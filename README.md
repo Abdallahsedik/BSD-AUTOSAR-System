@@ -89,7 +89,7 @@ The project demonstrates a complete, industry-grade embedded software developmen
 ---------------------------------------------------------------------------------------------------
 ## 3. System Scope and Context
 ### 3.1 Business Context
-
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/a4635d19-8045-4906-a2ec-6659fd0aaee1" />
 
 ### 3.2 CAN Message Matrix
 #### Receive Messages
@@ -124,6 +124,7 @@ The project demonstrates a complete, industry-grade embedded software developmen
 | Code Standard     | MISRA-C:2012       | Automotive safety requirement                     |
 | Communication     | CAN 500 kbps       | Standard automotive bus                           |
 | Scheduling        | OSEK/AUTOSAR OS    | Deterministic task scheduling                     |
+
 
 
 
