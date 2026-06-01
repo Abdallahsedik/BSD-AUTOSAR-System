@@ -93,6 +93,16 @@
 #define BASE_MCU_HEADER <Mcu.h>
 #endif
 
+#ifndef BASE_OS_ENABLED
+/** \brief Enable status of the module Os (/Os/Os) (VariantPreCompile) */
+#define BASE_OS_ENABLED STD_ON
+#endif
+
+    #ifndef BASE_OS_HEADER
+/** \brief Name of the Os (/Os/Os) module's main header file */
+#define BASE_OS_HEADER <Os.h>
+#endif
+
 #ifndef BASE_PDUR_ENABLED
 /** \brief Enable status of the module PduR (/PduR/PduR) (VariantPostBuild) */
 #define BASE_PDUR_ENABLED STD_ON
