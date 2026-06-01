@@ -163,6 +163,26 @@
         <d:var name="SoftwareVersion" value="1.0.0"/>
         <d:var name="ReleaseVersion" value="4.3.0"/>
       </d:ctr>
+      <d:ctr name="Os">
+        <d:var name="ConfigurationFileURL" value="config\Os.xdm"/>
+        <d:var name="ConfigurationFormat" value="xdm"/>
+        <d:var name="GenerationPath" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+        <d:var name="PreConfig" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+        <d:var name="RecConfig" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+        <d:var name="ModuleId" value="Os_dSPACE_Sim"/>
+        <d:var name="ModuleType" value="Os"/>
+        <d:var name="Enabled" value="TRUE"/>
+        <d:var name="Generate" value="TRUE"/>
+        <d:var name="LoadExistingConfigurationFile" value="FALSE"/>
+        <d:var name="SoftwareVersion" value="1.0.0"/>
+        <d:var name="ReleaseVersion" value="4.3.0"/>
+      </d:ctr>
       <d:ctr name="PduR">
         <d:var name="ConfigurationFileURL" value="config\PduR.xdm"/>
         <d:var name="ConfigurationFormat" value="xdm"/>

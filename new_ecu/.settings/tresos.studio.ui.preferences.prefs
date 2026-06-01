@@ -19,6 +19,7 @@
 ///TS_TxDxM7I0R0/Com/ComConfig/ComSignal@COLUMN_WIDTH_LIST_VIEW=name\#/TS_TxDxM7I0R0/Com/ComConfig/ComSignal\=138
 ///TS_TxDxM7I0R0/Com/ComConfig/ComSignal@PREFERRED_VIEW_WIDTH=0
 ///TS_TxDxM7I0R0/Com/ComConfig@PREFERRED_VIEW_WIDTH=519
+///dSPACE_Sim/Os/OsIsr@MODULE_TLC_PREFERRED_VIEW_COUNT=1
 //Simulated\ Tab/Addressing@PREFERRED_VIEW_WIDTH=0
 //Simulated\ Tab/N-PDU\ Linking@PREFERRED_VIEW_WIDTH=0
 eclipse.preferences.version=1
