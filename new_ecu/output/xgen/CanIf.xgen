@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?module CanIf?>
+
+<xgen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.elektrobit.com/2013/xgen" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+
+
+
+
+
+
+  <!-- This is the configuration of module CanIf -->
+  <module name="CanIf" version="7.0.11 B946630">
+
+    <!-- This is the precompile-time configuration of the module. -->
+    <configuration class="PreCompile">
+
+        <?artifact directory="include" file="CanIf_Types_Int.h" type="types-h" generate="yes" ?>
+
+
+
+      <parameter name="relocatable-enable">
+        <boolean-value>true</boolean-value>
+      </parameter>
+
+      <!--
+          Type declarations:
+          Specifies the content of CanIf_Types_Int.h
+      -->
+
+      <type name="CanIf_TxBufferIndexType">
+        <comment><![CDATA[ \brief Index type for Tx buffers
+
+ This type defines the index width for Tx buffers.]]></comment>
+        <reference type="uint16" />
+      </type>
+
+      <type name="CanIf_RxBufferIndexType">
+        <comment><![CDATA[ \brief Index type for Rx buffers
+
+ This type defines the index width for Rx buffers.]]></comment>
+        <reference type="uint16" />
+      </type>
+
+      <type name="CanIf_LPduIndexType">
+        <comment><![CDATA[ \brief Index type for L-PDU related data
+
+ This type defines the index type for L-PDU related data.]]></comment>
+        <reference type="uint16" />
+      </type>
+
+      <!-- This is the type definition of the root structure -->
+      <type name="CanIf_ConfigType">
+        <comment><![CDATA[ \brief Type for the CAN interface configuration
+
+ This type defines the global configuration of the CAN interface.]]></comment>
+        <struct>
+          <member name="PlatformSignature" type="uint32" comment="Used to validate the platform"/>
+          <member name="LcfgSignature" type="uint32" comment="Used to validate the post build configuration against the link time configuration"/>
+          <member name="CfgSignature" type="uint32" comment="Used to validate the post build configuration against the precompile time configuration"/>
+          <member name="PublicInfoSignature" type="uint32" comment="Used to validate the post build configuration against the precompile time published information configuration"/>
+          <member name="txLPduConfigPtr" type="CanIf_TxLPduConfigType" comment="ptr. to array of Tx L-PDU configurations">
+            <compiler-abstraction>
+              <ref2cfg />
+            </compiler-abstraction>
+          </member>
+          <member  name="rxLPduConfigPtr" type="CanIf_RxLPduConfigType" comment="ptr. to array of Rx L-PDU configurations">
+            <compiler-abstraction>
+              <ref2cfg />
+            </compiler-abstraction>
+          </member>
+          <member name="sortedRxLPduConfigPtr" type="CanIf_SortedRxLPduConfigType" comment="ptr. to array of sorted Rx L-PDU configurations">
+            <compiler-abstraction>
+              <ref2cfg />
+            </compiler-abstraction>
+          </member>
+          <member name="driverConfigPtr" type="CanIf_CanDriverConfigType" comment="pointer a driver configuration">
+            <compiler-abstraction>
+              <ref2cfg />
+            </compiler-abstraction>
+          </member>
+          <member name="nrOfStaticTxLPdus" type="CanIf_LPduIndexType" comment="number of static Tx L-PDUs"/>
+          <member name="nrOfTxLPdus" type="CanIf_LPduIndexType" comment="number of Tx L-PDUs"/>
+          <member name="nrOfRxLPdus" type="CanIf_LPduIndexType" comment="number of Rx L-PDUs"/>
+        </struct>
+      </type>
+
+      <!-- This type is used for configuration of Tx L-PDUs. -->
+      <type name="CanIf_TxLPduConfigType">
+        <comment><![CDATA[ \brief Tx L-PDU configuration type
+
+ This type is used for configuration of Tx L-PDUs.]]></comment>
+        <struct>
+          <member name="canId" type="Can_IdType" comment="CAN ID"/>
+          <member name="hth" type="Can_HwHandleType" comment="HTH"/>
+          <member name="sourcePduId_UL" type="PduIdType" comment="source PDU ID of upper layer"/>
+          <member name="userType" type="uint8" comment="type of callback function"/>
+          <member name="intCtrlIdx" type="uint8" comment="CanIf internal controller index"/>
+          <member name="PduLength" type="PduLengthType" comment="PDU length in EcuC"/>
+          <member name="truncateOptions" type="uint8" comment="PDU options regarding its truncation"/>
+        </struct>
+      </type>
+
+      <!-- This type defines the configuration of the index table for Rx L-PDUs. -->
+      <type name="CanIf_SortedRxLPduConfigType">
+        <comment><![CDATA[ \brief Rx L-PDU index type
+
+ This type is the index table to select a Rx L-Pdu.]]></comment>
+        <struct>
+          <member name="upperRangeCanId" type="uint32"  comment="Upper range CAN ID/no range flag"/>
+          <member name="canId" type="Can_IdType" comment="CAN ID"/>
+          <member name="rxLPduIndex" type="CanIf_LPduIndexType"/>
+        </struct>
+      </type>
+
+      <!-- This type defines the configuration of a Rx L-PDU. -->
+      <type name="CanIf_RxLPduConfigType">
+        <comment><![CDATA[ \brief Rx L-PDU configuration type
+
+ This type defines the configuration of a Rx L-PDU.]]></comment>
+        <struct>
+          <member name="targetPduId" type="PduIdType" comment="target PDU ID"/>
+          <member name="limitedPduLength" type="uint8" comment="target PDU length"/>
+          <member name="userType" type="uint8" comment="type of callback function"/>
+          <member name="dlc" type="uint8" comment="CAN DLC"/>
+          <member name="hrh" type="Can_HwHandleType" comment="HRH"/>
+          <member name="intCtrlIdx" type="uint8" comment="CanIf internal controller index"/>
+        </struct>
+      </type>
+
+      <!-- This is the data type used for HTH configuration. -->
+      <type name="CanIf_HthConfigType">
+        <comment><![CDATA[ \brief HTH configuration type
+
+ This is the data type used for HTH configuration.]]></comment>
+        <struct>
+          <member name="firstIndex" type="CanIf_LPduIndexType" comment="index of first pending Tx request"/>
+          <member type="uint8" name="intCtrlIdx" comment="CanIf internal controller index"/>
+        </struct>
+      </type>
+
+      <!-- This is the data type used for HRH configuration. -->
+      <type name="CanIf_HrhConfigType">
+        <comment><![CDATA[ \brief HRH configuration type
+
+ This is the data type used for HRH configuration.]]></comment>
+        <struct>
+          <member name="firstIndex" type="CanIf_LPduIndexType" comment="index of first Rx L-PDU for this HRH"/>
+          <member name="lastIndex" type="CanIf_LPduIndexType" comment="index of last Rx L-PDU for this HRH"/>
+          <member name="swFiltering" type="uint8">
+            <comment>
+              <![CDATA[CANIF_BINARY_SOFTWARE_FILTERING - binary search;
+                       CANIF_NO_SOFTWARE_FILTERING - no sw filtering.
+              ]]>
+            </comment>
+          </member>
+          <member name="intCtrlIdx" type="uint8" comment="CanIf internal controller index"/>
+        </struct>
+      </type>
+
+      <!-- This is the type used for controller configuration. -->
+      <type name="CanIf_CanControllerConfigType">
+        <comment><![CDATA[ \brief Controller configuration
+
+ This is the type used for controller configuration.]]></comment>
+        <struct>
+          <member name="controllerId" type="uint8" comment="CAN controller ID"/>
+        </struct>
+      </type>
+
+      <!-- This type defines the driver configuration used in the CAN interface. -->
+      <type name="CanIf_CanDriverConfigType">
+        <comment><![CDATA[ \brief Driver configuration type
+
+ This type defines the driver configuration used in the CAN interface.]]></comment>
+        <struct>
+          <member name="ctrlConfigPtr" type="CanIf_CanControllerConfigType" comment="array of controller configurations">
+            <compiler-abstraction>
+              <ref2cfg />
+            </compiler-abstraction>
+          </member>
+          <member name="hohIdToCanIfIdxPtr" type="uint16" comment="HOH ID translation array">
+            <compiler-abstraction>
+              <ref2cfg />
+            </compiler-abstraction>
+          </member>
+          <member name="hthConfigPtr" type="CanIf_HthConfigType" comment="array of HTH configurations">
+            <compiler-abstraction>
+              <ref2cfg />
+            </compiler-abstraction>
+          </member>
+          <member name="hrhConfigPtr" type="CanIf_HrhConfigType" comment="array of HRH configurations">
+            <compiler-abstraction>
+              <ref2cfg />
+            </compiler-abstraction>
+          </member>
+          <member name="nrOfControllers" type="uint8" comment="Number of CAN controllers contained in this driver"/>
+        </struct>
+      </type>
+
+
+    </configuration>   <!-- PreCompile -->
+
+    <!-- This is the post-build configuration of the module. -->
+    <configuration class="PostBuild">
+
+      <?artifact directory="include" file="CanIf_PBcfg.h" type="postbuild-h" ?>
+      <?artifact directory="src" file="CanIf_PBcfg.c" type="postbuild-c" generate="yes" ?>
+
+      <!--
+          Type declarations:
+          Specifies the content of CanIf_PBcfg.h
+      -->
+
+      <!-- This is the type definition of the layout type of the
+           modules' post-build configuration structure -->
+      <!-- !LINKSTO dsn.CanIf.PostBuildConfigurationData,1 -->
+      <type name="CanIf_ConfigLayoutType">
+        <struct>
+          <member name="RootCfg" type="CanIf_ConfigType"/>
+          <member name="txLPduConfig" type="CanIf_TxLPduConfigType" count="2"/>
+          <member name="rxLPduConfig" type="CanIf_RxLPduConfigType" count="6"/>
+          <member name="driverHthConfig" type="CanIf_HthConfigType" count="2"/>
+          <member name="driverHrhConfig" type="CanIf_HrhConfigType" count="6"/>
+          <member name="hohIdToCanIfIdx" type="uint16" count="9"/>
+          <member name="canControllerConfig" type="CanIf_CanControllerConfigType" count="1"/>
+          <!-- this implementation supports a single can driver only -->
+          <member name="canDriverConfig" type="CanIf_CanDriverConfigType" count="1"/>
+          <member name="sortedRxLPduConfig" type="CanIf_SortedRxLPduConfigType" count="12"/>
+        </struct>
+      </type>
+
+      <type name="CanIf_ConstConfigLayoutType">
+        <reference type="CanIf_ConfigLayoutType">
+          <compiler-abstraction>
+            <const memory-class="CANIF_APPL_CONST" />
+          </compiler-abstraction>
+        </reference>
+      </type>
+
+      <!--
+          Type definition and initialisation:
+          Specifies the content of CanIf_PBcfg.c
+      -->
+
+      <memory-section name="CONFIG_DATA_UNSPECIFIED">
+      <instance type="CanIf_ConstConfigLayoutType"
+             name="CanIf_ConfigLayout">
+
+        <parameter name="postbuild-configuration-name">
+          <symbolic-value>CanIf_Config</symbolic-value>
+        </parameter>
+        <parameter name="postbuild-configuration-name">
+          <symbolic-value>CanIfInitCfg</symbolic-value>
+        </parameter>
+
+        <!-- CanIf_ConfigType -->
+        <field>
+          <field>
+            <int>2147485970</int>
+          </field>
+          <field>
+            <int>2034454346</int>
+          </field>
+          <field>
+            <int>1416607236</int>
+          </field>
+          <field>
+            <int>2372725615</int>
+          </field>
+          <field>
+            <ref>
+              <struct-field name="txLPduConfig" />
+              <array-field index="0" />
+            </ref>
+          </field>
+          <field>
+            <ref>
+              <struct-field name="rxLPduConfig" />
+              <array-field index="0" />
+            </ref>
+          </field>
+          <field>
+            <ref>
+              <struct-field name="sortedRxLPduConfig" />
+              <array-field index="0" />
+            </ref>
+          </field>
+          <field>
+            <ref>
+              <struct-field name="canDriverConfig" />
+              <array-field index="0" />
+            </ref>
+          </field>
+          <field>
+            <int>2</int>
+          </field>
+          <field>
+            <int>2</int>
+          </field>
+          <field>
+            <int>6</int>
+          </field>
+        </field>
+
+        <!-- CanIf_TxLPduConfigType -->
+        <!-- txLPduConfig[] -->
+        <field>
+          <field>
+            <field>
+              <int>768</int>
+            </field>
+            <field>
+              <int>7</int>
+            </field>
+            <field>
+              <int>0</int>
+            </field>
+            <!-- !LINKSTO CanIf.EB.Metadata.Config.1,1 -->
+            <field>
+              <int>3</int>
+            </field>
+            <field>
+              <int>0</int>
+            </field>
+            <field>
+              <!-- Pdu Length from EcuC -->
+              <!-- Check if Can FD -->
+                <!-- Check if the PDU length from EcuC is larger than the max CAN 2.0 frame length -->
+              <int>2</int>
+            </field>
+            <field>
+              <!-- Truncating options -->
+              <!-- Check if parameter CanIfTxPduTruncation is ON -->
+              <int>0</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>769</int>
+            </field>
+            <field>
+              <int>8</int>
+            </field>
+            <field>
+              <int>1</int>
+            </field>
+            <!-- !LINKSTO CanIf.EB.Metadata.Config.1,1 -->
+            <field>
+              <int>3</int>
+            </field>
+            <field>
+              <int>0</int>
+            </field>
+            <field>
+              <!-- Pdu Length from EcuC -->
+              <!-- Check if Can FD -->
+                <!-- Check if the PDU length from EcuC is larger than the max CAN 2.0 frame length -->
+              <int>2</int>
+            </field>
+            <field>
+              <!-- Truncating options -->
+              <!-- Check if parameter CanIfTxPduTruncation is ON -->
+              <int>0</int>
+            </field>
+          </field>
+        </field>
+
+
+        <!-- CanIf_RxLPduConfigType -->
+        <!-- rxLPduConfig -->
+        <field>
+          <field>
+            <!-- Rx-PDU 0 -->
+            
+            <field>
+              <int>0</int>
+            </field>
+            <field>
+              
+              <int>8</int>
+            </field>
+            <field>
+              <int>3</int>
+            </field>
+                <field>
+                  <int>8</int>
+                </field>
+            <field>
+              <!-- Can_HwHandleType hrh /* HRH */ -->
+              <int>0</int>
+            </field>
+            <field>
+              <!-- uint8 intCtrlIdx /* CanIf internal controller index */ -->
+              <int>0</int>
+            </field>
+          </field>
+          <field>
+            <!-- Rx-PDU 1 -->
+            
+            <field>
+              <int>1</int>
+            </field>
+            <field>
+              
+              <int>8</int>
+            </field>
+            <field>
+              <int>3</int>
+            </field>
+                <field>
+                  <int>8</int>
+                </field>
+            <field>
+              <!-- Can_HwHandleType hrh /* HRH */ -->
+              <int>1</int>
+            </field>
+            <field>
+              <!-- uint8 intCtrlIdx /* CanIf internal controller index */ -->
+              <int>0</int>
+            </field>
+          </field>
+          <field>
+            <!-- Rx-PDU 2 -->
+            
+            <field>
+              <int>2</int>
+            </field>
+            <field>
+              
+              <int>2</int>
+            </field>
+            <field>
+              <int>3</int>
+            </field>
+                <field>
+                  <int>2</int>
+                </field>
+            <field>
+              <!-- Can_HwHandleType hrh /* HRH */ -->
+              <int>2</int>
+            </field>
+            <field>
+              <!-- uint8 intCtrlIdx /* CanIf internal controller index */ -->
+              <int>0</int>
+            </field>
+          </field>
+          <field>
+            <!-- Rx-PDU 3 -->
+            
+            <field>
+              <int>3</int>
+            </field>
+            <field>
+              
+              <int>1</int>
+            </field>
+            <field>
+              <int>3</int>
+            </field>
+                <field>
+                  <int>1</int>
+                </field>
+            <field>
+              <!-- Can_HwHandleType hrh /* HRH */ -->
+              <int>3</int>
+            </field>
+            <field>
+              <!-- uint8 intCtrlIdx /* CanIf internal controller index */ -->
+              <int>0</int>
+            </field>
+          </field>
+          <field>
+            <!-- Rx-PDU 4 -->
+            
+            <field>
+              <int>4</int>
+            </field>
+            <field>
+              
+              <int>2</int>
+            </field>
+            <field>
+              <int>3</int>
+            </field>
+                <field>
+                  <int>2</int>
+                </field>
+            <field>
+              <!-- Can_HwHandleType hrh /* HRH */ -->
+              <int>4</int>
+            </field>
+            <field>
+              <!-- uint8 intCtrlIdx /* CanIf internal controller index */ -->
+              <int>0</int>
+            </field>
+          </field>
+          <field>
+            <!-- Rx-PDU 5 -->
+            
+            <field>
+              <int>5</int>
+            </field>
+            <field>
+              
+              <int>1</int>
+            </field>
+            <field>
+              <int>3</int>
+            </field>
+                <field>
+                  <int>1</int>
+                </field>
+            <field>
+              <!-- Can_HwHandleType hrh /* HRH */ -->
+              <int>5</int>
+            </field>
+            <field>
+              <!-- uint8 intCtrlIdx /* CanIf internal controller index */ -->
+              <int>0</int>
+            </field>
+          </field>
+        </field>
+
+        <!-- driverHthConfig -->
+        <field>
+            <field>
+              <field>
+                <int>0</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+            </field>
+            <field>
+              <field>
+                <int>0</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+            </field>
+        </field>
+
+
+        <!-- driverHrhConfig -->
+        <field>
+            <field>
+                  
+              <field>
+                <int>0</int>
+              </field>
+              <field>
+                <int>1</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+            </field>
+            <field>
+                  
+              <field>
+                <int>2</int>
+              </field>
+              <field>
+                <int>3</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+            </field>
+            <field>
+                  
+              <field>
+                <int>4</int>
+              </field>
+              <field>
+                <int>5</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+            </field>
+            <field>
+                  
+              <field>
+                <int>6</int>
+              </field>
+              <field>
+                <int>7</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+            </field>
+            <field>
+                  
+              <field>
+                <int>8</int>
+              </field>
+              <field>
+                <int>9</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+            </field>
+            <field>
+                  
+              <field>
+                <int>10</int>
+              </field>
+              <field>
+                <int>11</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+              <field>
+                <int>0</int>
+              </field>
+            </field>
+        </field>
+
+        <!-- hohIdToCanIfIdx -->
+        <field>
+
+           <field>
+             <int>0</int>
+           </field>
+           <field>
+             <int>1</int>
+           </field>
+           <field>
+             <int>2</int>
+           </field>
+           <field>
+             <int>3</int>
+           </field>
+           <field>
+             <int>4</int>
+           </field>
+           <field>
+             <int>5</int>
+           </field>
+           <field>
+             <int>65535</int>
+           </field>
+           <field>
+             <int>0</int>
+           </field>
+           <field>
+             <int>1</int>
+           </field>
+        </field>
+
+        <!-- canControllerConfig -->
+        <field>
+          <field>
+            <field>
+              <int>0</int>
+            </field>
+          </field>
+        </field>
+
+        <!-- canDriverConfig -->
+        <field>
+          <field>
+            <field>
+              <ref>
+                <struct-field name="canControllerConfig" />
+                <array-field index="0" />
+              </ref>
+            </field>
+            <field>
+              <ref>
+                <struct-field name="hohIdToCanIfIdx" />
+                <array-field index="0" />
+              </ref>
+            </field>
+            <field>
+              <ref>
+                <struct-field name="driverHthConfig" />
+                <array-field index="0" />
+              </ref>
+            </field>
+            <field>
+              <ref>
+                <struct-field name="driverHrhConfig" />
+                <array-field index="0" />
+              </ref>
+            </field>
+            <field>
+             <int>1</int>
+            </field>
+          </field>
+        </field>
+
+
+        <!-- sortedRxLPduConfig -->
+              <!-- Get and store the Mask and the Id to call EcuC -->
+              
+              
+              
+              <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+              <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+                <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+                <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+              <!-- Get and store the Mask and the Id to call EcuC -->
+              
+              
+              
+              <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+              <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+                <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+                <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+              <!-- Get and store the Mask and the Id to call EcuC -->
+              
+              
+              
+              <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+              <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+                <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+                <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+              <!-- Get and store the Mask and the Id to call EcuC -->
+              
+              
+              
+              <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+              <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+                <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+                <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+              <!-- Get and store the Mask and the Id to call EcuC -->
+              
+              
+              
+              <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+              <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+                <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+                <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+              <!-- Get and store the Mask and the Id to call EcuC -->
+              
+              
+              
+              <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+              <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+                <!-- !LINKSTO CanIf.EB.Metadata.Config.5,1 -->
+                <!-- !LINKSTO CanIf.EB.CanIfRxPduCanIdGeneralMask.1,1 -->
+        <field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>512</int>
+            </field>
+            <field>
+              <int>0</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>1073742336</int>
+            </field>
+            <field>
+              <int>0</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>513</int>
+            </field>
+            <field>
+              <int>1</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>1073742337</int>
+            </field>
+            <field>
+              <int>1</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>256</int>
+            </field>
+            <field>
+              <int>2</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>1073742080</int>
+            </field>
+            <field>
+              <int>2</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>928</int>
+            </field>
+            <field>
+              <int>3</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>1073742752</int>
+            </field>
+            <field>
+              <int>3</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>736</int>
+            </field>
+            <field>
+              <int>4</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>1073742560</int>
+            </field>
+            <field>
+              <int>4</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>416</int>
+            </field>
+            <field>
+              <int>5</int>
+            </field>
+          </field>
+          <field>
+            <field>
+              <int>4294967295</int>
+            </field>
+            <field>
+              <int>1073742240</int>
+            </field>
+            <field>
+              <int>5</int>
+            </field>
+          </field>
+        </field>
+
+
+      </instance>
+      </memory-section>
+    </configuration>  <!-- PostBuild -->
+  </module>
+
+  <!-- include the AUTOSAR standard data types, etc. -->
+  <xi:include href="Base.xgen" xpointer="element(/1/1)"/>
+
+</xgen>
+

@@ -1,0 +1,24 @@
+///@COLUMN_WIDTH_LIST_VIEW=name\#/\=326
+///Can@COLUMN_WIDTH_LIST_VIEW=name\#/Can\=310
+///TS_TxDxM6I0R0/PduR/PduRRoutingPaths/PduRDestPdu@COLUMN_WIDTH_LIST_VIEW=name\#/TS_TxDxM6I0R0/PduR/PduRRoutingPaths/PduRDestPdu\=186
+///TS_TxDxM6I0R0/PduR/PduRRoutingPaths/PduRDestPdu@PREFERRED_VIEW_WIDTH=0
+///TS_TxDxM6I0R0/PduR/PduRRoutingPaths/PduRSrcPdu@COLUMN_WIDTH_LIST_VIEW=name\#/TS_TxDxM6I0R0/PduR/PduRRoutingPaths/PduRSrcPdu\=195
+///TS_TxDxM6I0R0/PduR/PduRRoutingPaths/PduRSrcPdu@PREFERRED_VIEW_WIDTH=0
+///TS_TxDxM6I0R0/PduR/PduRRoutingPaths@PREFERRED_VIEW_WIDTH=471
+///TS_TxDxM7I0R0/CanIf/CanIfInitCfg/CanIfRxPduCfg@COLUMN_WIDTH_LIST_VIEW=name\#/TS_TxDxM7I0R0/CanIf/CanIfInitCfg/CanIfRxPduCfg\=198
+///TS_TxDxM7I0R0/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu@COLUMN_WIDTH_LIST_VIEW=name\#/TS_TxDxM7I0R0/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu\=172
+///TS_TxDxM7I0R0/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu@PREFERRED_VIEW_WIDTH=681
+///TS_TxDxM7I0R0/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu@PREFERRED_VIEW_WIDTH=1006
+///TS_TxDxM7I0R0/CanTp/CanTpConfig/CanTpChannel@PREFERRED_VIEW_WIDTH=584
+///TS_TxDxM7I0R0/CanTp/CanTpConfig@PREFERRED_VIEW_WIDTH=469
+///TS_TxDxM7I0R0/CanTp/CanTpGeneral@COLUMN_WIDTH_LIST_VIEW=name\#/TS_TxDxM7I0R0/CanTp/CanTpGeneral\=164
+///TS_TxDxM7I0R0/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxModeTrue/ComTxMode@COLUMN_WIDTH_LIST_VIEW=name\#/TS_TxDxM7I0R0/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxModeTrue/ComTxMode\=140
+///TS_TxDxM7I0R0/Com/ComConfig/ComIPdu/ComTxIPdu@COLUMN_WIDTH_LIST_VIEW=name\#/TS_TxDxM7I0R0/Com/ComConfig/ComIPdu/ComTxIPdu\=202
+///TS_TxDxM7I0R0/Com/ComConfig/ComIPdu@COLUMN_WIDTH_LIST_VIEW=name\#/TS_TxDxM7I0R0/Com/ComConfig/ComIPdu\=184
+///TS_TxDxM7I0R0/Com/ComConfig/ComIPdu@PREFERRED_VIEW_WIDTH=0
+///TS_TxDxM7I0R0/Com/ComConfig/ComSignal@COLUMN_WIDTH_LIST_VIEW=name\#/TS_TxDxM7I0R0/Com/ComConfig/ComSignal\=138
+///TS_TxDxM7I0R0/Com/ComConfig/ComSignal@PREFERRED_VIEW_WIDTH=0
+///TS_TxDxM7I0R0/Com/ComConfig@PREFERRED_VIEW_WIDTH=519
+//Simulated\ Tab/Addressing@PREFERRED_VIEW_WIDTH=0
+//Simulated\ Tab/N-PDU\ Linking@PREFERRED_VIEW_WIDTH=0
+eclipse.preferences.version=1

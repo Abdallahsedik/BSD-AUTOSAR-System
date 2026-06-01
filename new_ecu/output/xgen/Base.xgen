@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?module Base?>
+<xgen xmlns="http://www.elektrobit.com/2013/xgen">
+  <module name="Base" version="5.6.1 B1013353">
+    <configuration class="PreCompile">
+      <?artifact directory="include" file="Platform_Types.h" type="platform-types-h" generate="no"?>
+
+      <parameter name="cpu-word-size">
+        <integer-value>32</integer-value>
+      </parameter>
+      <parameter name="bit-ordering">
+        <symbolic-value>LE</symbolic-value>
+      </parameter>
+      <parameter name="byte-ordering">
+        <symbolic-value>LE</symbolic-value>
+      </parameter>
+
+      <type name="boolean">
+        <basetype-ref type="char" signed="false"/>
+      </type>
+      <type name="sint8">
+        <basetype-ref type="char" signed="true"/>
+      </type>
+      <type name="sint16">
+        <basetype-ref type="short" signed="true"/>
+      </type>
+      <type name="sint32">
+        <basetype-ref type="int" signed="true"/>
+      </type>
+      <type name="sint64">
+        <basetype-ref type="long long" signed="true"/>
+      </type>
+      <type name="uint8">
+        <basetype-ref type="char" signed="false"/>
+      </type>
+      <type name="uint16">
+        <basetype-ref type="short" signed="false"/>
+      </type>
+      <type name="uint32">
+        <basetype-ref type="int" signed="false"/>
+      </type>
+      <type name="uint64">
+        <basetype-ref type="long long" signed="false"/>
+      </type>
+      <type name="sint8_least">
+        <basetype-ref type="int" signed="true"/>
+      </type>
+      <type name="sint16_least">
+        <basetype-ref type="int" signed="true"/>
+      </type>
+      <type name="sint32_least">
+        <basetype-ref type="int" signed="true"/>
+      </type>
+      <type name="uint8_least">
+        <basetype-ref type="int" signed="false"/>
+      </type>
+      <type name="uint16_least">
+        <basetype-ref type="int" signed="false"/>
+      </type>
+      <type name="uint32_least">
+        <basetype-ref type="int" signed="false"/>
+      </type>
+      <type name="float32">
+        <basetype-ref type="float" signed="true"/>
+      </type>
+      <type name="float64">
+        <basetype-ref type="double" signed="true"/>
+      </type>
+      <type name="TS_MaxAlignedType">
+        <basetype-ref type="double" signed="true"/>
+      </type>
+
+      <base-type name="char" size="1" alignment="1" atomic-access="true" />
+      <base-type name="short" size="2" alignment="2" atomic-access="true" />
+      <base-type name="int" size="4" alignment="4" atomic-access="true" />
+      <base-type name="long" size="4" alignment="4" atomic-access="true" />
+      <base-type name="float" size="4" alignment="4" atomic-access="true" />
+      <base-type name="double" size="8" alignment="8" atomic-access="false" />
+      <base-type name="long long" size="8" alignment="8" atomic-access="false" />
+      <base-type name="farpointer" size="4" alignment="4" atomic-access="false"/>
+
+      <!-- Platform-specific information about structs and arrays. -->
+      <!-- See ASCPROJECT-831 for a rationale for the multiple alignment values -->
+      <!-- and a description of the 'up-to-size' attribute. -->
+      <struct-properties>
+        <minimum-alignment value="1" />
+      </struct-properties>
+
+      <array-properties>
+        <minimum-alignment value="1" />
+      </array-properties>
+    </configuration>
+
+    <configuration class="PreCompile">
+      <?artifact directory="include" file="Can_GeneralTypes_Cfg.h" type="types-h" generate="no"?>
+
+      <type name="Can_HwHandleType">
+        <reference type="uint16" />
+      </type>
+      <type name="Can_IdType">
+        <reference type="uint32" />
+      </type>
+    </configuration>
+
+    <configuration class="PreCompile">
+      <?artifact directory="include" file="TSPBConfig_BasicTypes.h" type="types-h" generate="no"?>
+
+      <type name="TS_CfgOffsetType">
+        <reference type="uint32"/>
+      </type>
+      <type name="TS_VarOffsetType">
+        <reference type="uint16"/>
+      </type>
+    </configuration>
+
+    <configuration class="PreCompile">
+      <?artifact directory="include" file="ComStack_Cfg.h" type="types-h" generate="no"?>
+
+      <!-- PduIdTypeEnum is fixed to UINT16, see deviations of EcuC -->
+      <type name="PduIdType">
+        <reference type="uint16" />
+      </type>
+      <!-- PduLengthTypeEnum is only configurable to UINT16 and UINT32, see deviations of EcuC -->
+      <type name="PduLengthType">
+        <reference type="uint16"/>
+      </type>
+    </configuration>
+
+  </module>
+</xgen>
