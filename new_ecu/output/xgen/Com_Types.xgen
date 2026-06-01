@@ -1,0 +1,1473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?module Com?>
+
+<xgen xmlns="http://www.elektrobit.com/2013/xgen" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <!-- This is the configuration of module Com -->
+    <module name="Com" version="7.0.4 B946630">
+
+
+        <!-- This is the precompile-time configuration of the module. -->
+        <configuration class="PreCompile">
+            <?artifact generate="yes" directory="include" file="Com_Types.h" type="types-h"?>
+
+            <parameter name="relocatable-enable">
+                <boolean-value>true</boolean-value>
+            </parameter>
+
+
+        <!-- PreCompile type definitions -->
+        <!-- START GENERATED PreCompile type definitions -->
+<type name="ComSignalGroupRefType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComFilterRefType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComSignalRefType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComIPduRefType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="Com_CbkRxTOutIdxType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComMainfunctionTxType">
+    <struct>
+        <member name="ComMainPduIDListRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComMainPduIDListSize" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComMainfunctionRxType">
+    <struct>
+        <member name="ComMainPduIDListRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComMainPduIDListSize" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComGWDestinationType">
+    <struct>
+        <member name="ComGWDestinationRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComGWDestinationSelect" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComGWDestinationRefType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComGWSourceType">
+    <struct>
+        <member name="ComGWSourceRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComGWDestinationNumRef" type="ComGWDestinationRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComGWDestinationFirstRef" type="ComGWDestinationRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComGWSourceSelect" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="Com_CbkTxAckIdxType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="Com_CbkTxTOutIdxType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComMainIDType">
+    <reference type="uint8">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComTMSFlagsRefType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComSignalDescBitType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComSignalBufferRefType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComFilterConfType">
+    <struct>
+        <member name="ComFilterRef" type="ComFilterRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterSignalValueRef" type="ComSignalBufferRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterType" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComSignalBitSizeType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComRAMIdxType">
+    <reference type="uint32">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComSignalBaseType">
+    <struct>
+        <member name="ComBufferRef" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxSignalFlags" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSignalPositionInBit" type="ComSignalDescBitType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComBitSize" type="ComSignalBitSizeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSignalGroupRef" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterConf" type="ComFilterConfType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComTxSignalType">
+    <struct>
+        <member name="ComSignalBase" type="ComSignalBaseType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxSignalFlags" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComUpdateBitPositionInBit" type="ComSignalDescBitType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSignalPositionInBit" type="ComSignalDescBitType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComPositionOfTMSFlag" type="ComTMSFlagsRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Com_MainID_Tx" type="ComMainIDType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComRxFirstTimeoutFactorType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComRxTimeoutFactorType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="Com_CbkRxAckIdxType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComRxSignalExtType">
+    <struct>
+        <member name="ComNotification" type="Com_CbkRxAckIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutFactorValue" type="ComRxTimeoutFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxFirstTimeoutFactorValue" type="ComRxFirstTimeoutFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="RxSigDMQueueRef" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutNotification" type="Com_CbkRxTOutIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComUpdateBitPositionInBit" type="ComSignalDescBitType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxSignalExtFlags" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComRxSignalType">
+    <struct>
+        <member name="ComSignalBase" type="ComSignalBaseType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSignalExtRef" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Com_MainID_Rx" type="ComMainIDType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComFilterOneEveryNSizeType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComFilterOneEveryNType">
+    <struct>
+        <member name="ComFilterPeriodFactor" type="ComFilterOneEveryNSizeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterOffset" type="ComFilterOneEveryNSizeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterOccurrence" type="ComFilterRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComFilter32BitMaskXMinMaxType">
+    <struct>
+        <member name="ComFilterMaskOrMin" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterXOrMax" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComFilter16BitMaskXMinMaxType">
+    <struct>
+        <member name="ComFilterMaskOrMin" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterXOrMax" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComFilter8BitMaskXMinMaxType">
+    <struct>
+        <member name="ComFilterMaskOrMin" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterXOrMax" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComFilter32BitMaskType">
+    <reference type="uint32">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComFilter16BitMaskType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComFilter8BitMaskType">
+    <reference type="uint8">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComRxGroupSignalRefType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComTxGroupSignalRefType">
+    <reference type="ComRxGroupSignalRefType">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComSignalDescByteType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComTxSignalGroupType">
+    <struct>
+        <member name="ComSignalGroupValueRef" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSignalGTMSFlagsRef" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSignalGTMSFlagsInitValueRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTOCMaskRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComWriteMaskRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSignalPositionInByte" type="ComSignalDescByteType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComByteSize" type="ComSignalDescByteType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComUpdateBitPositionInBit" type="ComSignalDescBitType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComGroupSignalWithFilterRefNum" type="ComTxGroupSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComPositionOfTMSFlag" type="ComTMSFlagsRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComGroupSignalRefFirst" type="ComTxGroupSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxSignalGroupFlags" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Com_MainID_Tx" type="ComMainIDType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComRxSignalGroupType">
+    <struct>
+        <member name="ComSignalGroupValueRef" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSignalPositionInByte" type="ComSignalDescByteType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComByteSize" type="ComSignalDescByteType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSignalExtRef" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Com_MainID_Rx" type="ComMainIDType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComIPduGroupFlagType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComIPduGroupType">
+    <struct>
+        <member name="ComMainPduIDListRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComMainPduIDListSize" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduGroupFlags" type="ComIPduGroupFlagType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComTxModeTimePeriodFactorType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComTxModeTimeOffsetFactorType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComTxModeRepetitionPeriodFactorType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComTxModeMixedNTimesType">
+    <struct>
+        <member name="ComTxModeRepetitionPeriodFactor" type="ComTxModeRepetitionPeriodFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModeTimeOffsetFactor" type="ComTxModeTimeOffsetFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModeTimePeriodFactor" type="ComTxModeTimePeriodFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModeNumberOfRepetitions" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComTxModePeriodicType">
+    <struct>
+        <member name="ComTxModeTimeOffsetFactor" type="ComTxModeTimeOffsetFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModeTimePeriodFactor" type="ComTxModeTimePeriodFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComTxModeNTimesType">
+    <struct>
+        <member name="ComTxModeRepetitionPeriodFactor" type="ComTxModeRepetitionPeriodFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModeNumberOfRepetitions" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComTxTimeoutFactorType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComTxModeIdxType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComTxIPduMinimumDelayTimeFactorType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="Com_CallOutFuncPtrRefType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComIPduSizeType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComIPduGroupMaskType">
+    <reference type="uint32">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="AbstractIPduType">
+    <struct>
+        <member name="ComIPduGroupMask" type="ComIPduGroupMaskType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComInitValueRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduInitSize" type="ComIPduSizeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSizeMax" type="ComIPduSizeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComTxIPduType">
+    <struct>
+        <member name="ComIPduGroupMask" type="ComIPduGroupMaskType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComInitValueRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduValueRef" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduTMSFlagsRef" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduTMSFlagsInitValueRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduInitSize" type="ComIPduSizeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSizeMax" type="ComIPduSizeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduRTxPduId" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalGroupRefNum" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalGroupRefFirst" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalRefNum" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalWithFilterRefNum" type="ComTMSFlagsRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalGroupWithFilterRefNum" type="ComTMSFlagsRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalRefFirst" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduCallOutFuncPtrRef" type="Com_CallOutFuncPtrRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduTrigTxCallOutFuncPtrRef" type="Com_CallOutFuncPtrRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxIPduMinimumDelayTimeFactorValue" type="ComTxIPduMinimumDelayTimeFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="MDTQueueRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModeTrueRef" type="ComTxModeIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModeFalseRef" type="ComTxModeIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PeriodicQueueRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="NTimesQueueRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxTimeoutNotificationFirst" type="Com_CbkTxTOutIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxTimeoutNotificationNum" type="Com_CbkTxTOutIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxTimeoutFactorValue" type="ComTxTimeoutFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TxDMQueueRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComNotificationFirst" type="Com_CbkTxAckIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComNotificationNum" type="Com_CbkTxAckIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComNotificationDeferredQueueRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxIPduFlags" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModeModes" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Com_MainID_Tx" type="ComMainIDType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="ComGWSourceRefType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="ComRxIPduType">
+    <struct>
+        <member name="ComIPduGroupMask" type="ComIPduGroupMaskType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComInitValueRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduValueRef" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTimeoutValueRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduInitSize" type="ComIPduSizeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSizeMax" type="ComIPduSizeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalGroupRefNum" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalGroupRefFirst" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalRefNum" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalWithBufferRefNum" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalW_F_A_NotiRefNum" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalWithDMOnly" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSignalRefFirst" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduCallOutFuncPtrRef" type="Com_CallOutFuncPtrRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutNotificationFirst" type="Com_CbkRxTOutIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutNotificationNum" type="Com_CbkRxTOutIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutFactorValue" type="ComRxTimeoutFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxFirstTimeoutFactorValue" type="ComRxFirstTimeoutFactorType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="RxDMQueueRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduSigGWFlagBit" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduGWSourceRefNum" type="ComGWSourceRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduGWSourceRefFirst" type="ComGWSourceRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduTimeoutSize" type="ComIPduSizeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxIPduFlags" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Com_MainID_Rx" type="ComMainIDType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="Com_ConfigType">
+    <struct>
+        <member name="ComPlatformSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComPublicInfoSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComCfgSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComLcfgSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxIPduStatusBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxIPduStatusBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxIPduLengthBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxIPduLengthBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxSignalGroupStatusBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComBufferBaseUInt32" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComBufferBaseSInt32" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComBufferBaseUInt16" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComBufferBaseSInt16" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComBufferBaseUInt8" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComBufferBaseSInt8" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComBufferBaseBool" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterOneEveryNBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSigGWRxPduFlagBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSigGWTxSignalGroupQueueBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComMDTQueueBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComPeriodicQueueBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComNTimesQueueBaseNextTime" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComNTimesQueueBaseRemaining" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutQueueBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutQueueListRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutSignalStatusQueueBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutSignalQueueListRef" type="ComSignalRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxDMInvSignalGroupStatusQueueBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutSignalGroupQueueBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutSignalGroupQueueListRef" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxTimeoutQueueBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComCbkTxAckDeferredStatusBase" type="ComRAMIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxIPduRef" type="ComRxIPduType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxIPduRef" type="ComTxIPduType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModeNTimesRef" type="ComTxModeNTimesType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModePeriodicRef" type="ComTxModePeriodicType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxModeMixedNTimesRef" type="ComTxModeMixedNTimesType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduGroupRef" type="ComIPduGroupType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSigGWRxIPduListRef" type="ComIPduRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxIPduSignalGroupListRef" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxIPduSignalGroupListRef" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxIPduSignalListRef" type="ComSignalRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxIPduSignalListRef" type="ComSignalRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxSignalGroupRef" type="ComRxSignalGroupType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxSignalGroupRef" type="ComTxSignalGroupType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxSignalGroupGroupSignalListRef" type="ComTxGroupSignalRefType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilter8BitMaskRef" type="ComFilter8BitMaskType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilter16BitMaskRef" type="ComFilter16BitMaskType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilter32BitMaskRef" type="ComFilter32BitMaskType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilter8BitMaskXMinMaxRef" type="ComFilter8BitMaskXMinMaxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilter16BitMaskXMinMaxRef" type="ComFilter16BitMaskXMinMaxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilter32BitMaskXMinMaxRef" type="ComFilter32BitMaskXMinMaxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterOneEveryNRef" type="ComFilterOneEveryNType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxSignalRef" type="ComRxSignalType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxSignalExtRef" type="ComRxSignalExtType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxSignalRef" type="ComTxSignalType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutNotificationRef" type="Com_CbkRxTOutIdxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxTimeoutNotificationRef" type="Com_CbkTxTOutIdxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxErrorNotificationRef" type="Com_CbkTxTOutIdxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxNotificationRef" type="Com_CbkTxAckIdxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComGWSourceRef" type="ComGWSourceType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComGWDestinationRef" type="ComGWDestinationType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComMainfunctionRxRef" type="ComMainfunctionRxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComMainfunctionTxRef" type="ComMainfunctionTxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSigGWTxSignalGroupQueueMax" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComMDTQueueMax" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComPeriodicQueueMax" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComNTimesQueueMax" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutQueueMax" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutSignalQueueBase" type="Com_CbkRxTOutIdxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutSignalQueueMax" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxTimeoutSignalGroupQueueMax" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxTimeoutQueueMax" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComCbkTxAckDeferredListMax" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxIPduArraySize" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxIPduArraySize" type="ComIPduRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxSignalArraySize" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxSignalArraySize" type="ComSignalRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComFilterOneEveryNArraySize" type="ComFilterRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComIPduGroupsNum" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComSigGWRxIPduArraySize" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComTxSignalGroupArraySize" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ComRxSignalGroupArraySize" type="ComSignalGroupRefType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+
+        <!-- END GENERATED PreCompile type definitions -->
+        </configuration> <!-- precompile -->
+
+
+    </module>
+
+    <!-- include the AUTOSAR standard data types, etc. -->
+    <xi:include href="Base.xgen" xpointer="element(/1/1)" />
+</xgen>

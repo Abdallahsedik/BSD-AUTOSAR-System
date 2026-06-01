@@ -1,0 +1,2595 @@
+<?xml version='1.0'?>
+<datamodel version="8.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/18/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/18/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:ce="http://www.tresos.de/_projects/DataModel2/18/childenable.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="Com" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Com" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_TxDxM7I0R0/Com"/>
+              <a:a name="IMPORTER_INFO" value="@REC"/>
+              <d:ctr name="PublishedInformation" type="IDENTIFIABLE">
+                <d:var name="PbcfgMSupport" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPostBuild">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:ctr name="ComConfig" type="IDENTIFIABLE">
+                <a:a name="IMPORTER_INFO" value="@REC"/>
+                <d:var name="ComDataMemSize" type="INTEGER" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComMaxIPduCnt" type="INTEGER" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:lst name="ComGwMapping" type="MAP"/>
+                <d:lst name="ComIPdu" type="MAP">
+                  <d:ctr name="ComIPdu_Radar_Left" type="IDENTIFIABLE">
+                    <d:var name="ComIPduCallout" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduCancellationSupport" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComIPduHandleId" type="INTEGER" value="0"/>
+                    <d:var name="ComIPduSignalProcessing" type="ENUMERATION" 
+                           value="IMMEDIATE">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduTriggerTransmitCallout" 
+                           type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduType" type="ENUMERATION" value="NORMAL">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="ComIPduGroupRef"/>
+                    <d:ref name="ComIPduMainFunctionRef" type="REFERENCE" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:lst name="ComIPduSignalGroupRef"/>
+                    <d:lst name="ComIPduSignalRef">
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_Radar_Left_Distance"/>
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_Radar_Left_ObjectDetected"/>
+                    </d:lst>
+                    <d:ref name="ComPduIdRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Radar_Left"/>
+                    <d:ctr name="ComIPduCounter" type="IDENTIFIABLE">
+                      <d:var name="ComIPduCounterErrorNotification" 
+                             type="FUNCTION-NAME" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterSize" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterStartPosition" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterThreshold" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="ComIPduReplication" type="IDENTIFIABLE">
+                      <d:var name="ComIPduReplicationQuorum" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="ComIPduReplicaRef">
+                        <d:ref type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="ComTxIPdu" type="IDENTIFIABLE">
+                      <d:var name="ComMetaDataDefault" type="STRING" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComMinimumDelayTime" type="FLOAT" value="0.0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduClearUpdateBit" type="ENUMERATION" 
+                             value="Transmit">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduUnusedAreasDefault" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="ComTxModeFalse" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                      <d:ctr name="ComTxModeTrue" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" 
+                                 value="DIRECT">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" value="1">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" 
+                                 value="1.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="ComIPdu_Radar_Right" type="IDENTIFIABLE">
+                    <d:var name="ComIPduCallout" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduCancellationSupport" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComIPduHandleId" type="INTEGER" value="1"/>
+                    <d:var name="ComIPduSignalProcessing" type="ENUMERATION" 
+                           value="IMMEDIATE">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduTriggerTransmitCallout" 
+                           type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduType" type="ENUMERATION" value="NORMAL">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="ComIPduGroupRef"/>
+                    <d:ref name="ComIPduMainFunctionRef" type="REFERENCE" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:lst name="ComIPduSignalGroupRef"/>
+                    <d:lst name="ComIPduSignalRef">
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_Radar_Right_Distance"/>
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_Radar_Right_ObjectDetected"/>
+                    </d:lst>
+                    <d:ref name="ComPduIdRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Radar_Right"/>
+                    <d:ctr name="ComIPduCounter" type="IDENTIFIABLE">
+                      <d:var name="ComIPduCounterErrorNotification" 
+                             type="FUNCTION-NAME" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterSize" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterStartPosition" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterThreshold" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="ComIPduReplication" type="IDENTIFIABLE">
+                      <d:var name="ComIPduReplicationQuorum" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="ComIPduReplicaRef">
+                        <d:ref type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="ComTxIPdu" type="IDENTIFIABLE">
+                      <d:var name="ComMetaDataDefault" type="STRING" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComMinimumDelayTime" type="FLOAT" value="0.0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduClearUpdateBit" type="ENUMERATION" 
+                             value="Transmit">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduUnusedAreasDefault" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="ComTxModeFalse" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                      <d:ctr name="ComTxModeTrue" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" 
+                                 value="DIRECT">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" value="1">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" 
+                                 value="1.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="ComIPdu_Speed" type="IDENTIFIABLE">
+                    <d:var name="ComIPduCallout" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduCancellationSupport" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComIPduHandleId" type="INTEGER" value="2"/>
+                    <d:var name="ComIPduSignalProcessing" type="ENUMERATION" 
+                           value="IMMEDIATE">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduTriggerTransmitCallout" 
+                           type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduType" type="ENUMERATION" value="NORMAL">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="ComIPduGroupRef"/>
+                    <d:ref name="ComIPduMainFunctionRef" type="REFERENCE" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:lst name="ComIPduSignalGroupRef"/>
+                    <d:lst name="ComIPduSignalRef">
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_Vehicle_Speed"/>
+                    </d:lst>
+                    <d:ref name="ComPduIdRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Speed"/>
+                    <d:ctr name="ComIPduCounter" type="IDENTIFIABLE">
+                      <d:var name="ComIPduCounterErrorNotification" 
+                             type="FUNCTION-NAME" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterSize" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterStartPosition" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterThreshold" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="ComIPduReplication" type="IDENTIFIABLE">
+                      <d:var name="ComIPduReplicationQuorum" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="ComIPduReplicaRef">
+                        <d:ref type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="ComTxIPdu" type="IDENTIFIABLE">
+                      <d:var name="ComMetaDataDefault" type="STRING" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComMinimumDelayTime" type="FLOAT" value="0.0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduClearUpdateBit" type="ENUMERATION" 
+                             value="Transmit">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduUnusedAreasDefault" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="ComTxModeFalse" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                      <d:ctr name="ComTxModeTrue" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" 
+                                 value="DIRECT">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" value="1">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" 
+                                 value="1.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="ComIPdu_TurnSignal" type="IDENTIFIABLE">
+                    <d:var name="ComIPduCallout" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduCancellationSupport" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComIPduHandleId" type="INTEGER" value="3"/>
+                    <d:var name="ComIPduSignalProcessing" type="ENUMERATION" 
+                           value="IMMEDIATE">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduTriggerTransmitCallout" 
+                           type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduType" type="ENUMERATION" value="NORMAL">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="ComIPduGroupRef"/>
+                    <d:ref name="ComIPduMainFunctionRef" type="REFERENCE" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:lst name="ComIPduSignalGroupRef"/>
+                    <d:lst name="ComIPduSignalRef">
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_TurnSignal_State"/>
+                    </d:lst>
+                    <d:ref name="ComPduIdRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_TurnSignal"/>
+                    <d:ctr name="ComIPduCounter" type="IDENTIFIABLE">
+                      <d:var name="ComIPduCounterErrorNotification" 
+                             type="FUNCTION-NAME" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterSize" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterStartPosition" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterThreshold" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="ComIPduReplication" type="IDENTIFIABLE">
+                      <d:var name="ComIPduReplicationQuorum" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="ComIPduReplicaRef">
+                        <d:ref type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="ComTxIPdu" type="IDENTIFIABLE">
+                      <d:var name="ComMetaDataDefault" type="STRING" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComMinimumDelayTime" type="FLOAT" value="0.0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduClearUpdateBit" type="ENUMERATION" 
+                             value="Transmit">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduUnusedAreasDefault" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="ComTxModeFalse" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                      <d:ctr name="ComTxModeTrue" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" 
+                                 value="DIRECT">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" value="1">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" 
+                                 value="1.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="ComIPdu_Steering" type="IDENTIFIABLE">
+                    <d:var name="ComIPduCallout" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduCancellationSupport" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComIPduHandleId" type="INTEGER" value="4"/>
+                    <d:var name="ComIPduSignalProcessing" type="ENUMERATION" 
+                           value="IMMEDIATE">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduTriggerTransmitCallout" 
+                           type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduType" type="ENUMERATION" value="NORMAL">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="ComIPduGroupRef"/>
+                    <d:ref name="ComIPduMainFunctionRef" type="REFERENCE" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:lst name="ComIPduSignalGroupRef"/>
+                    <d:lst name="ComIPduSignalRef">
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_Steering_Angle"/>
+                    </d:lst>
+                    <d:ref name="ComPduIdRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Steering"/>
+                    <d:ctr name="ComIPduCounter" type="IDENTIFIABLE">
+                      <d:var name="ComIPduCounterErrorNotification" 
+                             type="FUNCTION-NAME" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterSize" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterStartPosition" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterThreshold" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="ComIPduReplication" type="IDENTIFIABLE">
+                      <d:var name="ComIPduReplicationQuorum" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="ComIPduReplicaRef">
+                        <d:ref type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="ComTxIPdu" type="IDENTIFIABLE">
+                      <d:var name="ComMetaDataDefault" type="STRING" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComMinimumDelayTime" type="FLOAT" value="0.0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduClearUpdateBit" type="ENUMERATION" 
+                             value="Transmit">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduUnusedAreasDefault" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="ComTxModeFalse" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                      <d:ctr name="ComTxModeTrue" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" 
+                                 value="DIRECT">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" value="1">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" 
+                                 value="1.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="ComIPdu_Gear" type="IDENTIFIABLE">
+                    <d:var name="ComIPduCallout" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduCancellationSupport" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComIPduHandleId" type="INTEGER" value="5"/>
+                    <d:var name="ComIPduSignalProcessing" type="ENUMERATION" 
+                           value="IMMEDIATE">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduTriggerTransmitCallout" 
+                           type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduType" type="ENUMERATION" value="NORMAL">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="ComIPduGroupRef"/>
+                    <d:ref name="ComIPduMainFunctionRef" type="REFERENCE" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:lst name="ComIPduSignalGroupRef"/>
+                    <d:lst name="ComIPduSignalRef">
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_Current_Gear"/>
+                    </d:lst>
+                    <d:ref name="ComPduIdRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Gear"/>
+                    <d:ctr name="ComIPduCounter" type="IDENTIFIABLE">
+                      <d:var name="ComIPduCounterErrorNotification" 
+                             type="FUNCTION-NAME" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterSize" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterStartPosition" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterThreshold" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="ComIPduReplication" type="IDENTIFIABLE">
+                      <d:var name="ComIPduReplicationQuorum" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="ComIPduReplicaRef">
+                        <d:ref type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="ComTxIPdu" type="IDENTIFIABLE">
+                      <d:var name="ComMetaDataDefault" type="STRING" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComMinimumDelayTime" type="FLOAT" value="0.0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduClearUpdateBit" type="ENUMERATION" 
+                             value="Transmit">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduUnusedAreasDefault" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="ComTxModeFalse" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                      <d:ctr name="ComTxModeTrue" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" 
+                                 value="DIRECT">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" value="1">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" 
+                                 value="1.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="ComIPdu_Warning_Tx" type="IDENTIFIABLE">
+                    <d:var name="ComIPduCallout" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduCancellationSupport" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduDirection" type="ENUMERATION" 
+                           value="SEND"/>
+                    <d:var name="ComIPduHandleId" type="INTEGER" value="1"/>
+                    <d:var name="ComIPduSignalProcessing" type="ENUMERATION" 
+                           value="IMMEDIATE">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduTriggerTransmitCallout" 
+                           type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduType" type="ENUMERATION" value="NORMAL">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="ComIPduGroupRef"/>
+                    <d:ref name="ComIPduMainFunctionRef" type="REFERENCE" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:lst name="ComIPduSignalGroupRef"/>
+                    <d:lst name="ComIPduSignalRef">
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_Warning_State"/>
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_Buzzer_Frequency"/>
+                    </d:lst>
+                    <d:ref name="ComPduIdRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Warning_Tx"/>
+                    <d:ctr name="ComIPduCounter" type="IDENTIFIABLE">
+                      <d:var name="ComIPduCounterErrorNotification" 
+                             type="FUNCTION-NAME" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterSize" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterStartPosition" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterThreshold" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="ComIPduReplication" type="IDENTIFIABLE">
+                      <d:var name="ComIPduReplicationQuorum" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="ComIPduReplicaRef">
+                        <d:ref type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="ComTxIPdu" type="IDENTIFIABLE">
+                      <d:var name="ComMetaDataDefault" type="STRING" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComMinimumDelayTime" type="FLOAT" value="0.0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduClearUpdateBit" type="ENUMERATION" 
+                             value="Transmit">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduUnusedAreasDefault" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="ComTxModeFalse" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                      <d:ctr name="ComTxModeTrue" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="true"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" 
+                                 value="PERIODIC"/>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" value="1">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" 
+                                 value="1.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.1"/>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" 
+                                 value="0.1"/>
+                        </d:ctr>
+                      </d:ctr>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="ComIPdu_LED_Tx" type="IDENTIFIABLE">
+                    <d:var name="ComIPduCallout" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduCancellationSupport" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduDirection" type="ENUMERATION" 
+                           value="SEND"/>
+                    <d:var name="ComIPduHandleId" type="INTEGER" value="0"/>
+                    <d:var name="ComIPduSignalProcessing" type="ENUMERATION" 
+                           value="IMMEDIATE">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduTriggerTransmitCallout" 
+                           type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComIPduType" type="ENUMERATION" value="NORMAL">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="ComIPduGroupRef"/>
+                    <d:ref name="ComIPduMainFunctionRef" type="REFERENCE" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:lst name="ComIPduSignalGroupRef"/>
+                    <d:lst name="ComIPduSignalRef">
+                      <d:ref name="ComIPduSignalRef" type="REFERENCE" 
+                             value="ASPath:/Com/Com/ComConfig/S_LED_Intensity"/>
+                    </d:lst>
+                    <d:ref name="ComPduIdRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_LED_Tx"/>
+                    <d:ctr name="ComIPduCounter" type="IDENTIFIABLE">
+                      <d:var name="ComIPduCounterErrorNotification" 
+                             type="FUNCTION-NAME" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterSize" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterStartPosition" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComIPduCounterThreshold" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="ComIPduReplication" type="IDENTIFIABLE">
+                      <d:var name="ComIPduReplicationQuorum" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="ComIPduReplicaRef">
+                        <d:ref type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="ComTxIPdu" type="IDENTIFIABLE">
+                      <d:var name="ComMetaDataDefault" type="STRING" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComMinimumDelayTime" type="FLOAT" value="0.0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduClearUpdateBit" type="ENUMERATION" 
+                             value="Transmit">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComTxIPduUnusedAreasDefault" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="ComTxModeFalse" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:ctr>
+                      <d:ctr name="ComTxModeTrue" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="true"/>
+                        <d:ctr name="ComTxMode" type="IDENTIFIABLE">
+                          <d:var name="ComTxModeMode" type="ENUMERATION" 
+                                 value="PERIODIC"/>
+                          <d:var name="ComTxModeNumberOfRepetitions" 
+                                 type="INTEGER" value="1">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeRepetitionPeriod" type="FLOAT" 
+                                 value="1.0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="ComTxModeTimeOffset" type="FLOAT" 
+                                 value="0.1"/>
+                          <d:var name="ComTxModeTimePeriod" type="FLOAT" 
+                                 value="0.1"/>
+                        </d:ctr>
+                      </d:ctr>
+                    </d:ctr>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="ComIPduGroup" type="MAP"/>
+                <d:lst name="ComMainFunctionRouteSignals" type="MAP">
+                  <d:ctr name="ComMainFunctionRouteSignals" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                    <d:var name="ComMainRouteSignalsTimeBase" type="FLOAT" 
+                           value="0.005">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComMainRouteSignalsPartitionRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="ComMainFunctionRx" type="MAP">
+                  <d:ctr name="ComMainFunctionRx" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                    <d:var name="ComMainRxTimeBase" type="FLOAT" value="0.005">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComMainRxPartitionRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="ComMainFunctionTx" type="MAP">
+                  <d:ctr name="ComMainFunctionTx" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                    <d:var name="ComMainTxTimeBase" type="FLOAT" value="0.005">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComPreparationNotification" 
+                           type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComMainTxPartitionRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="ComSignal" type="MAP">
+                  <d:ctr name="S_Radar_Left_Distance" type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="0"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="16"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="0"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" 
+                           value="UINT16"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                  <d:ctr name="S_Radar_Left_ObjectDetected" type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="16"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="8"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="1"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" value="UINT8"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                  <d:ctr name="S_Radar_Right_Distance" type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="0"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="16"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="2"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" 
+                           value="UINT16"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                  <d:ctr name="S_Radar_Right_ObjectDetected" 
+                         type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="16"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="8"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="3"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" value="UINT8"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                  <d:ctr name="S_Vehicle_Speed" type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="0"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="16"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="4"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" 
+                           value="UINT16"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                  <d:ctr name="S_TurnSignal_State" type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="0"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="8"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="5"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" value="UINT8"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                  <d:ctr name="S_Steering_Angle" type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="0"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="16"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="6"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" 
+                           value="SINT16"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                  <d:ctr name="S_Current_Gear" type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="0"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="8"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="7"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" value="UINT8"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="RECEIVE"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                  <d:ctr name="S_Warning_State" type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="0"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="8"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="0"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" value="UINT8"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="SEND"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                  <d:ctr name="S_Buzzer_Frequency" type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="8"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="8"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="1"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" value="UINT8"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="SEND"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                  <d:ctr name="S_LED_Intensity" type="IDENTIFIABLE">
+                    <d:var name="ComBitPosition" type="INTEGER" value="0"/>
+                    <d:var name="ComBitSize" type="INTEGER" value="8"/>
+                    <d:var name="ComDataInvalidAction" type="ENUMERATION" 
+                           value="NOTIFY">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComErrorNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComFirstTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComHandleId" type="INTEGER" value="2"/>
+                    <d:var name="ComInitialValueOnly" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComInvalidNotification" type="FUNCTION-NAME" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                           value="NONE">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="ComSignalDataInvalidValue" type="STRING" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalEndianness" type="ENUMERATION" 
+                           value="LITTLE_ENDIAN"/>
+                    <d:var name="ComSignalInitValue" type="STRING" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalLength" type="INTEGER" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComSignalType" type="ENUMERATION" value="UINT8"/>
+                    <d:var name="ComTimeout" type="FLOAT" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutNotification" type="FUNCTION-NAME" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTimeoutSubstitutionValue" type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="ComTransferProperty" type="ENUMERATION" 
+                           value="TRIGGERED">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="ComUpdateBitPosition" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="ComSystemTemplateSystemSignalRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="ComFilter" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="ComFilterAlgorithm" type="ENUMERATION" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMask" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMax" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterMin" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterOffset" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterPeriod" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="ComFilterX" type="INTEGER" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:var name="ComSignalDirection" type="ENUMERATION" 
+                           value="SEND"/>
+                    <d:var name="ComSignalNoLock" type="BOOLEAN" value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="ComSignalGroup" type="MAP"/>
+                <d:ctr name="ComIPduCalloutsTx" type="IDENTIFIABLE">
+                  <d:lst name="ComIPduCalloutTx"/>
+                </d:ctr>
+                <d:ctr name="ComIPduCalloutsRx" type="IDENTIFIABLE">
+                  <d:lst name="ComIPduCalloutRx"/>
+                </d:ctr>
+              </d:ctr>
+              <d:ctr name="ComGeneral" type="IDENTIFIABLE">
+                <a:a name="IMPORTER_INFO" value="@REC"/>
+                <d:var name="ComCancellationSupport" type="BOOLEAN" value="true">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComConfigurationUseDet" type="BOOLEAN" value="true">
+                  <a:a name="ENABLE" value="true"/>
+                  <a:a name="IMPORTER_INFO" value="@REC"/>
+                </d:var>
+                <d:var name="ComEnableMDTForCyclicTransmission" type="BOOLEAN" 
+                       value="true">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComEnableSignalGroupArrayApi" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComMetaDataSupport" type="BOOLEAN" value="false">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComRetryFailedTransmitRequests" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComSupportedIPduGroups" type="INTEGER" value="1"/>
+                <d:lst name="ComUserCbkHeaderFile"/>
+                <d:var name="ComVersionInfoApi" type="BOOLEAN" value="false"/>
+                <d:ctr name="VendorSpecific" type="IDENTIFIABLE">
+                  <a:a name="IMPORTER_INFO" value="@REC"/>
+                  <d:var name="ComSignalGroupArrayLengthParamEnable" 
+                         type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComTxModeBehaviour" type="ENUMERATION" 
+                         value="AUTOSAR">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComConfigurationArraySizeMax" type="ENUMERATION" 
+                         value="INDEX_UINT32">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComCbkTxTOutArraySizeMax" type="ENUMERATION" 
+                         value="INDEX_UINT16">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComCbkRxTOutArraySizeMax" type="ENUMERATION" 
+                         value="INDEX_UINT16">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComCbkRxAckPtrArraySizeMax" type="ENUMERATION" 
+                         value="INDEX_UINT16">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComCbkTxAckPtrArraySizeMax" type="ENUMERATION" 
+                         value="INDEX_UINT16">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComCallOutFuncPtrArraySizeMax" 
+                         type="ENUMERATION" value="INDEX_UINT16">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTriggerTxCallOutEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComRxDataTimeoutAction" type="ENUMERATION" 
+                         value="RX_DATA_TIMEOUT_ACTION_CONFIG">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComRxTimeoutFactorSize" type="ENUMERATION" 
+                         value="SIZE_16_BIT">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComRxFirstTimeoutFactorSize" type="ENUMERATION" 
+                         value="SIZE_16_BIT">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxTimeoutFactorSize" type="ENUMERATION" 
+                         value="SIZE_16_BIT">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxModeRepetitionPeriodFactorS" 
+                         type="ENUMERATION" value="SIZE_16_BIT">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxModeTimeOffsetFactorSize" 
+                         type="ENUMERATION" value="SIZE_16_BIT">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxModeTimePeriodFactorSize" 
+                         type="ENUMERATION" value="SIZE_16_BIT">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxIpduMDTFactorSize" type="ENUMERATION" 
+                         value="SIZE_16_BIT">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComUpdateBitRxConfig" type="ENUMERATION" 
+                         value="UPDATE_BIT_INDIVIDUAL">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComUpdateBitTxConfig" type="ENUMERATION" 
+                         value="UPDATE_BIT_INDIVIDUAL">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComClearUpdateBitTxTransmitEnable" 
+                         type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComClearUpdateBitTxTriggerTransmitEnable" 
+                         type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComClearUpdateBitTxTxConfirmationEnable" 
+                         type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComTmsEnable" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComFilterReceiverEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxDynLengthIPduEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComRxDynLengthIPduEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComFilterOneEveryNPeriodOffSMax" 
+                         type="ENUMERATION" value="SIZE_16_BIT">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComFilterOneEveryNOccuranceMax" 
+                         type="ENUMERATION" value="SIZE_16_BIT">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxModeDirectEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxModeNTimesEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxModePeriodicEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxModeMixedDirectEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxModeMixedNTimesEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxSigConfDeferredEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComTxSigConfImmediateEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComRxSigConfDeferredEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComRxSigConfImmediateEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComSignalGwEnable" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComReportToDetEnable" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComCheckValueSizeEnable" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComRelocatableCfgEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="Com_TxF_MaskNewDiffersMaskOld_En" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="ComSigGwRxFilterEnable" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComTransfPropTriggeredEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComTransfPropTriggeredOCEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComTransfPropWithoutRepEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComRxTpAPIEnable" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComTxTpAPIEnable" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComTxBigEndianEnable" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComTxLittleEndianEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComRxBigEndianEnable" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComRxLittleEndianEnable" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComTxZeroSignalEnable" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComBasedTransformerSupportTx" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComBasedTransformerSupportRx" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComTxGroupSignalNoLock" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ComHandleSmallerRxPdus" type="ENUMERATION" 
+                         value="TRUNCATE_DATA_NOTIFY_ALL">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                </d:ctr>
+              </d:ctr>
+              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="false">
+                <a:a name="IMPORTER_INFO" value="@REC"/>
+              </d:var>
+              <d:ctr name="ComDefensiveProgramming" type="IDENTIFIABLE">
+                <d:var name="ComDefProgEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComPrecondAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComPostcondAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComStaticAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComUnreachAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ComInvariantAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArMajorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArMinorVersion" type="INTEGER" value="6">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArPatchVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMajorVersion" type="INTEGER" value="7">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwPatchVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ModuleId" type="INTEGER" value="50">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="1">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="Release" type="STRING" value="">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

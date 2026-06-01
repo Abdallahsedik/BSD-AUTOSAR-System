@@ -6,8 +6,8 @@
 
    This file is generated for:
    Atomic software component:  "BSD_ECU"
-   ARXML schema: "R22-11"
-   File generated on: "Sat May 30 04:40:55 2026"  */
+   ARXML schema: "4.4"
+   File generated on: "Sat May 30 09:36:50 2026"  */
 
 #ifndef Rte_Type_h
 #define Rte_Type_h

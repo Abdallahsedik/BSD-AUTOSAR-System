@@ -1,0 +1,694 @@
+<?xml version='1.0'?>
+<datamodel version="8.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/18/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/18/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:ce="http://www.tresos.de/_projects/DataModel2/18/childenable.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="PduR" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="PduR" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_TxDxM6I0R0/PduR"/>
+              <a:a name="IMPORTER_INFO" value="@REC"/>
+              <d:ctr name="PublishedInformation" type="IDENTIFIABLE">
+                <d:var name="PbcfgMSupport" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArMajorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArMinorVersion" type="INTEGER" value="8">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArPatchVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMajorVersion" type="INTEGER" value="6">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwPatchVersion" type="INTEGER" value="5">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ModuleId" type="INTEGER" value="51">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="1">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="Release" type="STRING" value="">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPostBuild">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:lst name="PduRBswModules" type="MAP">
+                <d:ctr name="Com" type="IDENTIFIABLE">
+                  <a:a name="IMPORTER_INFO" value="@REC"/>
+                  <d:var name="PduRCancelReceive" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRCancelTransmit" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRCommunicationInterface" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRCopyRxData" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRCopyTxData" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRLowerModule" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRRetransmission" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRRxIndication" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRStartOfReception" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRTpRxIndication" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRTpTransmit" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRTpTxConfirmation" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRTransmit" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRTransportProtocol" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRTriggertransmit" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRTxConfirmation" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRUpperModule" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:ref name="PduRBswModuleRef" type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                  <d:var name="PduRBswModuleIsEnabled" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRCalculateHandleId" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                </d:ctr>
+                <d:ctr name="CanIf" type="IDENTIFIABLE">
+                  <a:a name="IMPORTER_INFO" value="@REC"/>
+                  <d:var name="PduRCancelReceive" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRCancelTransmit" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRCommunicationInterface" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRCopyRxData" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRCopyTxData" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRLowerModule" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRRetransmission" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRRxIndication" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRStartOfReception" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRTpRxIndication" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRTpTransmit" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRTpTxConfirmation" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRTransmit" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="PduRTransportProtocol" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRTriggertransmit" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRTxConfirmation" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRUpperModule" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:ref name="PduRBswModuleRef" type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                  <d:var name="PduRBswModuleIsEnabled" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                  </d:var>
+                  <d:var name="PduRCalculateHandleId" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                </d:ctr>
+              </d:lst>
+              <d:ctr name="PduRDemEventParameterRefs" type="IDENTIFIABLE">
+                <a:a name="ENABLE" value="false"/>
+                <d:ref name="PDUR_ROUTING_PATH_BUFFER_OVERFLOW" 
+                       type="REFERENCE" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:ref>
+              </d:ctr>
+              <d:ctr name="PduRGeneral" type="IDENTIFIABLE">
+                <a:a name="IMPORTER_INFO" value="@REC"/>
+                <d:var name="PduRDevErrorDetect" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRMetaDataSupport" type="BOOLEAN" value="false">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRVersionInfoApi" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRZeroCostOperation" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRMultiCoreSupport" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRPartitionCount" type="INTEGER" >
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRMultiTpTxRPathsMax" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRRotfBufferAssignmentStrategy" 
+                       type="ENUMERATION" value="NEXT_TO_TPTHRESHOLD">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRIfGatewaySupport" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@REC"/>
+                </d:var>
+                <d:var name="PduRTpGatewaySupport" type="BOOLEAN" value="false"/>
+                <d:var name="PduRTpGwQueueEnable" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRRelocatableCfgEnable" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRRoutingAnalysis" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRRamStructureAnalysis" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRSbTxBufferSupport" type="BOOLEAN" value="false"/>
+                <d:var name="PduRFifoTxBufferSupport" type="BOOLEAN" 
+                       value="false"/>
+                <d:var name="PduRNto1RoutingSupport" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRMemorySize" type="INTEGER" value="0">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRMemorySizeExtension" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRMulticastTxConfirmation" type="BOOLEAN" 
+                       value="true"/>
+                <d:var name="PduRMulticastFromIfSupport" type="BOOLEAN" 
+                       value="true">
+                  <a:a name="IMPORTER_INFO" value="@REC"/>
+                </d:var>
+                <d:var name="PduRMulticastToIfSupport" type="BOOLEAN" 
+                       value="true">
+                  <a:a name="IMPORTER_INFO" value="@REC"/>
+                </d:var>
+                <d:var name="PduRMulticastLoTpToUpSupport" type="BOOLEAN" 
+                       value="false"/>
+                <d:var name="PduRMulticastUpToLoTpSupport" type="BOOLEAN" 
+                       value="false"/>
+                <d:var name="PduRRoutingPathGroupSupport" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="false">
+                <a:a name="IMPORTER_INFO" value="@REC"/>
+              </d:var>
+              <d:ctr name="PduRRoutingPaths" type="IDENTIFIABLE">
+                <d:var name="PduRConfigurationId" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRMaxRoutingPathCnt" type="INTEGER" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduRMaxRoutingPathGroupCnt" type="INTEGER" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:lst name="PduRBuffer" type="MAP"/>
+                <d:lst name="PduRDestPdu" type="MAP">
+                  <d:ctr name="Com_BSD_Radar_Left_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRDestPduDataProvision" type="ENUMERATION" 
+                           value="PDUR_DIRECT">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRDestPduHandleId" type="INTEGER" value="0">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRTransmissionConfirmation" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="PduRDestPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Radar_Left"/>
+                  </d:ctr>
+                  <d:ctr name="Com_BSD_Radar_Right_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRDestPduDataProvision" type="ENUMERATION" 
+                           value="PDUR_DIRECT">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRDestPduHandleId" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRTransmissionConfirmation" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="PduRDestPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Radar_Right"/>
+                  </d:ctr>
+                  <d:ctr name="Com_BSD_Speed_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRDestPduDataProvision" type="ENUMERATION" 
+                           value="PDUR_DIRECT">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRDestPduHandleId" type="INTEGER" value="2">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRTransmissionConfirmation" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="PduRDestPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Speed"/>
+                  </d:ctr>
+                  <d:ctr name="Com_BSD_TurnSignal_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRDestPduDataProvision" type="ENUMERATION" 
+                           value="PDUR_DIRECT">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRDestPduHandleId" type="INTEGER" value="3">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRTransmissionConfirmation" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="PduRDestPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_TurnSignal"/>
+                  </d:ctr>
+                  <d:ctr name="Com_BSD_Steering_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRDestPduDataProvision" type="ENUMERATION" 
+                           value="PDUR_DIRECT">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRDestPduHandleId" type="INTEGER" value="4">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRTransmissionConfirmation" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="PduRDestPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Steering"/>
+                  </d:ctr>
+                  <d:ctr name="Com_BSD_Gear_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRDestPduDataProvision" type="ENUMERATION" 
+                           value="PDUR_DIRECT">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRDestPduHandleId" type="INTEGER" value="5">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRTransmissionConfirmation" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="PduRDestPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Gear"/>
+                  </d:ctr>
+                  <d:ctr name="BSD_Warning_TxPDU" type="IDENTIFIABLE">
+                    <d:var name="PduRDestPduDataProvision" type="ENUMERATION" 
+                           value="PDUR_DIRECT">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRDestPduHandleId" type="INTEGER" value="0">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRTransmissionConfirmation" type="BOOLEAN" 
+                           value="true"/>
+                    <d:ref name="PduRDestPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Warning_Tx"/>
+                  </d:ctr>
+                  <d:ctr name="BSD_LED_TxPDU" type="IDENTIFIABLE">
+                    <d:var name="PduRDestPduDataProvision" type="ENUMERATION" 
+                           value="PDUR_DIRECT">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRDestPduHandleId" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PduRTransmissionConfirmation" type="BOOLEAN" 
+                           value="true"/>
+                    <d:ref name="PduRDestPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_LED_Tx"/>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="PduRRoutingPath" type="MAP">
+                  <d:ctr name="PduR_Route_RadarRight" type="IDENTIFIABLE">
+                    <d:var name="PduRQueueDepth" type="INTEGER" value="0">
+                      <a:a name="ENABLE" value="false"/>
+                    </d:var>
+                    <d:var name="PduRTpThreshold" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="PduRDestBufferRef"/>
+                    <d:ref name="PduRDestPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/Com_BSD_Radar_Right_PDU"/>
+                    <d:lst name="PduRRoutingPathGroupRef"/>
+                    <d:ref name="PduRSrcPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/BSD_Radar_Right_PDU"/>
+                    <d:ctr name="PduRDefaultValue" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:lst name="PduRDefaultValueElement" type="MAP"/>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="PduR_Route_RadarLeft" type="IDENTIFIABLE">
+                    <d:var name="PduRQueueDepth" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRTpThreshold" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="PduRDestBufferRef"/>
+                    <d:ref name="PduRDestPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/Com_BSD_Radar_Left_PDU"/>
+                    <d:lst name="PduRRoutingPathGroupRef"/>
+                    <d:ref name="PduRSrcPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/BSD_Radar_Left_PDU"/>
+                    <d:ctr name="PduRDefaultValue" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:lst name="PduRDefaultValueElement" type="MAP"/>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="PduR_Route_Speed" type="IDENTIFIABLE">
+                    <d:var name="PduRQueueDepth" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRTpThreshold" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="PduRDestBufferRef"/>
+                    <d:ref name="PduRDestPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/Com_BSD_Speed_PDU"/>
+                    <d:lst name="PduRRoutingPathGroupRef"/>
+                    <d:ref name="PduRSrcPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/BSD_Speed_PDU"/>
+                    <d:ctr name="PduRDefaultValue" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:lst name="PduRDefaultValueElement" type="MAP"/>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="PduR_Route_TurnSignal" type="IDENTIFIABLE">
+                    <d:var name="PduRQueueDepth" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRTpThreshold" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="PduRDestBufferRef"/>
+                    <d:ref name="PduRDestPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/Com_BSD_TurnSignal_PDU"/>
+                    <d:lst name="PduRRoutingPathGroupRef"/>
+                    <d:ref name="PduRSrcPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/BSD_TurnSignal_PDU"/>
+                    <d:ctr name="PduRDefaultValue" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:lst name="PduRDefaultValueElement" type="MAP"/>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="PduR_Route_Steering" type="IDENTIFIABLE">
+                    <d:var name="PduRQueueDepth" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRTpThreshold" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="PduRDestBufferRef"/>
+                    <d:ref name="PduRDestPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/Com_BSD_Steering_PDU"/>
+                    <d:lst name="PduRRoutingPathGroupRef"/>
+                    <d:ref name="PduRSrcPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/BSD_Steering_PDU"/>
+                    <d:ctr name="PduRDefaultValue" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:lst name="PduRDefaultValueElement" type="MAP"/>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="PduR_Route_Gear" type="IDENTIFIABLE">
+                    <d:var name="PduRQueueDepth" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRTpThreshold" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="PduRDestBufferRef"/>
+                    <d:ref name="PduRDestPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/Com_BSD_Gear_PDU"/>
+                    <d:lst name="PduRRoutingPathGroupRef"/>
+                    <d:ref name="PduRSrcPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/BSD_Gear_PDU"/>
+                    <d:ctr name="PduRDefaultValue" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:lst name="PduRDefaultValueElement" type="MAP"/>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="PduR_Route_Warning" type="IDENTIFIABLE">
+                    <d:var name="PduRQueueDepth" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRTpThreshold" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="PduRDestBufferRef"/>
+                    <d:ref name="PduRDestPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/BSD_Warning_TxPDU"/>
+                    <d:lst name="PduRRoutingPathGroupRef"/>
+                    <d:ref name="PduRSrcPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/Com_BSD_Warning_TxPDU"/>
+                    <d:ctr name="PduRDefaultValue" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:lst name="PduRDefaultValueElement" type="MAP"/>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="PduR_Route_LED" type="IDENTIFIABLE">
+                    <d:var name="PduRQueueDepth" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRTpThreshold" type="INTEGER" value="1">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="PduRDestBufferRef"/>
+                    <d:ref name="PduRDestPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/BSD_LED_TxPDU"/>
+                    <d:lst name="PduRRoutingPathGroupRef"/>
+                    <d:ref name="PduRSrcPduRRef" type="REFERENCE" 
+                           value="ASPath:/PduR/PduR/PduRRoutingPaths/Com_BSD_LED_TxPDU"/>
+                    <d:ctr name="PduRDefaultValue" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:lst name="PduRDefaultValueElement" type="MAP"/>
+                    </d:ctr>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="PduRRoutingPathGroup" type="MAP"/>
+                <d:lst name="PduRSrcPdu" type="MAP">
+                  <d:ctr name="BSD_Radar_Left_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRSourcePduBlockSize" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRSourcePduHandleId" type="INTEGER" value="0"/>
+                    <d:var name="PduRSrcPduUpTxConf" type="BOOLEAN" 
+                           value="false"/>
+                    <d:ref name="PduRSrcPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Radar_Left"/>
+                  </d:ctr>
+                  <d:ctr name="BSD_Radar_Right_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRSourcePduBlockSize" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRSourcePduHandleId" type="INTEGER" value="1"/>
+                    <d:var name="PduRSrcPduUpTxConf" type="BOOLEAN" 
+                           value="false"/>
+                    <d:ref name="PduRSrcPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Radar_Right"/>
+                  </d:ctr>
+                  <d:ctr name="BSD_Speed_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRSourcePduBlockSize" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRSourcePduHandleId" type="INTEGER" value="2"/>
+                    <d:var name="PduRSrcPduUpTxConf" type="BOOLEAN" 
+                           value="false"/>
+                    <d:ref name="PduRSrcPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Speed"/>
+                  </d:ctr>
+                  <d:ctr name="BSD_TurnSignal_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRSourcePduBlockSize" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRSourcePduHandleId" type="INTEGER" value="3"/>
+                    <d:var name="PduRSrcPduUpTxConf" type="BOOLEAN" 
+                           value="false"/>
+                    <d:ref name="PduRSrcPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_TurnSignal"/>
+                  </d:ctr>
+                  <d:ctr name="BSD_Steering_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRSourcePduBlockSize" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRSourcePduHandleId" type="INTEGER" value="4"/>
+                    <d:var name="PduRSrcPduUpTxConf" type="BOOLEAN" 
+                           value="false"/>
+                    <d:ref name="PduRSrcPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Steering"/>
+                  </d:ctr>
+                  <d:ctr name="BSD_Gear_PDU" type="IDENTIFIABLE">
+                    <d:var name="PduRSourcePduBlockSize" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRSourcePduHandleId" type="INTEGER" value="5"/>
+                    <d:var name="PduRSrcPduUpTxConf" type="BOOLEAN" 
+                           value="false"/>
+                    <d:ref name="PduRSrcPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Gear"/>
+                  </d:ctr>
+                  <d:ctr name="Com_BSD_Warning_TxPDU" type="IDENTIFIABLE">
+                    <d:var name="PduRSourcePduBlockSize" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRSourcePduHandleId" type="INTEGER" value="0"/>
+                    <d:var name="PduRSrcPduUpTxConf" type="BOOLEAN" value="true"/>
+                    <d:ref name="PduRSrcPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_Warning_Tx"/>
+                  </d:ctr>
+                  <d:ctr name="Com_BSD_LED_TxPDU" type="IDENTIFIABLE">
+                    <d:var name="PduRSourcePduBlockSize" type="INTEGER" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PduRSourcePduHandleId" type="INTEGER" value="1"/>
+                    <d:var name="PduRSrcPduUpTxConf" type="BOOLEAN" value="true">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="PduRSrcPduRef" type="REFERENCE" 
+                           value="ASPath:/EcuC/EcuC/EcucConfigSet/EcucPduCollection/Pdu_LED_Tx"/>
+                  </d:ctr>
+                </d:lst>
+              </d:ctr>
+              <d:lst name="PduRRoutingTables" type="MAP">
+                <d:ctr name="PduRRoutingTable_0" type="IDENTIFIABLE">
+                  <d:ctr name="PduRTxBufferTable" type="IDENTIFIABLE">
+                    <a:a name="ENABLE" value="false"/>
+                    <d:var name="PduRMaxTxBufferNumber" type="INTEGER" value="0">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="PduRTxBuffer" type="MAP"/>
+                  </d:ctr>
+                </d:ctr>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

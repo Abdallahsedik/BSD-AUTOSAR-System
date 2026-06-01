@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?module PduR?>
+
+<xgen xmlns="http://www.elektrobit.com/2013/xgen" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <!-- This is the configuration of module PduR -->
+    <module name="PduR" version="6.0.5 B946630">
+        <!-- This is the precompile-time configuration of the module. -->
+        <configuration class="PreCompile">
+            <?artifact generate="no" directory="include" file="PduR_CfgTypes.h" type="types-h"?>
+
+            <parameter name="relocatable-enable">
+                <boolean-value>false</boolean-value>
+            </parameter>
+
+
+        <!-- START static PreCompile type definitions -->
+        <type name="PduR_GateTpSessionIndexType">
+          <reference type="uint16">
+            <compiler-abstraction>
+              <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+          </reference>
+        </type>
+        <!-- END static PreCompile type definitions -->
+
+
+        <!-- PreCompile type definitions -->
+        <!-- START GENERATED PreCompile type definitions -->
+<type name="PduR_RefToRAM">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="PduR_BufTpIndexType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="PduR_PduIdType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="PduR_RefToModuleAPI">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="AbstractRoutingTableType">
+    <struct>
+        <member name="TargetPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_RTabUpTxType">
+    <struct>
+        <member name="TargetPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TargetModuleAPIRef" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_RTabUpTxConfigType">
+    <struct>
+        <member name="RTabTxRef" type="PduR_RTabUpTxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="RTabTxCount" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_RTabLoIfType">
+    <struct>
+        <member name="TargetPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TargetModuleAPIRef" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_RTabLoIfConfigType">
+    <struct>
+        <member name="RTabRxRef" type="PduR_RTabLoIfType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="RTabTxRef" type="PduR_RTabLoIfType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="RTabRxCount" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="RTabTxCount" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_Nto1TabTpType">
+    <struct>
+        <member name="GMPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="GMPduIdMemRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_Nto1TabTpConfigType">
+    <struct>
+        <member name="Nto1TabTpRef" type="PduR_Nto1TabTpType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="Nto1TabTpCount" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_GTabTpTxType">
+    <struct>
+        <member name="GMPduIdRx" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TargetApiId" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_TpThresholdType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="PduR_GTabTpRxType">
+    <struct>
+        <member name="TargetPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="SessionQueueMemRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TpThreshold" type="PduR_TpThresholdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TargetModuleAPIRef" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="RemainingEntries" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_GTabTpConfigType">
+    <struct>
+        <member name="GTabRxRef" type="PduR_GTabTpRxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="GTabTxRef" type="PduR_GTabTpTxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="GTabTpApiRef" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="GTabRxCount" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="GTabTxCount" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_GTabIfRxType">
+    <struct>
+        <member name="TargetPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="BufferId" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TargetModuleAPIRef" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_GTabIfConfigType">
+    <struct>
+        <member name="GTabRxRef" type="PduR_GTabIfRxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="GTabRxCount" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_MTabUpTpTxType">
+    <struct>
+        <member name="TargetPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="UprLyrTxPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TargetModuleAPIRef" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="SourceModuleAPIRef" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TotalNumDests" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_MTabUpTpConfigType">
+    <struct>
+        <member name="MTabTxRef" type="PduR_MTabUpTpTxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="MTabTxCount" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_MTabUpIfTxType">
+    <struct>
+        <member name="TargetPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TargetModuleAPIRef" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="SourceModuleAPIRef" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="UprLyrTxPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TotalNumDests" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TxConfEnabled" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_MTabUpIfConfigType">
+    <struct>
+        <member name="MTabTxRef" type="PduR_MTabUpIfTxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="MTabTxCount" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_MTabLoIfRxType">
+    <struct>
+        <member name="TargetPduId" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TargetModuleAPIRef" type="PduR_RefToModuleAPI">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="MoreEntries" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_MTabLoIfConfigType">
+    <struct>
+        <member name="MTabRxRef" type="PduR_MTabLoIfRxType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="MTabRxCount" type="PduR_PduIdType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_PduLengthType">
+    <reference type="uint16">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+<type name="PduR_BufTpConfigType">
+    <struct>
+        <member name="MemRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Length" type="PduR_PduLengthType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_BufTfDynPyldConfigType">
+    <struct>
+        <member name="DefaultRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="MemRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="UsedSduLengthPtr" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Length" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Depth" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_BufDfDynPyldConfigType">
+    <struct>
+        <member name="MemRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="UsedSduLengthPtr" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Length" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Depth" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_BufSbConfigType">
+    <struct>
+        <member name="DefaultRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="MemRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Length" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_PBConfigType">
+    <struct>
+        <member name="PduR_PlatformSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_PublicInfoSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_CfgSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_LcfgSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufDefaultRef" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufSbDynPyldConfigRef" type="PduR_BufSbConfigType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufDfDynPyldConfigRef" type="PduR_BufDfDynPyldConfigType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufTfDynPyldConfigRef" type="PduR_BufTfDynPyldConfigType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufTpConfigRef" type="PduR_BufTpConfigType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_MTabLoIfConfig" type="PduR_MTabLoIfConfigType">
+            <compiler-abstraction>
+                <const memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_MTabUpIfConfig" type="PduR_MTabUpIfConfigType">
+            <compiler-abstraction>
+                <const memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_MTabUpTpConfig" type="PduR_MTabUpTpConfigType">
+            <compiler-abstraction>
+                <const memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_GTabIfConfig" type="PduR_GTabIfConfigType">
+            <compiler-abstraction>
+                <const memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_GTabTpConfig" type="PduR_GTabTpConfigType">
+            <compiler-abstraction>
+                <const memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_Nto1TabTpConfig" type="PduR_Nto1TabTpConfigType">
+            <compiler-abstraction>
+                <const memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member count="1" name="PduR_RTabLoIfConfig" type="PduR_RTabLoIfConfigType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member count="1" name="PduR_RTabUpTxConfig" type="PduR_RTabUpTxConfigType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_ConfigurationId" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufSbDynPyldCount" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufDfDynPyldCount" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufTfDynPyldCount" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufTpCount" type="PduR_BufTpIndexType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_MultiTpTxSessionInfoRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_MultiIfTxInfoRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufSbDynPyldInfoRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufDfInfoRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufDfDynPyldInfoRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufTfInfoRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_BufTfDynPyldInfoRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_GateTpSessionInfoRef" type="PduR_RefToRAM">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PduR_MultiTpTxRPathsMax" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_GateTpQueueIndexType">
+    <reference type="uint8">
+        <compiler-abstraction>
+            <var memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+
+        <!-- END GENERATED PreCompile type definitions -->
+        </configuration> <!-- precompile -->
+
+        <!-- This is the post-build configuration of the module. -->
+        <configuration class="PostBuild">
+            <?artifact type="postbuild-h" directory="include" file="PduR_PBcfg.h" generate="yes"?>
+            <?artifact type="postbuild-c" directory="src" file="PduR_PBcfg.c" generate="yes"?>
+
+            <parameter name="postbuild-configuration-name.PduR_ConfigLayout">
+                <symbolic-value>PduRRoutingPaths</symbolic-value>
+            </parameter>
+
+            <!-- PostBuild type and variable definitions -->
+            <!-- START GENERATED PostBuild type and variable definitions --><type name="PduR_ConfigLayoutType">
+    <struct>
+        <member name="PduR_RootConfig" type="PduR_PBConfigType">
+            <compiler-abstraction>
+                <const memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member count="6" name="PduR_RTabLoIfRx" type="PduR_RTabLoIfType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member count="2" name="PduR_RTabLoIfTx" type="PduR_RTabLoIfType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member count="2" name="PduR_RTabUpTx" type="PduR_RTabUpTxType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="PduR_ConstConfigLayoutType">
+    <reference type="PduR_ConfigLayoutType">
+        <compiler-abstraction>
+            <const memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+
+            <memory-section name="SEC_CONFIG_DATA_UNSPECIFIED"><instance name="PduR_ConfigLayout" type="PduR_ConstConfigLayoutType">
+    <parameter name="postbuild-configuration-name">
+        <parameter reference="postbuild-configuration-name.PduR_ConfigLayout"/>
+    </parameter>
+    <compiler-abstraction>
+        <var memory-class="PDUR_APPL_CONST"/>
+    </compiler-abstraction>
+    <field>
+        <field>
+            <int>2147485970</int>
+        </field>
+        <field>
+            <int>1399647005</int>
+        </field>
+        <field>
+            <int>88124317</int>
+        </field>
+        <field>
+            <int>3958107115</int>
+        </field>
+        <field>
+            <ref/>
+        </field>
+        <field>
+            <ref/>
+        </field>
+        <field>
+            <ref/>
+        </field>
+        <field>
+            <ref/>
+        </field>
+        <field>
+            <ref/>
+        </field>
+        <field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <int>0</int>
+            </field>
+        </field>
+        <field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <int>0</int>
+            </field>
+        </field>
+        <field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <int>0</int>
+            </field>
+        </field>
+        <field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <int>0</int>
+            </field>
+        </field>
+        <field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <int>0</int>
+            </field>
+            <field>
+                <int>0</int>
+            </field>
+        </field>
+        <field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <int>0</int>
+            </field>
+        </field>
+        <field>
+            <field comment="CanIf">
+                <field>
+                    <ref>
+                        <struct-field name="PduR_RTabLoIfRx"/>
+                        <array-field index="0"/>
+                    </ref>
+                </field>
+                <field>
+                    <ref>
+                        <struct-field name="PduR_RTabLoIfTx"/>
+                        <array-field index="0"/>
+                    </ref>
+                </field>
+                <field>
+                    <int>6</int>
+                </field>
+                <field>
+                    <int>2</int>
+                </field>
+            </field>
+        </field>
+        <field>
+            <field comment="Com">
+                <field>
+                    <ref>
+                        <struct-field name="PduR_RTabUpTx"/>
+                        <array-field index="0"/>
+                    </ref>
+                </field>
+                <field>
+                    <int>2</int>
+                </field>
+            </field>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+        <field>
+            <int>0</int>
+        </field>
+    </field>
+    <field>
+        <field comment="Routing path 1:'PduR_Route_RadarLeft', calling module:'CanIf-LO-IF', PDU ID:0">
+            <field>
+                <int>0</int>
+            </field>
+            <field comment="Com">
+                <int>0</int>
+            </field>
+        </field>
+        <field comment="Routing path 0:'PduR_Route_RadarRight', calling module:'CanIf-LO-IF', PDU ID:1">
+            <field>
+                <int>1</int>
+            </field>
+            <field comment="Com">
+                <int>0</int>
+            </field>
+        </field>
+        <field comment="Routing path 2:'PduR_Route_Speed', calling module:'CanIf-LO-IF', PDU ID:2">
+            <field>
+                <int>2</int>
+            </field>
+            <field comment="Com">
+                <int>0</int>
+            </field>
+        </field>
+        <field comment="Routing path 3:'PduR_Route_TurnSignal', calling module:'CanIf-LO-IF', PDU ID:3">
+            <field>
+                <int>3</int>
+            </field>
+            <field comment="Com">
+                <int>0</int>
+            </field>
+        </field>
+        <field comment="Routing path 4:'PduR_Route_Steering', calling module:'CanIf-LO-IF', PDU ID:4">
+            <field>
+                <int>4</int>
+            </field>
+            <field comment="Com">
+                <int>0</int>
+            </field>
+        </field>
+        <field comment="Routing path 5:'PduR_Route_Gear', calling module:'CanIf-LO-IF', PDU ID:5">
+            <field>
+                <int>5</int>
+            </field>
+            <field comment="Com">
+                <int>0</int>
+            </field>
+        </field>
+    </field>
+    <field>
+        <field comment="Routing path 6:'PduR_Route_Warning', calling module:'CanIf-LO-IF', PDU ID:0">
+            <field>
+                <int>1</int>
+            </field>
+            <field comment="Com">
+                <int>0</int>
+            </field>
+        </field>
+        <field comment="Routing path 7:'PduR_Route_LED', calling module:'CanIf-LO-IF', PDU ID:1">
+            <field>
+                <int>0</int>
+            </field>
+            <field comment="Com">
+                <int>0</int>
+            </field>
+        </field>
+    </field>
+    <field>
+        <field comment="Routing path 6:'PduR_Route_Warning', calling module:'Com-UP-IF', PDU ID:0">
+            <field>
+                <int>0</int>
+            </field>
+            <field comment="CanIf">
+                <int>1</int>
+            </field>
+        </field>
+        <field comment="Routing path 7:'PduR_Route_LED', calling module:'Com-UP-IF', PDU ID:1">
+            <field>
+                <int>1</int>
+            </field>
+            <field comment="CanIf">
+                <int>1</int>
+            </field>
+        </field>
+    </field>
+</instance>
+
+            </memory-section>
+            <!-- END GENERATED PostBuild type and variable definitions -->
+        </configuration> <!-- post-build -->
+
+
+    </module>
+
+    <!-- include the AUTOSAR standard data types, etc. -->
+    <xi:include href="Base.xgen" xpointer="element(/1/1)" />
+</xgen>

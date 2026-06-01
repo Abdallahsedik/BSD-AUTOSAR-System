@@ -3,10 +3,10 @@
 Auto generated XML Component Description for model BSD_System
 Model version                : 1.6
 Simulink Coder version       : Simulink Coder 24.1 (R2024a) 19-Nov-2023
-XML source code generated on : Sat May 30 04:49:41 2026
-Model Checksum               : 4291315140 1144808317 816593366 3480810183
+XML source code generated on : Sat May 30 09:36:56 2026
+Model Checksum               : 3220180021 4020325994 3612949117 3022211245
 -->
-<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00051.xsd">
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00047.xsd">
     <AR-PACKAGES>
         <AR-PACKAGE>
             <SHORT-NAME>Components</SHORT-NAME>
