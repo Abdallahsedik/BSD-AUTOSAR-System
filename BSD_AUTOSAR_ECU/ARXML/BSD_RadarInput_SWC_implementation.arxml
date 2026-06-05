@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Auto generated XML Component Description for model BSD_RadarInput_SWC
+Model version                : 1.2
+Simulink Coder version       : Simulink Coder 24.1 (R2024a) 19-Nov-2023
+XML source code generated on : Thu Jun 04 19:25:21 2026
+Model Checksum               : 1957243924 3265635758 706046213 1514332399
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00047.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>Components</SHORT-NAME>
+            <ELEMENTS/>
+            <AR-PACKAGES>
+                <AR-PACKAGE>
+                    <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                    <ELEMENTS>
+                        <SWC-IMPLEMENTATION UUID="d332b654-7c4f-5288-c4ba-4bb5ddc07b09">
+                            <SHORT-NAME>BSD_RadarInput_SWC_Impl</SHORT-NAME>
+                            <CODE-DESCRIPTORS>
+                                <CODE>
+                                    <SHORT-NAME>Code</SHORT-NAME>
+                                    <ARTIFACT-DESCRIPTORS>
+                                        <AUTOSAR-ENGINEERING-OBJECT>
+                                            <SHORT-LABEL>BSD_RadarInput_SWC_c</SHORT-LABEL>
+                                            <CATEGORY>SWSRC</CATEGORY>
+                                        </AUTOSAR-ENGINEERING-OBJECT>
+                                        <AUTOSAR-ENGINEERING-OBJECT>
+                                            <SHORT-LABEL>BSD_RadarInput_SWC_h</SHORT-LABEL>
+                                            <CATEGORY>SWHDR</CATEGORY>
+                                        </AUTOSAR-ENGINEERING-OBJECT>
+                                        <AUTOSAR-ENGINEERING-OBJECT>
+                                            <SHORT-LABEL>BSD_RadarInput_SWC_private_h</SHORT-LABEL>
+                                            <CATEGORY>SWHDR</CATEGORY>
+                                        </AUTOSAR-ENGINEERING-OBJECT>
+                                        <AUTOSAR-ENGINEERING-OBJECT>
+                                            <SHORT-LABEL>BSD_RadarInput_SWC_types_h</SHORT-LABEL>
+                                            <CATEGORY>SWHDR</CATEGORY>
+                                        </AUTOSAR-ENGINEERING-OBJECT>
+                                    </ARTIFACT-DESCRIPTORS>
+                                </CODE>
+                            </CODE-DESCRIPTORS>
+                            <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                            <RESOURCE-CONSUMPTION>
+                                <SHORT-NAME>RsrcCons_BSD_RadarInput_SWC</SHORT-NAME>
+                            </RESOURCE-CONSUMPTION>
+                            <SW-VERSION>1.2.1</SW-VERSION>
+                            <USED-CODE-GENERATOR>Embedded Coder 24.1 (R2024a) 19-Nov-2023</USED-CODE-GENERATOR>
+                            <VENDOR-ID>0</VENDOR-ID>
+                            <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/Components/BSD_RadarInput_SWC/BSD_RadarInput_SWC_IB</BEHAVIOR-REF>
+                        </SWC-IMPLEMENTATION>
+                    </ELEMENTS>
+                </AR-PACKAGE>
+            </AR-PACKAGES>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

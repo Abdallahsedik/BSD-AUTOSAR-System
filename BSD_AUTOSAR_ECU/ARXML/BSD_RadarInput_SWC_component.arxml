@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Auto generated XML Component Description for model BSD_RadarInput_SWC
+Model version                : 1.2
+Simulink Coder version       : Simulink Coder 24.1 (R2024a) 19-Nov-2023
+XML source code generated on : Thu Jun 04 19:25:21 2026
+Model Checksum               : 1957243924 3265635758 706046213 1514332399
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00047.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>Components</SHORT-NAME>
+            <ELEMENTS>
+                <APPLICATION-SW-COMPONENT-TYPE UUID="845d20b2-a239-5ac0-9e2f-17d19e22c986">
+                    <SHORT-NAME>BSD_RadarInput_SWC</SHORT-NAME>
+                    <PORTS>
+                        <R-PORT-PROTOTYPE UUID="8e3bfb6d-3dbe-5d37-56ac-69212ca3385f">
+                            <SHORT-NAME>RPort_Raw_Distance_Left</SHORT-NAME>
+                            <REQUIRED-COM-SPECS>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarRaw/Raw_Distance</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint16</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                            </REQUIRED-COM-SPECS>
+                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_RadarRaw</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="22d2e87e-5607-599e-3283-fba32746f51f">
+                            <SHORT-NAME>RPort_Raw_Distance_Right</SHORT-NAME>
+                            <REQUIRED-COM-SPECS>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarRaw/Raw_Distance</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint16</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                            </REQUIRED-COM-SPECS>
+                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_RadarRaw</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="77a7bccd-80f1-5767-7f6b-76d77ae63194">
+                            <SHORT-NAME>RPort_Raw_Status_Left</SHORT-NAME>
+                            <REQUIRED-COM-SPECS>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarRaw/Raw_Status</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint8</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                            </REQUIRED-COM-SPECS>
+                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_RadarRaw</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="0551edbb-1b94-56f0-c8a6-f258e536abad">
+                            <SHORT-NAME>RPort_Raw_Status_Right</SHORT-NAME>
+                            <REQUIRED-COM-SPECS>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarRaw/Raw_Status</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint8</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                            </REQUIRED-COM-SPECS>
+                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_RadarRaw</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="1c796c50-7577-54d3-d0ff-4a12489000b4">
+                            <SHORT-NAME>PPort_RadarData_Distance_Left</SHORT-NAME>
+                            <PROVIDED-COM-SPECS>
+                                <NONQUEUED-SENDER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarSensor/Distance</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_float32</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-SENDER-COM-SPEC>
+                            </PROVIDED-COM-SPECS>
+                            <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_RadarSensor</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="64e1b948-b7bb-594a-f4ef-0274c8dac8de">
+                            <SHORT-NAME>PPort_RadarData_Distance_Right</SHORT-NAME>
+                            <PROVIDED-COM-SPECS>
+                                <NONQUEUED-SENDER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarSensor/Distance</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_float32</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-SENDER-COM-SPEC>
+                            </PROVIDED-COM-SPECS>
+                            <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_RadarSensor</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="0c2778e0-2478-5b24-66ef-589b41d549eb">
+                            <SHORT-NAME>PPort_RadarData_Status_Left</SHORT-NAME>
+                            <PROVIDED-COM-SPECS>
+                                <NONQUEUED-SENDER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarSensor/Status</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint8</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-SENDER-COM-SPEC>
+                            </PROVIDED-COM-SPECS>
+                            <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_RadarSensor</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="26a58c74-2c2d-5dbc-0a03-e85e36007703">
+                            <SHORT-NAME>PPort_RadarData_Status_Right</SHORT-NAME>
+                            <PROVIDED-COM-SPECS>
+                                <NONQUEUED-SENDER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarSensor/Status</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint8</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-SENDER-COM-SPEC>
+                            </PROVIDED-COM-SPECS>
+                            <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_RadarSensor</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                    </PORTS>
+                    <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR UUID="53bd5cab-c4e1-577b-18d7-7e7e2cc2c9cc">
+                            <SHORT-NAME>BSD_RadarInput_SWC_IB</SHORT-NAME>
+                            <EVENTS>
+                                <TIMING-EVENT UUID="cd053f10-5e6f-5336-88fa-cef937213186">
+                                    <SHORT-NAME>TE_RadarInput_20ms</SHORT-NAME>
+                                    <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Components/BSD_RadarInput_SWC/BSD_RadarInput_SWC_IB/BSD_RadarInput_Run</START-ON-EVENT-REF>
+                                    <PERIOD>0.02</PERIOD>
+                                </TIMING-EVENT>
+                            </EVENTS>
+                            <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                            <RUNNABLES>
+                                <RUNNABLE-ENTITY UUID="130f16c8-9c31-54ba-7f3f-e9cefa48d987">
+                                    <SHORT-NAME>BSD_RadarInput_Run</SHORT-NAME>
+                                    <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                                    <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                    <DATA-READ-ACCESSS>
+                                        <VARIABLE-ACCESS UUID="735f7db7-20a3-5ae1-3c26-016f15d07073">
+                                            <SHORT-NAME>IN_RPort_Raw_Distance_Left_Raw_Distance</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_RadarInput_SWC/RPort_Raw_Distance_Left</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarRaw/Raw_Distance</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="8e576a57-5395-5d45-1c06-52760b6739ac">
+                                            <SHORT-NAME>IN_RPort_Raw_Distance_Right_Raw_Distance</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_RadarInput_SWC/RPort_Raw_Distance_Right</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarRaw/Raw_Distance</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="2c7cdcf0-971c-5fed-3b6f-9dad6119c78f">
+                                            <SHORT-NAME>IN_RPort_Raw_Status_Left_Raw_Status</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_RadarInput_SWC/RPort_Raw_Status_Left</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarRaw/Raw_Status</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="04df0e80-9672-5592-78d3-e1c3874331ba">
+                                            <SHORT-NAME>IN_RPort_Raw_Status_Right_Raw_Status</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_RadarInput_SWC/RPort_Raw_Status_Right</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarRaw/Raw_Status</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                    </DATA-READ-ACCESSS>
+                                    <DATA-WRITE-ACCESSS>
+                                        <VARIABLE-ACCESS UUID="882b9144-94f8-5911-6a89-6c95844805f7">
+                                            <SHORT-NAME>OUT_PPort_RadarData_Distance_Left_Distance</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/BSD_RadarInput_SWC/PPort_RadarData_Distance_Left</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarSensor/Distance</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="ad6cc61c-95db-5e39-1402-b9a51a6abbd9">
+                                            <SHORT-NAME>OUT_PPort_RadarData_Distance_Right_Distance</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/BSD_RadarInput_SWC/PPort_RadarData_Distance_Right</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarSensor/Distance</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="0bf718dd-b526-50c2-1b33-2c72c8252f17">
+                                            <SHORT-NAME>OUT_PPort_RadarData_Status_Left_Status</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/BSD_RadarInput_SWC/PPort_RadarData_Status_Left</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarSensor/Status</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="1fd986eb-a40e-5dd8-a98c-f667d6330aed">
+                                            <SHORT-NAME>OUT_PPort_RadarData_Status_Right_Status</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/BSD_RadarInput_SWC/PPort_RadarData_Status_Right</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarSensor/Status</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                    </DATA-WRITE-ACCESSS>
+                                    <SYMBOL>BSD_RadarInput_Run</SYMBOL>
+                                </RUNNABLE-ENTITY>
+                                <RUNNABLE-ENTITY UUID="0c619b36-0b09-5e6b-aa5e-9f78ca28ba17">
+                                    <SHORT-NAME>BSD_RadarInput_SWC_Init</SHORT-NAME>
+                                    <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                                    <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                    <SYMBOL>BSD_RadarInput_SWC_Init</SYMBOL>
+                                </RUNNABLE-ENTITY>
+                            </RUNNABLES>
+                            <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                    </INTERNAL-BEHAVIORS>
+                </APPLICATION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Auto generated XML Component Description for model BSD_RadarInput_SWC
+Model version                : 1.2
+Simulink Coder version       : Simulink Coder 24.1 (R2024a) 19-Nov-2023
+XML source code generated on : Thu Jun 04 19:25:21 2026
+Model Checksum               : 1957243924 3265635758 706046213 1514332399
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00047.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>Interfaces</SHORT-NAME>
+            <ELEMENTS>
+                <SENDER-RECEIVER-INTERFACE UUID="63d44b2e-6a85-5be4-8627-ddfff500cbd5">
+                    <SHORT-NAME>SRI_RadarRaw</SHORT-NAME>
+                    <IS-SERVICE>false</IS-SERVICE>
+                    <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="3960d803-0bb1-50a2-9682-66e4ced43968">
+                            <SHORT-NAME>Raw_Distance</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%5u</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint16</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="bf081590-3b41-5eb6-e36b-cc24a4829300">
+                            <SHORT-NAME>Raw_Status</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%1u</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                    </DATA-ELEMENTS>
+                </SENDER-RECEIVER-INTERFACE>
+                <SENDER-RECEIVER-INTERFACE UUID="3396c997-68ce-5f7c-3808-c1e78d285477">
+                    <SHORT-NAME>SRI_RadarSensor</SHORT-NAME>
+                    <IS-SERVICE>false</IS-SERVICE>
+                    <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="01a2a108-3a67-59ea-73ed-7005e0264371">
+                            <SHORT-NAME>Distance</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%3.2f</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/float32</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="21b382f6-fca0-54c8-88a2-96c3f12dd4b8">
+                            <SHORT-NAME>Status</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%1u</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                    </DATA-ELEMENTS>
+                </SENDER-RECEIVER-INTERFACE>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

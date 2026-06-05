@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Auto generated XML Component Description for model BSD_RadarInput_SWC
+Model version                : 1.2
+Simulink Coder version       : Simulink Coder 24.1 (R2024a) 19-Nov-2023
+XML source code generated on : Thu Jun 04 19:25:21 2026
+Model Checksum               : 1957243924 3265635758 706046213 1514332399
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00047.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>DataTypes</SHORT-NAME>
+            <ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE UUID="b7cce4d4-2c0b-5d6f-c09b-fb76eb79dc2f">
+                    <SHORT-NAME>uint16</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/uint16</BASE-TYPE-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="46383b07-2b40-5bce-5db4-4e62ea839c02">
+                    <SHORT-NAME>uint8</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/uint8</BASE-TYPE-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="91fd14bc-a10c-5d73-58b1-27b3680da8f5">
+                    <SHORT-NAME>float32</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/float32</BASE-TYPE-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+            </ELEMENTS>
+            <AR-PACKAGES>
+                <AR-PACKAGE>
+                    <SHORT-NAME>SwBaseTypes</SHORT-NAME>
+                    <ELEMENTS>
+                        <SW-BASE-TYPE UUID="b4b7c011-0048-588a-7de4-0f38cb02704e">
+                            <SHORT-NAME>uint16</SHORT-NAME>
+                            <CATEGORY>FIXED_LENGTH</CATEGORY>
+                            <BASE-TYPE-SIZE>16</BASE-TYPE-SIZE>
+                            <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+                            <NATIVE-DECLARATION>uint16</NATIVE-DECLARATION>
+                        </SW-BASE-TYPE>
+                        <SW-BASE-TYPE UUID="b2400633-d21c-53cb-c4dc-21ad7e358f6b">
+                            <SHORT-NAME>uint8</SHORT-NAME>
+                            <CATEGORY>FIXED_LENGTH</CATEGORY>
+                            <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+                            <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+                            <NATIVE-DECLARATION>uint8</NATIVE-DECLARATION>
+                        </SW-BASE-TYPE>
+                        <SW-BASE-TYPE UUID="7eec1c78-194f-5b79-c2af-23fb98f0eeaf">
+                            <SHORT-NAME>float32</SHORT-NAME>
+                            <CATEGORY>FIXED_LENGTH</CATEGORY>
+                            <BASE-TYPE-SIZE>32</BASE-TYPE-SIZE>
+                            <BASE-TYPE-ENCODING>IEEE754</BASE-TYPE-ENCODING>
+                            <NATIVE-DECLARATION>float32</NATIVE-DECLARATION>
+                        </SW-BASE-TYPE>
+                    </ELEMENTS>
+                </AR-PACKAGE>
+            </AR-PACKAGES>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>
