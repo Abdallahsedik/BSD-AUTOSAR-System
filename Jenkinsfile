@@ -32,11 +32,14 @@ pipeline {
         stage('Compile Check') {
             steps {
                 echo '--- Compiling C files ---'
-                // Use Jenkins WORKSPACE variable to CD into the folder first.
-                // This completely prevents GCC from choking on Windows path wildcards.
+                // Using a FOR loop because Windows GCC cannot expand *.c wildcards natively
                 bat '''
                     cd "%WORKSPACE%\\%SWC_CODE_DIR%"
-                    gcc -Wall -std=c99 -I . -I "%WORKSPACE%\\%RTE_DIR%" -c *.c
+                    for %%f in (*.c) do (
+                        echo ----------------------------------------
+                        echo Compiling: %%f
+                        gcc -Wall -std=c99 -I . -I "%WORKSPACE%\\%RTE_DIR%" -c "%%f" || exit 1
+                    )
                 '''
             }
         }
