@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        // Pointing directly to where the code lives inside the repo
         SWC_CODE_DIR = 'BSD_AUTOSAR_ECU\\Generated_SWC_Code'
         RTE_DIR      = 'BSD_AUTOSAR_ECU\\RTE'
         REPORT_DIR   = 'Reports'
@@ -20,7 +19,6 @@ pipeline {
         stage('MISRA-C Check') {
             steps {
                 echo '--- Running MISRA-C static analysis ---'
-                // Using ABSOLUTE PATH to bypass Windows environment variable issues
                 bat '"C:\\Program Files\\Cppcheck\\cppcheck.exe" --std=c99 --output-file="%REPORT_DIR%\\misra_report.txt" "%SWC_CODE_DIR%" || exit 0'
                 bat 'if exist "%REPORT_DIR%\\misra_report.txt" type "%REPORT_DIR%\\misra_report.txt"'
             }
@@ -34,8 +32,12 @@ pipeline {
         stage('Compile Check') {
             steps {
                 echo '--- Compiling C files ---'
-                // Compiling all .c files found directly inside the specified SWC_CODE_DIR
-                bat 'gcc -Wall -std=c99 -I %SWC_CODE_DIR% -I %RTE_DIR% -c %SWC_CODE_DIR%\\*.c'
+                // Use Jenkins WORKSPACE variable to CD into the folder first.
+                // This completely prevents GCC from choking on Windows path wildcards.
+                bat '''
+                    cd "%WORKSPACE%\\%SWC_CODE_DIR%"
+                    gcc -Wall -std=c99 -I . -I "%WORKSPACE%\\%RTE_DIR%" -c *.c
+                '''
             }
         }
 
