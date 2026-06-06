@@ -1,0 +1,11 @@
+PROJECT_NAME        = "BSD AUTOSAR ECU"
+PROJECT_NUMBER      = 1.0
+OUTPUT_DIRECTORY    = docs
+INPUT               = BSD_AUTOSAR_ECU/Generated_SWC_Code \
+                      BSD_AUTOSAR_ECU/RTE
+FILE_PATTERNS       = *.c *.h
+RECURSIVE           = YES
+GENERATE_HTML       = YES
+GENERATE_LATEX      = NO
+EXTRACT_ALL         = YES
+HAVE_DOT            = NO

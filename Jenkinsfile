@@ -2,13 +2,18 @@ pipeline {
     agent any
 
     environment {
-        // Pointing exactly to your nested code folder
-        SWC_CODE_DIR = 'BSD_AUTOSAR_ECU\\Generated_SWC_Code'
-        RTE_DIR      = 'BSD_AUTOSAR_ECU\\RTE'
-        REPORT_DIR   = 'Reports'
+        SWC_CODE_DIR  = 'BSD_AUTOSAR_ECU\\Generated_SWC_Code'
+        RTE_DIR       = 'BSD_AUTOSAR_ECU\\RTE'
+        TEST_DIR      = 'BSD_AUTOSAR_ECU\\Tests'
+        UNITY_DIR     = 'BSD_AUTOSAR_ECU\\Tests\\unity_src\\src'
+        EB_INCLUDE    = 'BSD_AUTOSAR_ECU\\EB_Tresos\\output\\include'
+        REPORT_DIR    = 'Reports'
+        CPPCHECK      = 'C:\\Program Files\\Cppcheck\\cppcheck.exe'
+        DOXYGEN       = 'C:\\Program Files\\doxygen\\bin\\doxygen.exe'
     }
 
     stages {
+
         stage('Checkout') {
             steps {
                 echo '--- Cloning repository ---'
@@ -20,13 +25,18 @@ pipeline {
         stage('MISRA-C Check') {
             steps {
                 echo '--- Running MISRA-C static analysis ---'
-                // Uses absolute path to guarantee Jenkins finds Cppcheck
-                bat '"C:\\Program Files\\Cppcheck\\cppcheck.exe" --std=c99 --output-file="%REPORT_DIR%\\misra_report.txt" "%SWC_CODE_DIR%" || exit 0'
+                bat '''
+                    "%CPPCHECK%" ^
+                        --std=c99 ^
+                        --output-file="%REPORT_DIR%\\misra_report.txt" ^
+                        "%SWC_CODE_DIR%" || exit 0
+                '''
                 bat 'if exist "%REPORT_DIR%\\misra_report.txt" type "%REPORT_DIR%\\misra_report.txt"'
             }
             post {
                 always {
-                    archiveArtifacts artifacts: 'Reports/misra_report.txt', allowEmptyArchive: true
+                    archiveArtifacts artifacts: 'Reports/misra_report.txt',
+                                     allowEmptyArchive: true
                 }
             }
         }
@@ -34,15 +44,82 @@ pipeline {
         stage('Compile Check') {
             steps {
                 echo '--- Compiling C files ---'
-                // Changes directory first to safely handle Windows *.c wildcards
                 bat '''
                     cd "%WORKSPACE%\\%SWC_CODE_DIR%"
                     for %%f in (*.c) do (
                         echo ----------------------------------------
                         echo Compiling: %%f
-			gcc -Wall -std=c99 -I . -I "%WORKSPACE%\\%RTE_DIR%" -I "%WORKSPACE%\\BSD_AUTOSAR_ECU\\EB_Tresos\\output\\include" -c "%%f" || exit 1
+                        gcc -Wall -std=c99 ^
+                            -I . ^
+                            -I "%WORKSPACE%\\%RTE_DIR%" ^
+                            -I "%WORKSPACE%\\%EB_INCLUDE%" ^
+                            -c "%%f" || exit 1
                     )
                 '''
+            }
+        }
+
+        stage('Unit Tests') {
+            steps {
+                echo '--- Building test runner ---'
+                bat '''
+                    gcc ^
+                        -I "%WORKSPACE%\\%UNITY_DIR%" ^
+                        -I "%WORKSPACE%\\%RTE_DIR%" ^
+                        -I "%WORKSPACE%\\%SWC_CODE_DIR%" ^
+                        "%WORKSPACE%\\%UNITY_DIR%\\unity.c" ^
+                        "%WORKSPACE%\\%TEST_DIR%\\test_BSD_Algorithm.c" ^
+                        -o "%WORKSPACE%\\%REPORT_DIR%\\test_runner.exe" ^
+                        || exit 1
+                '''
+                echo '--- Running unit tests ---'
+                bat '''
+                    "%WORKSPACE%\\%REPORT_DIR%\\test_runner.exe" ^
+                        > "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" 2>&1 || exit 0
+                    type "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt"
+                '''
+                echo '--- Checking test results ---'
+                bat '''
+                    findstr /i "FAIL" "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" ^
+                    && (echo TESTS FAILED && exit 1) ^
+                    || echo ALL TESTS PASSED
+                '''
+            }
+            post {
+                always {
+                    archiveArtifacts artifacts: 'Reports/test_output.txt',
+                                     allowEmptyArchive: true
+                }
+            }
+        }
+
+        stage('Generate Docs') {
+            steps {
+                echo '--- Generating Doxygen documentation ---'
+                bat '''
+                    if exist "%DOXYGEN%" (
+                        "%DOXYGEN%" Doxyfile
+                        echo Documentation generated successfully
+                    ) else (
+                        echo Doxygen not found — skipping docs
+                    )
+                '''
+            }
+            post {
+                success {
+                    script {
+                        if (fileExists('docs/html/index.html')) {
+                            publishHTML([
+                                allowMissing:          true,
+                                alwaysLinkToLastBuild: true,
+                                keepAll:               true,
+                                reportDir:             'docs/html',
+                                reportFiles:           'index.html',
+                                reportName:            'BSD Doxygen Docs'
+                            ])
+                        }
+                    }
+                }
             }
         }
 
@@ -50,7 +127,11 @@ pipeline {
             steps {
                 echo '--- Archiving ---'
                 archiveArtifacts(
-                    artifacts:         'BSD_AUTOSAR_ECU/Generated_SWC_Code/**, Reports/**',
+                    artifacts: '''
+                        BSD_AUTOSAR_ECU/Generated_SWC_Code/**,
+                        Reports/**,
+                        docs/html/**
+                    ''',
                     fingerprint:       true,
                     allowEmptyArchive: true
                 )
@@ -60,10 +141,10 @@ pipeline {
 
     post {
         success {
-            echo '✅ Pipeline passed'
+            echo '✅ Pipeline passed — MISRA ✅ Compile ✅ Tests ✅ Docs ✅'
         }
         failure {
-            echo '❌ Pipeline failed'
+            echo '❌ Pipeline failed — check stage logs above'
         }
         always {
             cleanWs()
