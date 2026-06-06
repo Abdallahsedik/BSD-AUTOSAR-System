@@ -40,7 +40,7 @@ pipeline {
                     for %%f in (*.c) do (
                         echo ----------------------------------------
                         echo Compiling: %%f
-                        gcc -Wall -std=c99 -I . -I "%WORKSPACE%\\%RTE_DIR%" -c "%%f" || exit 1
+			gcc -Wall -std=c99 -I . -I "%WORKSPACE%\\%RTE_DIR%" -I "%WORKSPACE%\\BSD_AUTOSAR_ECU\\EB_Tresos\\output\\include" -c "%%f" || exit 1
                     )
                 '''
             }

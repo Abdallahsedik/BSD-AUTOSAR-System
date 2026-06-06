@@ -5,9 +5,9 @@
    file when deploying the generated code outside of Simulink.
 
    This file is generated for:
-   Atomic software component:  "BSD_ECU"
+   Atomic software component:  "BSD_RadarInput_SWC"
    ARXML schema: "4.4"
-   File generated on: "Sat May 30 09:36:50 2026"  */
+   File generated on: "Thu Jun 04 19:25:14 2026"  */
 
 #ifndef Rte_Type_h
 #define Rte_Type_h

@@ -1,0 +1,74 @@
+/* This file contains stub implementations of the AUTOSAR RTE functions.
+   The stub implementations can be used for testing the generated code in
+   Simulink, for example, in SIL/PIL simulations of the component under
+   test. Note that this file should be replaced with an appropriate RTE
+   file when deploying the generated code outside of Simulink.
+
+   This file is generated for:
+   Atomic software component:  "BSD_RadarInput_SWC"
+   ARXML schema: "4.4"
+   File generated on: "Thu Jun 04 19:25:14 2026"  */
+
+#ifndef Rte_BSD_RadarInput_SWC_h
+#define Rte_BSD_RadarInput_SWC_h
+#include "Rte_Type.h"
+#include "Compiler.h"
+
+/* Data access functions */
+#define Rte_IRead_BSD_RadarInput_Run_RPort_Raw_Distance_Left_Raw_Distance Rte_IRead_BSD_RadarInput_SWC_BSD_RadarInput_Run_RPort_Raw_Distance_Left_Raw_Distance
+
+uint16 Rte_IRead_BSD_RadarInput_Run_RPort_Raw_Distance_Left_Raw_Distance(void);
+
+#define Rte_IRead_BSD_RadarInput_Run_RPort_Raw_Distance_Right_Raw_Distance Rte_IRead_BSD_RadarInput_SWC_BSD_RadarInput_Run_RPort_Raw_Distance_Right_Raw_Distance
+
+uint16 Rte_IRead_BSD_RadarInput_Run_RPort_Raw_Distance_Right_Raw_Distance(void);
+
+#define Rte_IRead_BSD_RadarInput_Run_RPort_Raw_Status_Left_Raw_Status Rte_IRead_BSD_RadarInput_SWC_BSD_RadarInput_Run_RPort_Raw_Status_Left_Raw_Status
+
+uint8 Rte_IRead_BSD_RadarInput_Run_RPort_Raw_Status_Left_Raw_Status(void);
+
+#define Rte_IRead_BSD_RadarInput_Run_RPort_Raw_Status_Right_Raw_Status Rte_IRead_BSD_RadarInput_SWC_BSD_RadarInput_Run_RPort_Raw_Status_Right_Raw_Status
+
+uint8 Rte_IRead_BSD_RadarInput_Run_RPort_Raw_Status_Right_Raw_Status(void);
+
+#define Rte_IWrite_BSD_RadarInput_Run_PPort_RadarData_Distance_Left_Distance Rte_IWrite_BSD_RadarInput_SWC_BSD_RadarInput_Run_PPort_RadarData_Distance_Left_Distance
+
+void Rte_IWrite_BSD_RadarInput_Run_PPort_RadarData_Distance_Left_Distance
+  (float32 u);
+
+#define Rte_IWriteRef_BSD_RadarInput_Run_PPort_RadarData_Distance_Left_Distance Rte_IWriteRef_BSD_RadarInput_SWC_BSD_RadarInput_Run_PPort_RadarData_Distance_Left_Distance
+
+float32* Rte_IWriteRef_BSD_RadarInput_Run_PPort_RadarData_Distance_Left_Distance
+  (void);
+
+#define Rte_IWrite_BSD_RadarInput_Run_PPort_RadarData_Distance_Right_Distance Rte_IWrite_BSD_RadarInput_SWC_BSD_RadarInput_Run_PPort_RadarData_Distance_Right_Distance
+
+void Rte_IWrite_BSD_RadarInput_Run_PPort_RadarData_Distance_Right_Distance
+  (float32 u);
+
+#define Rte_IWriteRef_BSD_RadarInput_Run_PPort_RadarData_Distance_Right_Distance Rte_IWriteRef_BSD_RadarInput_SWC_BSD_RadarInput_Run_PPort_RadarData_Distance_Right_Distance
+
+float32*
+  Rte_IWriteRef_BSD_RadarInput_Run_PPort_RadarData_Distance_Right_Distance(void);
+
+#define Rte_IWrite_BSD_RadarInput_Run_PPort_RadarData_Status_Left_Status Rte_IWrite_BSD_RadarInput_SWC_BSD_RadarInput_Run_PPort_RadarData_Status_Left_Status
+
+void Rte_IWrite_BSD_RadarInput_Run_PPort_RadarData_Status_Left_Status(uint8 u);
+
+#define Rte_IWriteRef_BSD_RadarInput_Run_PPort_RadarData_Status_Left_Status Rte_IWriteRef_BSD_RadarInput_SWC_BSD_RadarInput_Run_PPort_RadarData_Status_Left_Status
+
+uint8* Rte_IWriteRef_BSD_RadarInput_Run_PPort_RadarData_Status_Left_Status(void);
+
+#define Rte_IWrite_BSD_RadarInput_Run_PPort_RadarData_Status_Right_Status Rte_IWrite_BSD_RadarInput_SWC_BSD_RadarInput_Run_PPort_RadarData_Status_Right_Status
+
+void Rte_IWrite_BSD_RadarInput_Run_PPort_RadarData_Status_Right_Status(uint8 u);
+
+#define Rte_IWriteRef_BSD_RadarInput_Run_PPort_RadarData_Status_Right_Status Rte_IWriteRef_BSD_RadarInput_SWC_BSD_RadarInput_Run_PPort_RadarData_Status_Right_Status
+
+uint8* Rte_IWriteRef_BSD_RadarInput_Run_PPort_RadarData_Status_Right_Status(void);
+
+/* Entry point functions */
+extern FUNC(void, BSD_RadarInput_SWC_CODE) BSD_RadarInput_Run(void);
+extern FUNC(void, BSD_RadarInput_SWC_CODE) BSD_RadarInput_SWC_Init(void);
+
+#endif
