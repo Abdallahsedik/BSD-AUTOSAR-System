@@ -57,8 +57,7 @@ pipeline {
                 '''
             }
         }
-
-      stage('Unit Tests') {
+        stage('Unit Tests') {
             steps {
                 echo '--- Building test runner ---'
                 bat '''
@@ -79,11 +78,16 @@ pipeline {
                     type "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt"
                 '''
                 echo '--- Checking test results ---'
-                // Changed search string to exactly ":FAIL" so it ignores test names
+                // Proper IF/ELSE to guarantee Jenkins gets the correct Exit Code
                 bat '''
-                    findstr /c:":FAIL" "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" ^
-                    && (echo TESTS FAILED && exit 1) ^
-                    || echo ALL TESTS PASSED
+                    findstr /c:":FAIL" "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" >nul
+                    if %ERRORLEVEL% equ 0 (
+                        echo ❌ TESTS FAILED
+                        exit /b 1
+                    ) else (
+                        echo ✅ ALL TESTS PASSED
+                        exit /b 0
+                    )
                 '''
             }
             post {
