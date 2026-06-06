@@ -2,12 +2,11 @@ pipeline {
     agent any
 
     environment {
-        PROJECT_NAME    = 'BSD_AUTOSAR_ECU'
-        SWC_CODE_DIR    = 'Generated_SWC_Code'
-        TEST_DIR        = 'Tests'
-        RTE_DIR         = 'RTE'
-        UNITY_DIR       = 'Unity/src'
-        REPORT_DIR      = 'Reports'
+        PROJECT_NAME = 'BSD_AUTOSAR_ECU'
+        SWC_CODE_DIR = 'Generated_SWC_Code'
+        TEST_DIR     = 'Tests'
+        RTE_DIR      = 'RTE'
+        REPORT_DIR   = 'Reports'
     }
 
     stages {
@@ -36,7 +35,9 @@ pipeline {
             post {
                 always {
                     recordIssues(
-                        tools: [cppCheck(pattern: 'Reports/misra_report.xml')]
+                        tools: [cppCheck(
+                            pattern: 'Reports/misra_report.xml'
+                        )]
                     )
                 }
             }
@@ -61,21 +62,21 @@ pipeline {
                 echo '--- Running unit tests ---'
                 sh '''
                     gcc \
-                        -I ${UNITY_DIR} \
+                        -I Unity/src \
                         -I ${SWC_CODE_DIR} \
                         -I ${RTE_DIR} \
-                        ${UNITY_DIR}/unity.c \
+                        Unity/src/unity.c \
                         ${TEST_DIR}/test_BSD_Algorithm.c \
                         ${SWC_CODE_DIR}/BSD_Algorithm_swc.c \
                         -o test_runner
 
-                    ./test_runner \
-                        --junit-output ${REPORT_DIR}/test_results.xml
+                    ./test_runner
                 '''
             }
             post {
                 always {
-                    junit 'Reports/test_results.xml'
+                    junit allowEmptyResults: true,
+                          testResults: 'Reports/test_results.xml'
                 }
             }
         }
@@ -88,10 +89,12 @@ pipeline {
             post {
                 success {
                     publishHTML([
-                        allowMissing: false,
-                        reportDir:    'docs/html',
-                        reportFiles:  'index.html',
-                        reportName:   'BSD Doxygen Docs'
+                        allowMissing:          false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll:               true,
+                        reportDir:             'docs/html',
+                        reportFiles:           'index.html',
+                        reportName:            'BSD Doxygen Docs'
                     ])
                 }
             }
@@ -100,12 +103,11 @@ pipeline {
         stage('Archive Artifacts') {
             steps {
                 echo '--- Archiving build artifacts ---'
-                archiveArtifacts artifacts: '''
-                    Generated_SWC_Code/**/*.c,
-                    Generated_SWC_Code/**/*.h,
-                    ARXML/**/*.arxml,
-                    Reports/**
-                ''', fingerprint: true
+                archiveArtifacts(
+                    artifacts:    'Generated_SWC_Code/**,ARXML/**,Reports/**',
+                    fingerprint:  true,
+                    allowEmptyArchive: true
+                )
             }
         }
     }
