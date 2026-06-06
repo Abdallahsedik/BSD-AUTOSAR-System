@@ -176,11 +176,25 @@ pipeline {
     post {
         success {
             echo '✅ Pipeline passed — MISRA ✅ Compile ✅ Tests ✅ Docs ✅'
-            githubNotify context: 'Jenkins CI', status: 'SUCCESS', description: 'Pipeline and all tests passed successfully!'
+            step([
+                $class: 'GitHubCommitStatusSetter',
+                contextSource: [$class: 'ManuallyEnteredCommitContext', context: 'Jenkins CI'],
+                statusResultSource: [
+                    $class: 'ConditionalStatusResultSource',
+                    results: [[$class: 'AnyBuildResult', message: 'Pipeline and all tests passed successfully!', state: 'SUCCESS']]
+                ]
+            ])
         }
         failure {
             echo '❌ Pipeline failed — check stage logs above'
-            githubNotify context: 'Jenkins CI', status: 'FAILURE', description: 'Pipeline failed. Check Jenkins logs.'
+            step([
+                $class: 'GitHubCommitStatusSetter',
+                contextSource: [$class: 'ManuallyEnteredCommitContext', context: 'Jenkins CI'],
+                statusResultSource: [
+                    $class: 'ConditionalStatusResultSource',
+                    results: [[$class: 'AnyBuildResult', message: 'Pipeline failed. Check Jenkins logs.', state: 'FAILURE']]
+                ]
+            ])
         }
         always {
             cleanWs()
