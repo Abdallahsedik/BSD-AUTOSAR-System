@@ -35,8 +35,7 @@ pipeline {
             }
             post {
                 always {
-                    archiveArtifacts artifacts: 'Reports/misra_report.txt',
-                                     allowEmptyArchive: true
+                    archiveArtifacts artifacts: 'Reports/misra_report.txt', allowEmptyArchive: true
                 }
             }
         }
@@ -67,15 +66,16 @@ pipeline {
                         -I "%WORKSPACE%\\%UNITY_DIR%" ^
                         -I "%WORKSPACE%\\%RTE_DIR%" ^
                         -I "%WORKSPACE%\\%SWC_CODE_DIR%" ^
+                        -I "%WORKSPACE%\\%EB_INCLUDE%" ^
                         "%WORKSPACE%\\%UNITY_DIR%\\unity.c" ^
-                        "%WORKSPACE%\\%TEST_DIR%\\test_BSD_Algorithm.c" ^
+                        "%WORKSPACE%\\%TEST_DIR%\\test_BSD_RadarInput.c" ^
+                        "%WORKSPACE%\\%SWC_CODE_DIR%\\BSD_RadarInput_SWC.c" ^
                         -o "%WORKSPACE%\\%REPORT_DIR%\\test_runner.exe" ^
                         || exit 1
                 '''
                 echo '--- Running unit tests ---'
                 bat '''
-                    "%WORKSPACE%\\%REPORT_DIR%\\test_runner.exe" ^
-                        > "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" 2>&1 || exit 0
+                    "%WORKSPACE%\\%REPORT_DIR%\\test_runner.exe" > "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" 2>&1 || exit 0
                     type "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt"
                 '''
                 echo '--- Checking test results ---'
@@ -87,8 +87,7 @@ pipeline {
             }
             post {
                 always {
-                    archiveArtifacts artifacts: 'Reports/test_output.txt',
-                                     allowEmptyArchive: true
+                    archiveArtifacts artifacts: 'Reports/test_output.txt', allowEmptyArchive: true
                 }
             }
         }
@@ -127,11 +126,7 @@ pipeline {
             steps {
                 echo '--- Archiving ---'
                 archiveArtifacts(
-                    artifacts: '''
-                        BSD_AUTOSAR_ECU/Generated_SWC_Code/**,
-                        Reports/**,
-                        docs/html/**
-                    ''',
+                    artifacts: 'BSD_AUTOSAR_ECU/Generated_SWC_Code/**, Reports/**, docs/html/**',
                     fingerprint:       true,
                     allowEmptyArchive: true
                 )
