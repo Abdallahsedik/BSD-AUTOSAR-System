@@ -176,9 +176,11 @@ pipeline {
     post {
         success {
             echo '✅ Pipeline passed — MISRA ✅ Compile ✅ Tests ✅ Docs ✅'
+            githubNotify context: 'Jenkins CI', status: 'SUCCESS', description: 'Pipeline and all tests passed successfully!'
         }
         failure {
             echo '❌ Pipeline failed — check stage logs above'
+            githubNotify context: 'Jenkins CI', status: 'FAILURE', description: 'Pipeline failed. Check Jenkins logs.'
         }
         always {
             cleanWs()
