@@ -42,11 +42,11 @@ Sw Version : 1.0.0
  * Ex: ID = 43*/
 #define COMPILER_VENDOR_ID                      43
 
-/* AUTOSAR Version 4.4.0*/
+/* AUTOSAR Version 4.6.0*/
 
-#define COMPILER_AR_RELEASE_MAJOR_VERSION       4
-#define COMPILER_AR_RELEASE_MINOR_VERSION       4
-#define COMPILER_AR_RELEASE_REVISION_VERSION    0
+#define COMPILER_AR_RELEASE_MAJOR_VERSION       4U
+#define COMPILER_AR_RELEASE_MINOR_VERSION       6U
+#define COMPILER_AR_RELEASE_REVISION_VERSION    0U
 /* Module Version 1.0.0 */
 #define COMPILER_SW_MAJOR_VERSION               1
 #define COMPILER_SW_MINOR_VERSION               0

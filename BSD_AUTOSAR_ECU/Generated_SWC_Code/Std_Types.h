@@ -41,9 +41,9 @@ Sw Version : 1.0.0
 *        module's description file
 */
 #define STD_VENDOR_ID                     43
-#define STD_AR_RELEASE_MAJOR_VERSION      4
-#define STD_AR_RELEASE_MINOR_VERSION      4
-#define STD_AR_RELEASE_REVISION_VERSION   0
+#define STD_AR_RELEASE_MAJOR_VERSION      4U
+#define STD_AR_RELEASE_MINOR_VERSION      6U
+#define STD_AR_RELEASE_REVISION_VERSION   0U
 
 #define STD_SW_MAJOR_VERSION              1
 #define STD_SW_MINOR_VERSION              0
