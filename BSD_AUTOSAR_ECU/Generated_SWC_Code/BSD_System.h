@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'BSD_System'.
  *
- * Model version                  : 1.6
+ * Model version                  : 1.16
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Sat May 30 09:36:33 2026
+ * C/C++ source code generated on : Sun Jun  7 00:49:51 2026
  *
  * Target selection: autosar.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -25,12 +25,15 @@
 
 /* PublicStructure Variables for Internal Data, for system '<Root>' */
 typedef struct {
-  uint8 is_active_c3_BSD_System;       /* '<S1>/Chart' */
-  uint8 is_c3_BSD_System;              /* '<S1>/Chart' */
+  float32 effective_dist;              /* '<S1>/BSD_Algorithm_SWC_Chart' */
+  uint8 Sensor_L_Fault;                /* '<S1>/BSD_Algorithm_SWC_Chart' */
+  uint8 Sensor_R_Fault;                /* '<S1>/BSD_Algorithm_SWC_Chart' */
+  uint8 is_active_c3_BSD_System;       /* '<S1>/BSD_Algorithm_SWC_Chart' */
+  uint8 is_c3_BSD_System;              /* '<S1>/BSD_Algorithm_SWC_Chart' */
 } ARID_DEF_BSD_System_T;
 
 /* PublicStructure Variables for Internal Data */
-extern ARID_DEF_BSD_System_T BSD_System_ARID_DEF;/* '<S1>/Chart' */
+extern ARID_DEF_BSD_System_T BSD_System_ARID_DEF;/* '<S1>/BSD_Algorithm_SWC_Chart' */
 
 /*-
  * The generated code includes comments that allow you to trace directly
@@ -48,7 +51,7 @@ extern ARID_DEF_BSD_System_T BSD_System_ARID_DEF;/* '<S1>/Chart' */
  *
  * '<Root>' : 'BSD_System'
  * '<S1>'   : 'BSD_System/BSD_Algorithm_swc'
- * '<S2>'   : 'BSD_System/BSD_Algorithm_swc/Chart'
+ * '<S2>'   : 'BSD_System/BSD_Algorithm_swc/BSD_Algorithm_SWC_Chart'
  */
 #endif                                 /* BSD_System_h_ */
 

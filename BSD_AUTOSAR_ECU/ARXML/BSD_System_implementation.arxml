@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Auto generated XML Component Description for model BSD_System
-Model version                : 1.6
+Model version                : 1.16
 Simulink Coder version       : Simulink Coder 24.1 (R2024a) 19-Nov-2023
-XML source code generated on : Sat May 30 09:36:56 2026
-Model Checksum               : 3220180021 4020325994 3612949117 3022211245
+XML source code generated on : Sun Jun 07 00:50:16 2026
+Model Checksum               : 2838873562 719031958 2329775244 2538230499
 -->
 <AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00047.xsd">
     <AR-PACKAGES>
@@ -44,7 +44,7 @@ Model Checksum               : 3220180021 4020325994 3612949117 3022211245
                             <RESOURCE-CONSUMPTION>
                                 <SHORT-NAME>RsrcCons_BSD_System</SHORT-NAME>
                             </RESOURCE-CONSUMPTION>
-                            <SW-VERSION>1.6.1</SW-VERSION>
+                            <SW-VERSION>1.16.1</SW-VERSION>
                             <USED-CODE-GENERATOR>Embedded Coder 24.1 (R2024a) 19-Nov-2023</USED-CODE-GENERATOR>
                             <VENDOR-ID>0</VENDOR-ID>
                             <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/Components/BSD_ECU/BSD_System_IB</BEHAVIOR-REF>

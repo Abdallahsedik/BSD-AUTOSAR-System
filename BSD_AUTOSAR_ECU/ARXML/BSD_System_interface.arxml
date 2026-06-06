@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Auto generated XML Component Description for model BSD_System
-Model version                : 1.6
+Model version                : 1.16
 Simulink Coder version       : Simulink Coder 24.1 (R2024a) 19-Nov-2023
-XML source code generated on : Sat May 30 09:36:56 2026
-Model Checksum               : 3220180021 4020325994 3612949117 3022211245
+XML source code generated on : Sun Jun 07 00:50:16 2026
+Model Checksum               : 2838873562 719031958 2329775244 2538230499
 -->
 <AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00047.xsd">
     <AR-PACKAGES>
@@ -12,11 +12,11 @@ Model Checksum               : 3220180021 4020325994 3612949117 3022211245
             <SHORT-NAME>Interfaces</SHORT-NAME>
             <ELEMENTS>
                 <SENDER-RECEIVER-INTERFACE UUID="acdfb147-f85d-5be5-7580-596198b27447">
-                    <SHORT-NAME>WarningOutput_If</SHORT-NAME>
+                    <SHORT-NAME>SRI_Warning</SHORT-NAME>
                     <IS-SERVICE>false</IS-SERVICE>
                     <DATA-ELEMENTS>
                         <VARIABLE-DATA-PROTOTYPE UUID="3fec76ab-f93e-59f0-397f-f007ef048cc3">
-                            <SHORT-NAME>WarningStatus</SHORT-NAME>
+                            <SHORT-NAME>Warning_Status</SHORT-NAME>
                             <LONG-NAME>
                                 <L-4 L="FOR-ALL">Warning Status</L-4>
                             </LONG-NAME>
@@ -24,8 +24,9 @@ Model Checksum               : 3220180021 4020325994 3612949117 3022211245
                             <SW-DATA-DEF-PROPS>
                                 <SW-DATA-DEF-PROPS-VARIANTS>
                                     <SW-DATA-DEF-PROPS-CONDITIONAL>
-                                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
-                                        <DISPLAY-FORMAT>%1.0f</DISPLAY-FORMAT>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%d</DISPLAY-FORMAT>
                                         <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
                                     </SW-DATA-DEF-PROPS-CONDITIONAL>
                                 </SW-DATA-DEF-PROPS-VARIANTS>
@@ -41,74 +42,206 @@ Model Checksum               : 3220180021 4020325994 3612949117 3022211245
                             <SW-DATA-DEF-PROPS>
                                 <SW-DATA-DEF-PROPS-VARIANTS>
                                     <SW-DATA-DEF-PROPS-CONDITIONAL>
-                                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%d</DISPLAY-FORMAT>
                                         <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
                                     </SW-DATA-DEF-PROPS-CONDITIONAL>
                                 </SW-DATA-DEF-PROPS-VARIANTS>
                             </SW-DATA-DEF-PROPS>
                             <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</TYPE-TREF>
-                        </VARIABLE-DATA-PROTOTYPE>
-                    </DATA-ELEMENTS>
-                </SENDER-RECEIVER-INTERFACE>
-                <SENDER-RECEIVER-INTERFACE UUID="b89bfff9-8453-55ce-01d0-6dd61aa13afb">
-                    <SHORT-NAME>VehicleSignal_If</SHORT-NAME>
-                    <IS-SERVICE>false</IS-SERVICE>
-                    <DATA-ELEMENTS>
-                        <VARIABLE-DATA-PROTOTYPE UUID="31f63d57-e30f-5de0-df0e-05a92b708af8">
-                            <SHORT-NAME>TurnSignal__</SHORT-NAME>
-                            <LONG-NAME>
-                                <L-4 L="FOR-ALL">Driver turn signal indicator</L-4>
-                            </LONG-NAME>
-                            <CATEGORY>VALUE</CATEGORY>
-                            <SW-DATA-DEF-PROPS>
-                                <SW-DATA-DEF-PROPS-VARIANTS>
-                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
-                                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
-                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
-                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
-                                </SW-DATA-DEF-PROPS-VARIANTS>
-                            </SW-DATA-DEF-PROPS>
-                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</TYPE-TREF>
-                        </VARIABLE-DATA-PROTOTYPE>
-                        <VARIABLE-DATA-PROTOTYPE UUID="f2431aad-96fb-5d58-4021-df153b21fb72">
-                            <SHORT-NAME>VehicleSpeed</SHORT-NAME>
-                            <LONG-NAME>
-                                <L-4 L="FOR-ALL">Vehicle Speed</L-4>
-                            </LONG-NAME>
-                            <CATEGORY>VALUE</CATEGORY>
-                            <SW-DATA-DEF-PROPS>
-                                <SW-DATA-DEF-PROPS-VARIANTS>
-                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
-                                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
-                                        <DISPLAY-FORMAT>%3.0f</DISPLAY-FORMAT>
-                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
-                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
-                                </SW-DATA-DEF-PROPS-VARIANTS>
-                            </SW-DATA-DEF-PROPS>
-                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/float32</TYPE-TREF>
                         </VARIABLE-DATA-PROTOTYPE>
                     </DATA-ELEMENTS>
                 </SENDER-RECEIVER-INTERFACE>
                 <SENDER-RECEIVER-INTERFACE UUID="e90a6840-d09b-568d-7c71-e5c4a68a0eb9">
-                    <SHORT-NAME>RadarSensor_If</SHORT-NAME>
+                    <SHORT-NAME>SRI_RadarData</SHORT-NAME>
                     <IS-SERVICE>false</IS-SERVICE>
                     <DATA-ELEMENTS>
                         <VARIABLE-DATA-PROTOTYPE UUID="d276b839-46f7-53a1-abc9-e7e91f925207">
-                            <SHORT-NAME>Distance</SHORT-NAME>
+                            <SHORT-NAME>Distance_Left</SHORT-NAME>
                             <LONG-NAME>
-                                <L-4 L="FOR-ALL">Radar measured distance in meters</L-4>
+                                <L-4 L="FOR-ALL">Longl distance to the nearest target detected by the right rear radar</L-4>
                             </LONG-NAME>
                             <CATEGORY>VALUE</CATEGORY>
                             <SW-DATA-DEF-PROPS>
                                 <SW-DATA-DEF-PROPS-VARIANTS>
                                     <SW-DATA-DEF-PROPS-CONDITIONAL>
-                                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
-                                        <DISPLAY-FORMAT>%4.2f</DISPLAY-FORMAT>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%2.2f</DISPLAY-FORMAT>
                                         <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
                                     </SW-DATA-DEF-PROPS-CONDITIONAL>
                                 </SW-DATA-DEF-PROPS-VARIANTS>
                             </SW-DATA-DEF-PROPS>
                             <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/float32</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="a900c7d4-7b46-5492-ca5a-91b72dff47cc">
+                            <SHORT-NAME>Distance_Right</SHORT-NAME>
+                            <LONG-NAME>
+                                <L-4 L="FOR-ALL">Longl distance to the nearest target detected by the left rear radar</L-4>
+                            </LONG-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%2.2f</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/float32</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="2595bb86-b4f1-5dfe-5f0f-12cafa4ffb6c">
+                            <SHORT-NAME>Status_Left</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%d</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="8a385928-c627-52b7-0256-b96a3f4c3550">
+                            <SHORT-NAME>Status_Right</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%d</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                    </DATA-ELEMENTS>
+                </SENDER-RECEIVER-INTERFACE>
+                <SENDER-RECEIVER-INTERFACE UUID="7f5f4bee-f263-58fe-5040-75ab4374042a">
+                    <SHORT-NAME>SRI_VehicleData</SHORT-NAME>
+                    <IS-SERVICE>false</IS-SERVICE>
+                    <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="6fca8fbc-49d9-582a-0b01-4048960b2d99">
+                            <SHORT-NAME>Vehicle_Speed</SHORT-NAME>
+                            <LONG-NAME>
+                                <L-4 L="FOR-ALL"> vehicle speed in km/h </L-4>
+                            </LONG-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%3.1f</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/float32</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="b37e4431-daad-5ecd-d5f9-5491dcdfc62e">
+                            <SHORT-NAME>Gear_Position</SHORT-NAME>
+                            <LONG-NAME>
+                                <L-4 L="FOR-ALL">Current transmission gear position (0=Park, 1=Reverse, 2=Neutral, 3=Drive)</L-4>
+                            </LONG-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%d</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="eeac4ef7-e9d6-5a08-5cb7-29f9488fcd9a">
+                            <SHORT-NAME>Turn_Signal</SHORT-NAME>
+                            <LONG-NAME>
+                                <L-4 L="FOR-ALL">Status of the vehicle turn indicator stalk (0=Off, 1=Left, 2=Right)</L-4>
+                            </LONG-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%d</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="610dc2be-1aca-5808-63e9-f8b1cd8bbf80">
+                            <SHORT-NAME>Steering_Angle</SHORT-NAME>
+                            <LONG-NAME>
+                                <L-4 L="FOR-ALL">Current steering wheel angle in degrees</L-4>
+                            </LONG-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%4.1f</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/float32</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                    </DATA-ELEMENTS>
+                </SENDER-RECEIVER-INTERFACE>
+                <SENDER-RECEIVER-INTERFACE UUID="f679ad0a-fb18-585c-d577-0fbbf963375d">
+                    <SHORT-NAME>SRI_FaultStatus</SHORT-NAME>
+                    <IS-SERVICE>false</IS-SERVICE>
+                    <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="56e4aeb1-4676-5ff2-c91d-d5dd42afa08e">
+                            <SHORT-NAME>Sensor_L_Fault</SHORT-NAME>
+                            <LONG-NAME>
+                                <L-4 L="FOR-ALL">Fault status flag for the left Rear Radar Sensor (0 = Normal, 1 = Fault)</L-4>
+                            </LONG-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%d</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="07c77b7a-ac90-518f-28aa-a412c40af8d0">
+                            <SHORT-NAME>Sensor_R_Fault</SHORT-NAME>
+                            <LONG-NAME>
+                                <L-4 L="FOR-ALL">Fault status flag for the Right Rear Radar Sensor (0 = Normal, 1 = Fault)</L-4>
+                            </LONG-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/DataTypes/SwAddrMethods/VAR</SW-ADDR-METHOD-REF>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <DISPLAY-FORMAT>%d</DISPLAY-FORMAT>
+                                        <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                            <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</TYPE-TREF>
                         </VARIABLE-DATA-PROTOTYPE>
                     </DATA-ELEMENTS>
                 </SENDER-RECEIVER-INTERFACE>

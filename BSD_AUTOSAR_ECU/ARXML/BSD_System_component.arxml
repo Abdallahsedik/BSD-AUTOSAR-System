@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Auto generated XML Component Description for model BSD_System
-Model version                : 1.6
+Model version                : 1.16
 Simulink Coder version       : Simulink Coder 24.1 (R2024a) 19-Nov-2023
-XML source code generated on : Sat May 30 09:36:56 2026
-Model Checksum               : 3220180021 4020325994 3612949117 3022211245
+XML source code generated on : Sun Jun 07 00:50:16 2026
+Model Checksum               : 2838873562 719031958 2329775244 2538230499
 -->
 <AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00047.xsd">
     <AR-PACKAGES>
@@ -14,11 +14,56 @@ Model Checksum               : 3220180021 4020325994 3612949117 3022211245
                 <APPLICATION-SW-COMPONENT-TYPE UUID="743c02e6-2b2f-56e4-8049-89b4b754db02">
                     <SHORT-NAME>BSD_ECU</SHORT-NAME>
                     <PORTS>
-                        <R-PORT-PROTOTYPE UUID="1d9d0846-7f73-5f3c-600b-748d0152aab9">
-                            <SHORT-NAME>RPort_Distance</SHORT-NAME>
+                        <R-PORT-PROTOTYPE UUID="75932db7-0ad3-541d-8e14-9c131bcb2e2f">
+                            <SHORT-NAME>RPort_VehicleData</SHORT-NAME>
                             <REQUIRED-COM-SPECS>
                                 <NONQUEUED-RECEIVER-COM-SPEC>
-                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/RadarSensor_If/Distance</DATA-ELEMENT-REF>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_VehicleData/Gear_Position</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint8</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_VehicleData/Vehicle_Speed</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_float32</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_VehicleData/Turn_Signal</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint8</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_VehicleData/Steering_Angle</DATA-ELEMENT-REF>
                                     <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
                                     <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
                                     <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
@@ -33,13 +78,58 @@ Model Checksum               : 3220180021 4020325994 3612949117 3022211245
                                     </INIT-VALUE>
                                 </NONQUEUED-RECEIVER-COM-SPEC>
                             </REQUIRED-COM-SPECS>
-                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/RadarSensor_If</REQUIRED-INTERFACE-TREF>
+                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_VehicleData</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
-                        <R-PORT-PROTOTYPE UUID="013f2793-3c4f-58ea-bd84-b4a6cff31c37">
-                            <SHORT-NAME>RPort_TurnSignal</SHORT-NAME>
+                        <R-PORT-PROTOTYPE UUID="7daea119-8f18-5f8f-3cd5-ee172b18b1cf">
+                            <SHORT-NAME>RPort_RadarData</SHORT-NAME>
                             <REQUIRED-COM-SPECS>
                                 <NONQUEUED-RECEIVER-COM-SPEC>
-                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/VehicleSignal_If/TurnSignal__</DATA-ELEMENT-REF>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarData/Distance_Left</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_float32</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarData/Distance_Right</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_float32</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarData/Status_Left</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint8</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarData/Status_Right</DATA-ELEMENT-REF>
                                     <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
                                     <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
                                     <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
@@ -54,34 +144,24 @@ Model Checksum               : 3220180021 4020325994 3612949117 3022211245
                                     </INIT-VALUE>
                                 </NONQUEUED-RECEIVER-COM-SPEC>
                             </REQUIRED-COM-SPECS>
-                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/VehicleSignal_If</REQUIRED-INTERFACE-TREF>
-                        </R-PORT-PROTOTYPE>
-                        <R-PORT-PROTOTYPE UUID="f85778e9-46bf-5231-ca6a-df93ff2c5768">
-                            <SHORT-NAME>RPort_VehicleSpeed</SHORT-NAME>
-                            <REQUIRED-COM-SPECS>
-                                <NONQUEUED-RECEIVER-COM-SPEC>
-                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/VehicleSignal_If/VehicleSpeed</DATA-ELEMENT-REF>
-                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
-                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
-                                    <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
-                                    <ENABLE-UPDATE>false</ENABLE-UPDATE>
-                                    <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
-                                    <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
-                                    <INIT-VALUE>
-                                        <NUMERICAL-VALUE-SPECIFICATION>
-                                            <SHORT-LABEL>DefaultInitValue_float32</SHORT-LABEL>
-                                            <VALUE>0</VALUE>
-                                        </NUMERICAL-VALUE-SPECIFICATION>
-                                    </INIT-VALUE>
-                                </NONQUEUED-RECEIVER-COM-SPEC>
-                            </REQUIRED-COM-SPECS>
-                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/VehicleSignal_If</REQUIRED-INTERFACE-TREF>
+                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_RadarData</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
                         <P-PORT-PROTOTYPE UUID="2c9cc081-2fe7-5b28-a3bf-cc60c0f249d8">
-                            <SHORT-NAME>PPort_WarningStatus</SHORT-NAME>
+                            <SHORT-NAME>PPort_WarningOutput</SHORT-NAME>
                             <PROVIDED-COM-SPECS>
                                 <NONQUEUED-SENDER-COM-SPEC>
-                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/WarningOutput_If/WarningStatus</DATA-ELEMENT-REF>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_Warning/Warning_Status</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint8</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-SENDER-COM-SPEC>
+                                <NONQUEUED-SENDER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_Warning/LED_Output</DATA-ELEMENT-REF>
                                     <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
                                     <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
                                     <INIT-VALUE>
@@ -92,13 +172,24 @@ Model Checksum               : 3220180021 4020325994 3612949117 3022211245
                                     </INIT-VALUE>
                                 </NONQUEUED-SENDER-COM-SPEC>
                             </PROVIDED-COM-SPECS>
-                            <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/WarningOutput_If</PROVIDED-INTERFACE-TREF>
+                            <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_Warning</PROVIDED-INTERFACE-TREF>
                         </P-PORT-PROTOTYPE>
-                        <P-PORT-PROTOTYPE UUID="aad11e09-7fa8-5188-ebb0-ec3367b2dde9">
-                            <SHORT-NAME>PPort_LED_Output</SHORT-NAME>
+                        <P-PORT-PROTOTYPE UUID="128de55d-2592-5134-80a0-6378f73a4da1">
+                            <SHORT-NAME>PPort_FaultStatus</SHORT-NAME>
                             <PROVIDED-COM-SPECS>
                                 <NONQUEUED-SENDER-COM-SPEC>
-                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/WarningOutput_If/LED_Output</DATA-ELEMENT-REF>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_FaultStatus/Sensor_L_Fault</DATA-ELEMENT-REF>
+                                    <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                    <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                    <INIT-VALUE>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_uint8</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </INIT-VALUE>
+                                </NONQUEUED-SENDER-COM-SPEC>
+                                <NONQUEUED-SENDER-COM-SPEC>
+                                    <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_FaultStatus/Sensor_R_Fault</DATA-ELEMENT-REF>
                                     <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
                                     <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
                                     <INIT-VALUE>
@@ -109,7 +200,7 @@ Model Checksum               : 3220180021 4020325994 3612949117 3022211245
                                     </INIT-VALUE>
                                 </NONQUEUED-SENDER-COM-SPEC>
                             </PROVIDED-COM-SPECS>
-                            <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/WarningOutput_If</PROVIDED-INTERFACE-TREF>
+                            <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/SRI_FaultStatus</PROVIDED-INTERFACE-TREF>
                         </P-PORT-PROTOTYPE>
                     </PORTS>
                     <INTERNAL-BEHAVIORS>
@@ -135,50 +226,113 @@ Model Checksum               : 3220180021 4020325994 3612949117 3022211245
                                     <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
                                     <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
                                     <DATA-READ-ACCESSS>
-                                        <VARIABLE-ACCESS UUID="7b0de192-bea5-5441-f8c1-db2cbcf9d8d4">
-                                            <SHORT-NAME>IN_RPort_Distance_Distance</SHORT-NAME>
+                                        <VARIABLE-ACCESS UUID="a9b1cf38-8f30-5e8e-4965-a09e369da44f">
+                                            <SHORT-NAME>IN_RPort_RadarData_Distance_Left</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
-                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_Distance</PORT-PROTOTYPE-REF>
-                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/RadarSensor_If/Distance</TARGET-DATA-PROTOTYPE-REF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_RadarData</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarData/Distance_Left</TARGET-DATA-PROTOTYPE-REF>
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="c407e18d-e02e-5d32-d852-5e4435930934">
-                                            <SHORT-NAME>IN_RPort_TurnSignal_TurnSignal</SHORT-NAME>
+                                        <VARIABLE-ACCESS UUID="df7deaea-ab92-59ba-a6ac-344defaf1917">
+                                            <SHORT-NAME>IN_RPort_RadarData_Distance_Right</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
-                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_TurnSignal</PORT-PROTOTYPE-REF>
-                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/VehicleSignal_If/TurnSignal__</TARGET-DATA-PROTOTYPE-REF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_RadarData</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarData/Distance_Right</TARGET-DATA-PROTOTYPE-REF>
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="8e8a1d1d-e9a0-5a50-1574-4710a4a5a9a0">
-                                            <SHORT-NAME>IN_RPort_VehicleSpeed_VehicleSpeed</SHORT-NAME>
+                                        <VARIABLE-ACCESS UUID="acffa37e-bb97-59a5-7a20-98cb009ac8ad">
+                                            <SHORT-NAME>IN_RPort_VehicleData_Gear_Position</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
-                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_VehicleSpeed</PORT-PROTOTYPE-REF>
-                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/VehicleSignal_If/VehicleSpeed</TARGET-DATA-PROTOTYPE-REF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_VehicleData</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_VehicleData/Gear_Position</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="fdf03bf2-f5d4-5693-7e9d-c8982d04b3e3">
+                                            <SHORT-NAME>IN_RPort_RadarData_Status_Left</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_RadarData</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarData/Status_Left</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="ed417276-79dc-583a-066f-7e9d344679bf">
+                                            <SHORT-NAME>IN_RPort_RadarData_Status_Right</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_RadarData</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_RadarData/Status_Right</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="f44f1efc-9a1e-539d-8e4b-477705703d09">
+                                            <SHORT-NAME>IN_RPort_VehicleData_Steering_Angle</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_VehicleData</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_VehicleData/Steering_Angle</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="0abcdf1c-2361-5c11-3fcf-d1a6470dfb93">
+                                            <SHORT-NAME>IN_RPort_VehicleData_Turn_Signal</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_VehicleData</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_VehicleData/Turn_Signal</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="41486400-c9cc-5721-4034-21f6f6801388">
+                                            <SHORT-NAME>IN_RPort_VehicleData_Vehicle_Speed</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/BSD_ECU/RPort_VehicleData</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_VehicleData/Vehicle_Speed</TARGET-DATA-PROTOTYPE-REF>
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
                                     </DATA-READ-ACCESSS>
                                     <DATA-WRITE-ACCESSS>
-                                        <VARIABLE-ACCESS UUID="5cea8ca0-0be4-50e3-03b1-12e839e0e842">
-                                            <SHORT-NAME>OUT_PPort_WarningStatus_WarningStatus</SHORT-NAME>
+                                        <VARIABLE-ACCESS UUID="3dc6a0fa-e693-52a8-2374-641064e64ec0">
+                                            <SHORT-NAME>OUT_PPort_WarningOutput_Warning_Status</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
-                                                    <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/BSD_ECU/PPort_WarningStatus</PORT-PROTOTYPE-REF>
-                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/WarningOutput_If/WarningStatus</TARGET-DATA-PROTOTYPE-REF>
+                                                    <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/BSD_ECU/PPort_WarningOutput</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_Warning/Warning_Status</TARGET-DATA-PROTOTYPE-REF>
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="7fa13005-5475-5eec-c136-ccabade2dd18">
-                                            <SHORT-NAME>OUT_PPort_LED_Output_LED_Output</SHORT-NAME>
+                                        <VARIABLE-ACCESS UUID="2371ff69-942a-533a-aadf-ef31c93bf8e3">
+                                            <SHORT-NAME>OUT_PPort_WarningOutput_LED_Output</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
-                                                    <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/BSD_ECU/PPort_LED_Output</PORT-PROTOTYPE-REF>
-                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/WarningOutput_If/LED_Output</TARGET-DATA-PROTOTYPE-REF>
+                                                    <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/BSD_ECU/PPort_WarningOutput</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_Warning/LED_Output</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="22386b14-122e-5a92-fce7-e847e0fe0305">
+                                            <SHORT-NAME>OUT_PPort_FaultStatus_Sensor_L_Fault</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/BSD_ECU/PPort_FaultStatus</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_FaultStatus/Sensor_L_Fault</TARGET-DATA-PROTOTYPE-REF>
+                                                </AUTOSAR-VARIABLE-IREF>
+                                            </ACCESSED-VARIABLE>
+                                        </VARIABLE-ACCESS>
+                                        <VARIABLE-ACCESS UUID="0e5b2395-85f3-5db9-e252-604f38ba378d">
+                                            <SHORT-NAME>OUT_PPort_FaultStatus_Sensor_R_Fault</SHORT-NAME>
+                                            <ACCESSED-VARIABLE>
+                                                <AUTOSAR-VARIABLE-IREF>
+                                                    <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/BSD_ECU/PPort_FaultStatus</PORT-PROTOTYPE-REF>
+                                                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SRI_FaultStatus/Sensor_R_Fault</TARGET-DATA-PROTOTYPE-REF>
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
