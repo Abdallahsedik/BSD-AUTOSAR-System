@@ -1,113 +1,81 @@
-pipeline {
-    agent any
-
-    environment {
-        SWC_CODE_DIR = 'Generated_SWC_Code'
-        TEST_DIR     = 'Tests'
-        RTE_DIR      = 'RTE'
-        REPORT_DIR   = 'Reports'
-    }
-
-    stages {
-
-        stage('Checkout') {
-            steps {
-                echo '--- Cloning repository ---'
-                checkout scm
-                bat 'mkdir Reports 2>nul || echo Reports exists'
-            }
-        }
-stage('MISRA-C Check') {            
+pipeline {    
+    agent any    
+    environment {        
+        PROJECT_NAME    = 'BSD_AUTOSAR_ECU'        
+        SWC_CODE_DIR    = 'Generated_SWC_Code'        
+        TEST_DIR        = 'Tests'        
+        UNITY_DIR       = 'Unity/src'        
+        REPORT_DIR      = 'Reports'    
+    }    
+    stages {        
+        stage('Checkout') {            
+            steps {                
+                echo '--- Cloning repository ---'                
+                checkout scm                
+                bat 'if not exist "%REPORT_DIR%" mkdir "%REPORT_DIR%"'            
+            }        
+        }        
+        stage('MISRA-C Check') {            
             steps {                
                 echo '--- Running MISRA-C static analysis ---'                
-                // Formatted as a single line to prevent Windows batch errors
-                // Added || exit 0 so Jenkins doesn't crash if cppcheck finds a warning
-                bat 'cppcheck --std=c99 --xml --xml-version=2 %SWC_CODE_DIR% 2> %REPORT_DIR%/misra_report.xml || exit 0'            
+                // Pointed explicitly to \source and added \includes path
+                bat 'cppcheck --std=c99 --xml --xml-version=2 -I %SWC_CODE_DIR%\\includes %SWC_CODE_DIR%\\source 2> %REPORT_DIR%\\misra_report.xml || exit 0'            
             }            
             post {                
                 always {                    
                     recordIssues(tools: [cppCheck(pattern: 'Reports/misra_report.xml')])                
                 }            
             }        
-        }
-        stage('Compile Check') {
-            steps {
-                echo '--- Compiling generated C code ---'
-                bat '''
-                    gcc -Wall -Wextra ^
-                        -std=c99 ^
-                        -I %SWC_CODE_DIR% ^
-                        -I %RTE_DIR% ^
-                        %SWC_CODE_DIR%/*.c ^
-                        -c
-                '''
-            }
-        }
-
-        stage('Unit Tests') {
-            steps {
-                echo '--- Running unit tests ---'
-                bat '''
-                    gcc ^
-                        -I Unity/src ^
-                        -I %SWC_CODE_DIR% ^
-                        -I %RTE_DIR% ^
-                        Unity/src/unity.c ^
-                        %TEST_DIR%/test_BSD_Algorithm.c ^
-                        %SWC_CODE_DIR%/BSD_Algorithm_swc.c ^
-                        -o test_runner.exe
-
-                    test_runner.exe
-                '''
-            }
-            post {
-                always {
-                    junit allowEmptyResults: true,
-                          testResults: 'Reports/test_results.xml'
-                }
-            }
-        }
-
-        stage('Generate Docs') {
-            steps {
-                echo '--- Generating Doxygen documentation ---'
-                bat 'doxygen Doxyfile'
-            }
-            post {
-                success {
-                    publishHTML([
-                        allowMissing:          false,
-                        alwaysLinkToLastBuild: true,
-                        keepAll:               true,
-                        reportDir:             'docs/html',
-                        reportFiles:           'index.html',
-                        reportName:            'BSD Doxygen Docs'
-                    ])
-                }
-            }
-        }
-
-        stage('Archive Artifacts') {
-            steps {
-                echo '--- Archiving build artifacts ---'
-                archiveArtifacts(
-                    artifacts:         'Generated_SWC_Code/**,ARXML/**,Reports/**',
-                    fingerprint:       true,
-                    allowEmptyArchive: true
-                )
-            }
-        }
-    }
-
-    post {
-        success {
-            echo '✅ Pipeline passed'
-        }
-        failure {
-            echo '❌ Pipeline failed'
-        }
-        always {
-            cleanWs()
-        }
+        }        
+        stage('Compile Check') {            
+            steps {                
+                echo '--- Compiling generated C code ---'                
+                // Simplified include path since RTE headers are in the \includes folder
+                bat 'gcc -Wall -Wextra -std=c99 -I %SWC_CODE_DIR%\\includes -c %SWC_CODE_DIR%\\source\\*.c'            
+            }        
+        }        
+        stage('Unit Tests') {            
+            steps {                
+                echo '--- Running unit tests ---'                
+                // Updated to target BSD_System.c instead of the non-existent Algorithm file
+                bat 'gcc -I %UNITY_DIR% -I %SWC_CODE_DIR%\\includes %UNITY_DIR%\\unity.c %TEST_DIR%\\test_BSD_System.c %SWC_CODE_DIR%\\source\\BSD_System.c -o test_runner.exe'
+                bat 'test_runner.exe --junit-output %REPORT_DIR%\\test_results.xml'            
+            }            
+            post {                
+                always { junit 'Reports/test_results.xml' }            
+            }        
+        }        
+        stage('Generate Docs') {            
+            steps {                
+                echo '--- Generating Doxygen documentation ---'                
+                bat 'doxygen Doxyfile'            
+            }            
+            post {                
+                success {                    
+                    publishHTML(target: [                        
+                        allowMissing: false,                        
+                        alwaysLinkToLastBuild: true,                        
+                        keepAll: true,                        
+                        reportDir: 'docs/html',                        
+                        reportFiles: 'index.html',                        
+                        reportName: 'BSD Doxygen Docs'                    
+                    ])                
+                }            
+            }        
+        }        
+        stage('Archive Artifacts') {            
+            steps {                
+                echo '--- Archiving build artifacts ---'                
+                archiveArtifacts artifacts: '''                    
+                    Generated_SWC_Code/**/*.c,                    
+                    Generated_SWC_Code/**/*.h,                    
+                    Reports/** ''', fingerprint: true            
+            }        
+        }    
+    }    
+    post {        
+        success { echo '✅ Pipeline passed — all checks green' }        
+        failure { echo '❌ Pipeline failed — check stage logs' }        
+        always { cleanWs() }    
     }
 }
