@@ -59,8 +59,9 @@ pipeline {
         }
         stage('Unit Tests') {
             steps {
-                echo '--- Building test runner ---'
+                echo '--- Building test runners ---'
                 bat '''
+                    echo Building Radar Input Tests...
                     gcc ^
                         -I "%WORKSPACE%\\%UNITY_DIR%" ^
                         -I "%WORKSPACE%\\%RTE_DIR%" ^
@@ -69,14 +70,39 @@ pipeline {
                         "%WORKSPACE%\\%UNITY_DIR%\\unity.c" ^
                         "%WORKSPACE%\\%TEST_DIR%\\test_BSD_RadarInput.c" ^
                         "%WORKSPACE%\\%SWC_CODE_DIR%\\BSD_RadarInput_SWC.c" ^
-                        -o "%WORKSPACE%\\%REPORT_DIR%\\test_runner.exe" ^
+                        -o "%WORKSPACE%\\%REPORT_DIR%\\test_runner_radar.exe" ^
+                        || exit 1
+                        
+                    echo Building System Algorithm Tests...
+                    gcc ^
+                        -I "%WORKSPACE%\\%UNITY_DIR%" ^
+                        -I "%WORKSPACE%\\%RTE_DIR%" ^
+                        -I "%WORKSPACE%\\%SWC_CODE_DIR%" ^
+                        -I "%WORKSPACE%\\%EB_INCLUDE%" ^
+                        "%WORKSPACE%\\%UNITY_DIR%\\unity.c" ^
+                        "%WORKSPACE%\\%TEST_DIR%\\test_BSD_System.c" ^
+                        "%WORKSPACE%\\%SWC_CODE_DIR%\\BSD_System.c" ^
+                        -o "%WORKSPACE%\\%REPORT_DIR%\\test_runner_system.exe" ^
                         || exit 1
                 '''
+                
                 echo '--- Running unit tests ---'
                 bat '''
-                    "%WORKSPACE%\\%REPORT_DIR%\\test_runner.exe" > "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" 2>&1 || exit 0
+                    echo Running Radar Tests...
+                    "%WORKSPACE%\\%REPORT_DIR%\\test_runner_radar.exe" > "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" 2>&1
+                    
+                    echo Running System Algorithm Tests...
+                    "%WORKSPACE%\\%REPORT_DIR%\\test_runner_system.exe" >> "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" 2>&1
+                    
                     type "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt"
                 '''
+                
+                echo '--- Converting to JUnit XML using Unity Ruby Parser ---'
+                bat '''
+                    cd "%WORKSPACE%\\%REPORT_DIR%"
+                    ruby "%WORKSPACE%\\%TEST_DIR%\\parseOutput.rb" -xml test_output.txt
+                '''
+                
                 echo '--- Checking test results ---'
                 // Proper IF/ELSE to guarantee Jenkins gets the correct Exit Code
                 bat '''
@@ -90,19 +116,20 @@ pipeline {
                     )
                 '''
             }
+            // Correctly formatted post block (only one!)
             post {
-               post {
-                    always {
-                     // Keep your original text artifact
-                     archiveArtifacts artifacts: 'Reports/test_output.txt', allowEmptyArchive: true
-                     
-                     // Add this to populate the Blue Ocean Tests tab
-                     junit 'Reports/test_results.xml' 
-                         }
-                    }
+                always {
+                    // Keep your original text artifact
+                    archiveArtifacts artifacts: 'Reports/test_output.txt', allowEmptyArchive: true
+                    
+                    // Add this to populate the Blue Ocean Tests tab
+                    // Note: the ruby script outputs exactly 'report.xml' by default
+                    junit 'Reports/report.xml' 
+                }
             }
-            
         }
+            
+        
 
         stage('Generate Docs') {
             steps {
