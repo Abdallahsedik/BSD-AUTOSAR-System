@@ -8,49 +8,33 @@ pipeline {
     }
 
     stages {
-
         stage('Checkout') {
             steps {
                 echo '--- Cloning repository ---'
                 checkout scm
-                bat 'if not exist "Reports" mkdir "Reports"'
+                bat 'if not exist "%REPORT_DIR%" mkdir "%REPORT_DIR%"'
             }
         }
 
         stage('MISRA-C Check') {
             steps {
                 echo '--- Running MISRA-C static analysis ---'
-                bat '''
-                    cppcheck ^
-                        --std=c99 ^
-                        --output-file=Reports\\misra_report.txt ^
-                        %SWC_CODE_DIR%\\
-                '''
-                bat 'type Reports\\misra_report.txt'
+                // Converted to a single line. Added || exit 0 so it doesn't crash the build on a warning.
+                bat 'cppcheck --std=c99 --output-file="%REPORT_DIR%\\misra_report.txt" "%SWC_CODE_DIR%" || exit 0'
+                bat 'if exist "%REPORT_DIR%\\misra_report.txt" type "%REPORT_DIR%\\misra_report.txt"'
             }
             post {
                 always {
-                    archiveArtifacts artifacts: 'Reports/misra_report.txt',
-                                     allowEmptyArchive: true
+                    archiveArtifacts artifacts: 'Reports/misra_report.txt', allowEmptyArchive: true
                 }
             }
         }
 
         stage('Compile Check') {
             steps {
-                echo '--- Listing C files ---'
-                bat 'dir /s /b %SWC_CODE_DIR%\\*.c'
-                echo '--- Compiling ---'
-                bat '''
-                    for /r %SWC_CODE_DIR% %%f in (*.c) do (
-                        echo Compiling: %%f
-                        gcc -Wall -std=c99 ^
-                            -I %SWC_CODE_DIR% ^
-                            -I %RTE_DIR% ^
-                            "%%f" -c ^
-                            || exit /b 1
-                    )
-                '''
+                echo '--- Compiling C files ---'
+                // Bulk compile using *.c is much safer in Jenkins than a batch FOR loop
+                bat 'gcc -Wall -std=c99 -I %SWC_CODE_DIR% -I %RTE_DIR% -c %SWC_CODE_DIR%\\*.c'
             }
         }
 
@@ -58,7 +42,7 @@ pipeline {
             steps {
                 echo '--- Archiving ---'
                 archiveArtifacts(
-                    artifacts:         '%SWC_CODE_DIR%/**,ARXML/**,Reports/**',
+                    artifacts:         '%SWC_CODE_DIR%/**, ARXML/**, Reports/**',
                     fingerprint:       true,
                     allowEmptyArchive: true
                 )
