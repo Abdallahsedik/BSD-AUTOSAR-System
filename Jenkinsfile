@@ -27,13 +27,23 @@ pipeline {
                 }            
             }        
         }        
-        stage('Compile Check') {            
-            steps {                
-                echo '--- Compiling generated C code ---'                
-                // Simplified include path since RTE headers are in the \includes folder
-                bat 'gcc -Wall -Wextra -std=c99 -I %SWC_CODE_DIR%\\includes -c %SWC_CODE_DIR%\\source\\*.c'            
-            }        
-        }        
+       stage('Compile Check') {
+    steps {
+        echo '--- Compiling generated C code ---'
+        bat '''
+            dir /s /b Generated_SWC_Code\\*.c
+        '''
+        bat '''
+            for /r Generated_SWC_Code %%f in (*.c) do (
+                echo Compiling: %%f
+                gcc -Wall -std=c99 ^
+                    -I Generated_SWC_Code ^
+                    -I RTE ^
+                    "%%f" -c
+            )
+        '''
+    }
+}
         stage('Unit Tests') {            
             steps {                
                 echo '--- Running unit tests ---'                
