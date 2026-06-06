@@ -77,9 +77,12 @@ void test_WARNING_Triggered_By_Close_Object(void)
     /* Step 1: Initialize chart to CLEAR */
     BSD_Algorithm_Run(); 
 
-    /* Step 2: Inject target and run cycle */
+    /* Step 2: Inject target. The first run calculates the new effective_dist (2.0) */
     mock_distance_L = 2.0f;
     BSD_Algorithm_Run(); 
+
+    /* Step 3: The second run actually triggers the transition from CLEAR to WARNING */
+    BSD_Algorithm_Run();
 
     TEST_ASSERT_EQUAL_UINT8(1U, result_warning_status);
     TEST_ASSERT_EQUAL_UINT8(1U, result_led_output);
@@ -90,11 +93,15 @@ void test_ALERT_Requires_Both_TurnSignal_And_Steering(void)
     /* Step 1: Initialize chart to CLEAR */
     BSD_Algorithm_Run(); 
 
-    /* Step 2: Move to WARNING state */
+    /* Step 2: Inject target. First run calculates distance. */
     mock_distance_L = 2.0f;
     BSD_Algorithm_Run(); 
 
-    /* Step 3: Trigger ALERT using the generated AND logic */
+    /* Step 3: Second run transitions from CLEAR to WARNING */
+    BSD_Algorithm_Run(); 
+
+    /* Step 4: Inject turn signal and steering. 
+       Third run transitions from WARNING to ALERT */
     mock_turn_signal = 1U;
     mock_steering_angle = 20.0f;
     BSD_Algorithm_Run(); 
