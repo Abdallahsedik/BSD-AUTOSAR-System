@@ -178,7 +178,7 @@ pipeline {
             echo '✅ Pipeline passed — MISRA ✅ Compile ✅ Tests ✅ Docs ✅'
             step([
                 $class: 'GitHubCommitStatusSetter',
-                contextSource: [$class: 'ManuallyEnteredCommitContext', context: 'Jenkins CI'],
+                contextSource: [$class: 'ManuallyEnteredCommitContextSource', context: 'Jenkins CI'],
                 statusResultSource: [
                     $class: 'ConditionalStatusResultSource',
                     results: [[$class: 'AnyBuildResult', message: 'Pipeline and all tests passed successfully!', state: 'SUCCESS']]
@@ -189,7 +189,7 @@ pipeline {
             echo '❌ Pipeline failed — check stage logs above'
             step([
                 $class: 'GitHubCommitStatusSetter',
-                contextSource: [$class: 'ManuallyEnteredCommitContext', context: 'Jenkins CI'],
+                contextSource: [$class: 'ManuallyEnteredCommitContextSource', context: 'Jenkins CI'],
                 statusResultSource: [
                     $class: 'ConditionalStatusResultSource',
                     results: [[$class: 'AnyBuildResult', message: 'Pipeline failed. Check Jenkins logs.', state: 'FAILURE']]
