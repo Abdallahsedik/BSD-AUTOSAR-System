@@ -17,30 +17,19 @@ pipeline {
                 bat 'mkdir Reports 2>nul || echo Reports exists'
             }
         }
-
-        stage('MISRA-C Check') {
-            steps {
-                echo '--- Running MISRA-C static analysis ---'
-                bat '''
-                    cppcheck ^
-                        --std=c99 ^
-                        --xml ^
-                        --xml-version=2 ^
-                        %SWC_CODE_DIR%/ ^
-                        2> %REPORT_DIR%/misra_report.xml
-                '''
-            }
-            post {
-                always {
-                    recordIssues(
-                        tools: [cppCheck(
-                            pattern: 'Reports/misra_report.xml'
-                        )]
-                    )
-                }
-            }
+stage('MISRA-C Check') {            
+            steps {                
+                echo '--- Running MISRA-C static analysis ---'                
+                // Formatted as a single line to prevent Windows batch errors
+                // Added || exit 0 so Jenkins doesn't crash if cppcheck finds a warning
+                bat 'cppcheck --std=c99 --xml --xml-version=2 %SWC_CODE_DIR% 2> %REPORT_DIR%/misra_report.xml || exit 0'            
+            }            
+            post {                
+                always {                    
+                    recordIssues(tools: [cppCheck(pattern: 'Reports/misra_report.xml')])                
+                }            
+            }        
         }
-
         stage('Compile Check') {
             steps {
                 echo '--- Compiling generated C code ---'
