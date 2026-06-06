@@ -2,8 +2,9 @@ pipeline {
     agent any
 
     environment {
-        SWC_CODE_DIR = 'Generated_SWC_Code'
-        RTE_DIR      = 'RTE'
+        // Pointing directly to where the code lives inside the repo
+        SWC_CODE_DIR = 'BSD_AUTOSAR_ECU\\Generated_SWC_Code'
+        RTE_DIR      = 'BSD_AUTOSAR_ECU\\RTE'
         REPORT_DIR   = 'Reports'
     }
 
@@ -19,8 +20,8 @@ pipeline {
         stage('MISRA-C Check') {
             steps {
                 echo '--- Running MISRA-C static analysis ---'
-                // Converted to a single line. Added || exit 0 so it doesn't crash the build on a warning.
-                bat 'cppcheck --std=c99 --output-file="%REPORT_DIR%\\misra_report.txt" "%SWC_CODE_DIR%" || exit 0'
+                // Using ABSOLUTE PATH to bypass Windows environment variable issues
+                bat '"C:\\Program Files\\Cppcheck\\cppcheck.exe" --std=c99 --output-file="%REPORT_DIR%\\misra_report.txt" "%SWC_CODE_DIR%" || exit 0'
                 bat 'if exist "%REPORT_DIR%\\misra_report.txt" type "%REPORT_DIR%\\misra_report.txt"'
             }
             post {
@@ -33,7 +34,7 @@ pipeline {
         stage('Compile Check') {
             steps {
                 echo '--- Compiling C files ---'
-                // Bulk compile using *.c is much safer in Jenkins than a batch FOR loop
+                // Compiling all .c files found directly inside the specified SWC_CODE_DIR
                 bat 'gcc -Wall -std=c99 -I %SWC_CODE_DIR% -I %RTE_DIR% -c %SWC_CODE_DIR%\\*.c'
             }
         }
@@ -42,7 +43,7 @@ pipeline {
             steps {
                 echo '--- Archiving ---'
                 archiveArtifacts(
-                    artifacts:         '%SWC_CODE_DIR%/**, ARXML/**, Reports/**',
+                    artifacts:         'BSD_AUTOSAR_ECU/Generated_SWC_Code/**, ARXML/**, Reports/**',
                     fingerprint:       true,
                     allowEmptyArchive: true
                 )
