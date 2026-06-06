@@ -91,10 +91,17 @@ pipeline {
                 '''
             }
             post {
-                always {
-                    archiveArtifacts artifacts: 'Reports/test_output.txt', allowEmptyArchive: true
-                }
+               post {
+                    always {
+                     // Keep your original text artifact
+                     archiveArtifacts artifacts: 'Reports/test_output.txt', allowEmptyArchive: true
+                     
+                     // Add this to populate the Blue Ocean Tests tab
+                     junit 'Reports/test_results.xml' 
+                         }
+                    }
             }
+            
         }
 
         stage('Generate Docs') {
