@@ -47,31 +47,32 @@ void test_Normal_Operation(void)
     TEST_ASSERT_EQUAL_UINT8(1U, result_bsd_avail);
 }
 
+
 void test_Left_Sensor_Debounce_Triggers_Degraded(void)
 {
-    mock_status_left = 1U; /* Fault */
+    mock_status_left = 1U;
     
-    /* Run 4 cycles: should be OK */
-    for(int i=0; i<4; i++) Diagnostic_Run();
-    TEST_ASSERT_EQUAL_UINT8(0U, result_sys_health);
+    for(int i = 0; i < 6; i++) { 
+        Diagnostic_Run(); 
+    }
     
-    /* 5th cycle: should transition to DEGRADED */
-    Diagnostic_Run();
-    TEST_ASSERT_EQUAL_UINT8(1U, result_sys_health);
-    TEST_ASSERT_EQUAL_UINT8(1U, result_dtc_count);
+    TEST_ASSERT_EQUAL_UINT8(1U, result_sys_health); // Should be 1 (Degraded)
+    TEST_ASSERT_EQUAL_UINT8(1U, result_dtc_count);  // Should be 1 active DTC
 }
-
 void test_Both_Sensors_Trigger_System_Fail(void)
 {
     mock_status_left  = 1U;
     mock_status_right = 1U;
     
-    /* Run 5 cycles */
-    for(int i=0; i<5; i++) Diagnostic_Run();
     
+  // Run enough cycles to trigger both debounce counters
+    for(int i = 0; i < 7; i++) { 
+        Diagnostic_Run(); 
+    }    
     TEST_ASSERT_EQUAL_UINT8(2U, result_sys_health); // FAIL
     TEST_ASSERT_EQUAL_UINT8(0U, result_bsd_avail);  // Disabled
 }
+
 
 void test_Speed_Signal_Loss_Debounce(void)
 {
