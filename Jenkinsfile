@@ -98,6 +98,18 @@ pipeline {
                             "%WORKSPACE%\\%SWC_CODE_DIR%\\BSD_VehicleSignal_SWC.c" ^
                             -o "%WORKSPACE%\\%REPORT_DIR%\\test_runner_vehiclesignal.exe" ^
                             || exit 1
+
+                            echo Building Warning Output Tests...
+                            gcc ^
+                                -I "%WORKSPACE%\\%UNITY_DIR%" ^
+                                -I "%WORKSPACE%\\%RTE_DIR%" ^
+                                -I "%WORKSPACE%\\%SWC_CODE_DIR%" ^
+                                -I "%WORKSPACE%\\%EB_INCLUDE%" ^
+                                "%WORKSPACE%\\%UNITY_DIR%\\unity.c" ^
+                                "%WORKSPACE%\\%TEST_DIR%\\test_BSD_Warning_SWC.c" ^
+                                "%WORKSPACE%\\%SWC_CODE_DIR%\\BSD_Warning_SWC.c" ^
+                                -o "%WORKSPACE%\\%REPORT_DIR%\\test_runner_warning.exe" ^
+                                || exit 1
                 '''
                 
                 echo '--- Running unit tests ---'
@@ -111,6 +123,9 @@ pipeline {
                     echo Running Vehicle Signal Tests...
                     "%WORKSPACE%\\%REPORT_DIR%\\test_runner_vehiclesignal.exe" >> "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" 2>&1
                     
+                    echo Running  Warning Output Tests...
+                    "%WORKSPACE%\\%REPORT_DIR%\\test_runner_warning.exe" >> "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt" 2>&1
+
                     type "%WORKSPACE%\\%REPORT_DIR%\\test_output.txt"
                 '''
                 
