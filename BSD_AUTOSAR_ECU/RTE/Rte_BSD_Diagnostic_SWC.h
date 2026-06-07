@@ -1,0 +1,66 @@
+/* This file contains stub implementations of the AUTOSAR RTE functions.
+   The stub implementations can be used for testing the generated code in
+   Simulink, for example, in SIL/PIL simulations of the component under
+   test. Note that this file should be replaced with an appropriate RTE
+   file when deploying the generated code outside of Simulink.
+
+   This file is generated for:
+   Atomic software component:  "BSD_Diagnostic_SWC"
+   ARXML schema: "4.4"
+   File generated on: "Sun Jun 07 05:20:03 2026"  */
+
+#ifndef Rte_BSD_Diagnostic_SWC_h
+#define Rte_BSD_Diagnostic_SWC_h
+#include "Rte_Type.h"
+#include "Compiler.h"
+
+/* Data access functions */
+#define Rte_IRead_Diagnostic_Run_RPort_VehicleStatus_Gear_Position Rte_IRead_BSD_Diagnostic_SWC_Diagnostic_Run_RPort_VehicleStatus_Gear_Position
+
+uint8 Rte_IRead_Diagnostic_Run_RPort_VehicleStatus_Gear_Position(void);
+
+#define Rte_IRead_Diagnostic_Run_RPort_SensorStatus_Status_Left Rte_IRead_BSD_Diagnostic_SWC_Diagnostic_Run_RPort_SensorStatus_Status_Left
+
+uint8 Rte_IRead_Diagnostic_Run_RPort_SensorStatus_Status_Left(void);
+
+#define Rte_IRead_Diagnostic_Run_RPort_SensorStatus_Status_Right Rte_IRead_BSD_Diagnostic_SWC_Diagnostic_Run_RPort_SensorStatus_Status_Right
+
+uint8 Rte_IRead_Diagnostic_Run_RPort_SensorStatus_Status_Right(void);
+
+#define Rte_IRead_Diagnostic_Run_RPort_VehicleStatus_Vehicle_Speed Rte_IRead_BSD_Diagnostic_SWC_Diagnostic_Run_RPort_VehicleStatus_Vehicle_Speed
+
+float32 Rte_IRead_Diagnostic_Run_RPort_VehicleStatus_Vehicle_Speed(void);
+
+#define Rte_IRead_Diagnostic_Run_RPort_WarningStatus_Warning_Status Rte_IRead_BSD_Diagnostic_SWC_Diagnostic_Run_RPort_WarningStatus_Warning_Status
+
+uint8 Rte_IRead_Diagnostic_Run_RPort_WarningStatus_Warning_Status(void);
+
+#define Rte_IWrite_Diagnostic_Run_PPort_DiagnosticStatus_DTC_Active_Count Rte_IWrite_BSD_Diagnostic_SWC_Diagnostic_Run_PPort_DiagnosticStatus_DTC_Active_Count
+
+void Rte_IWrite_Diagnostic_Run_PPort_DiagnosticStatus_DTC_Active_Count(uint8 u);
+
+#define Rte_IWriteRef_Diagnostic_Run_PPort_DiagnosticStatus_DTC_Active_Count Rte_IWriteRef_BSD_Diagnostic_SWC_Diagnostic_Run_PPort_DiagnosticStatus_DTC_Active_Count
+
+uint8* Rte_IWriteRef_Diagnostic_Run_PPort_DiagnosticStatus_DTC_Active_Count(void);
+
+#define Rte_IWrite_Diagnostic_Run_PPort_DiagnosticStatus_System_Health Rte_IWrite_BSD_Diagnostic_SWC_Diagnostic_Run_PPort_DiagnosticStatus_System_Health
+
+void Rte_IWrite_Diagnostic_Run_PPort_DiagnosticStatus_System_Health(uint8 u);
+
+#define Rte_IWriteRef_Diagnostic_Run_PPort_DiagnosticStatus_System_Health Rte_IWriteRef_BSD_Diagnostic_SWC_Diagnostic_Run_PPort_DiagnosticStatus_System_Health
+
+uint8* Rte_IWriteRef_Diagnostic_Run_PPort_DiagnosticStatus_System_Health(void);
+
+#define Rte_IWrite_Diagnostic_Run_PPort_DiagnosticStatus_BSD_Available Rte_IWrite_BSD_Diagnostic_SWC_Diagnostic_Run_PPort_DiagnosticStatus_BSD_Available
+
+void Rte_IWrite_Diagnostic_Run_PPort_DiagnosticStatus_BSD_Available(uint8 u);
+
+#define Rte_IWriteRef_Diagnostic_Run_PPort_DiagnosticStatus_BSD_Available Rte_IWriteRef_BSD_Diagnostic_SWC_Diagnostic_Run_PPort_DiagnosticStatus_BSD_Available
+
+uint8* Rte_IWriteRef_Diagnostic_Run_PPort_DiagnosticStatus_BSD_Available(void);
+
+/* Entry point functions */
+extern FUNC(void, BSD_Diagnostic_SWC_CODE) Diagnostic_Run(void);
+extern FUNC(void, BSD_Diagnostic_SWC_CODE) Diag_init(void);
+
+#endif
