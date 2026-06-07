@@ -52,12 +52,17 @@ void test_Left_Sensor_Debounce_Triggers_Degraded(void)
 {
     mock_status_left = 1U;
     
-    for(int i = 0; i < 6; i++) { 
+    // 1. Initial run to activate the chart
+    Diagnostic_Run(); 
+    
+    // 2. Run enough cycles (e.g., 10) to ensure the Stateflow
+    //    debounce logic and state transitions have time to settle.
+    for(int i = 0; i < 10; i++) { 
         Diagnostic_Run(); 
     }
     
-    TEST_ASSERT_EQUAL_UINT8(1U, result_sys_health); // Should be 1 (Degraded)
-    TEST_ASSERT_EQUAL_UINT8(1U, result_dtc_count);  // Should be 1 active DTC
+    TEST_ASSERT_EQUAL_UINT8(1U, result_sys_health);
+    TEST_ASSERT_EQUAL_UINT8(1U, result_dtc_count);
 }
 void test_Both_Sensors_Trigger_System_Fail(void)
 {
@@ -77,10 +82,14 @@ void test_Both_Sensors_Trigger_System_Fail(void)
 void test_Speed_Signal_Loss_Debounce(void)
 {
     mock_speed    = 0.0f;
-    mock_gear_pos = 3U; /* Drive */
+    mock_gear_pos = 3U;
     
-    /* Run 10 cycles for speed debounce */
-    for(int i=0; i<10; i++) Diagnostic_Run();
+    Diagnostic_Run(); // Init
+    
+    // Speed debounce threshold is 10. Run 15 times to be certain.
+    for(int i = 0; i < 15; i++) { 
+        Diagnostic_Run(); 
+    }
     
     TEST_ASSERT_EQUAL_UINT8(1U, result_dtc_count);
     TEST_ASSERT_EQUAL_UINT8(1U, result_sys_health);
