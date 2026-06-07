@@ -1,0 +1,71 @@
+/* This file contains stub implementations of the AUTOSAR RTE functions.
+   The stub implementations can be used for testing the generated code in
+   Simulink, for example, in SIL/PIL simulations of the component under
+   test. Note that this file should be replaced with an appropriate RTE
+   file when deploying the generated code outside of Simulink.
+
+   This file is generated for:
+   Atomic software component:  "untitled1"
+   ARXML schema: "R22-11"
+   File generated on: "Sun Jun 07 03:07:21 2026"  */
+
+#ifndef Rte_untitled1_h
+#define Rte_untitled1_h
+#include "Rte_Type.h"
+#include "Compiler.h"
+
+/* Data access functions */
+#define Rte_IRead_VehicleSignal_Run_RPort_Gear_Raw_Raw_Gear_Position Rte_IRead_untitled1_VehicleSignal_Run_RPort_Gear_Raw_Raw_Gear_Position
+
+uint8 Rte_IRead_VehicleSignal_Run_RPort_Gear_Raw_Raw_Gear_Position(void);
+
+#define Rte_IRead_VehicleSignal_Run_RPort_Steering_Raw_Raw_Steering_Angle Rte_IRead_untitled1_VehicleSignal_Run_RPort_Steering_Raw_Raw_Steering_Angle
+
+sint16 Rte_IRead_VehicleSignal_Run_RPort_Steering_Raw_Raw_Steering_Angle(void);
+
+#define Rte_IRead_VehicleSignal_Run_RPort_TurnSignal_Raw_Raw_Turn_Signal Rte_IRead_untitled1_VehicleSignal_Run_RPort_TurnSignal_Raw_Raw_Turn_Signal
+
+uint8 Rte_IRead_VehicleSignal_Run_RPort_TurnSignal_Raw_Raw_Turn_Signal(void);
+
+#define Rte_IRead_VehicleSignal_Run_RPort_Vehicle_Speed_Raw_Raw_Vehicle_Speed Rte_IRead_untitled1_VehicleSignal_Run_RPort_Vehicle_Speed_Raw_Raw_Vehicle_Speed
+
+uint16 Rte_IRead_VehicleSignal_Run_RPort_Vehicle_Speed_Raw_Raw_Vehicle_Speed
+  (void);
+
+#define Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Vehicle_Speed Rte_IWrite_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Vehicle_Speed
+
+void Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Vehicle_Speed(float32 u);
+
+#define Rte_IWriteRef_VehicleSignal_Run_PPort_Vehicle_Data_Vehicle_Speed Rte_IWriteRef_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Vehicle_Speed
+
+float32* Rte_IWriteRef_VehicleSignal_Run_PPort_Vehicle_Data_Vehicle_Speed(void);
+
+#define Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Steering_Angle Rte_IWrite_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Steering_Angle
+
+void Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Steering_Angle(float32 u);
+
+#define Rte_IWriteRef_VehicleSignal_Run_PPort_Vehicle_Data_Steering_Angle Rte_IWriteRef_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Steering_Angle
+
+float32* Rte_IWriteRef_VehicleSignal_Run_PPort_Vehicle_Data_Steering_Angle(void);
+
+#define Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Turn_Signal Rte_IWrite_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Turn_Signal
+
+void Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Turn_Signal(uint8 u);
+
+#define Rte_IWriteRef_VehicleSignal_Run_PPort_Vehicle_Data_Turn_Signal Rte_IWriteRef_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Turn_Signal
+
+uint8* Rte_IWriteRef_VehicleSignal_Run_PPort_Vehicle_Data_Turn_Signal(void);
+
+#define Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Gear_Position Rte_IWrite_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Gear_Position
+
+void Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Gear_Position(uint8 u);
+
+#define Rte_IWriteRef_VehicleSignal_Run_PPort_Vehicle_Data_Gear_Position Rte_IWriteRef_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Gear_Position
+
+uint8* Rte_IWriteRef_VehicleSignal_Run_PPort_Vehicle_Data_Gear_Position(void);
+
+/* Entry point functions */
+extern FUNC(void, untitled1_CODE) VehicleSignal_Run(void);
+extern FUNC(void, untitled1_CODE) BSD_VehicleSignal_SWC_Init(void);
+
+#endif
