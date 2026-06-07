@@ -1,7 +1,7 @@
 #include "../Tests/unity_src/src/unity.h"
 #include "Platform_Types.h"
 
-/* * If Platform_Types.h doesn't define the standard AUTOSAR types in your test 
+/* If Platform_Types.h doesn't define the standard AUTOSAR types in your test 
  * environment, we map them to standard C types here for the compiler.
  */
 #ifndef _PLATFORM_TYPES_H_
@@ -28,17 +28,17 @@ static uint8   result_gear     = 0U;
 extern void VehicleSignal_Run(void);
 extern void BSD_VehicleSignal_SWC_Init(void);
 
-/* ── MOCK RTE READ APIS ── */
-uint16 Rte_IRead_VehicleSignal_Run_RPort_Vehicle_Speed_Raw_Raw_Vehicle_Speed(void) { return mock_raw_speed; }
-sint16 Rte_IRead_VehicleSignal_Run_RPort_Steering_Raw_Raw_Steering_Angle(void) { return mock_raw_steering; }
-uint8  Rte_IRead_VehicleSignal_Run_RPort_TurnSignal_Raw_Raw_Turn_Signal(void) { return mock_raw_turn; }
-uint8  Rte_IRead_VehicleSignal_Run_RPort_Gear_Raw_Raw_Gear_Position(void) { return mock_raw_gear; }
+/* ── MOCK RTE READ APIS (Updated with untitled1_ prefix) ── */
+uint16 Rte_IRead_untitled1_VehicleSignal_Run_RPort_Vehicle_Speed_Raw_Raw_Vehicle_Speed(void) { return mock_raw_speed; }
+sint16 Rte_IRead_untitled1_VehicleSignal_Run_RPort_Steering_Raw_Raw_Steering_Angle(void) { return mock_raw_steering; }
+uint8  Rte_IRead_untitled1_VehicleSignal_Run_RPort_TurnSignal_Raw_Raw_Turn_Signal(void) { return mock_raw_turn; }
+uint8  Rte_IRead_untitled1_VehicleSignal_Run_RPort_Gear_Raw_Raw_Gear_Position(void) { return mock_raw_gear; }
 
-/* ── MOCK RTE WRITE APIS ── */
-void Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Vehicle_Speed(float32 data) { result_speed = data; }
-void Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Steering_Angle(float32 data) { result_steering = data; }
-void Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Turn_Signal(uint8 data) { result_turn = data; }
-void Rte_IWrite_VehicleSignal_Run_PPort_Vehicle_Data_Gear_Position(uint8 data) { result_gear = data; }
+/* ── MOCK RTE WRITE APIS (Updated with untitled1_ prefix) ── */
+void Rte_IWrite_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Vehicle_Speed(float32 data) { result_speed = data; }
+void Rte_IWrite_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Steering_Angle(float32 data) { result_steering = data; }
+void Rte_IWrite_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Turn_Signal(uint8 data) { result_turn = data; }
+void Rte_IWrite_untitled1_VehicleSignal_Run_PPort_Vehicle_Data_Gear_Position(uint8 data) { result_gear = data; }
 
 
 /* ── TEST LIFECYCLE ── */
