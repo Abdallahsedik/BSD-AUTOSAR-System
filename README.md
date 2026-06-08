@@ -214,9 +214,14 @@ The project demonstrates a complete, industry-grade embedded software developmen
 📁 BSD-AUTOSAR-ECU/
 │
 ├── 📁 Simulink/
-│   ├── BSD_System.slx              ← AUTOSAR SWC model
+│   ├── BSD_System.slx (algorithm_swc)             ← AUTOSAR SWC model
+|   ├── BSD_Warning_SWC.slx
+|   ├── BSD_VehicleSignal_SWC.slx
+|   ├── BSD_RadarInput_SWC.slx
+|   ├── BSD_Diagnostic_SWC.slx
+|   ├── BSD_System_Top.slx 
 │   └── BSD_TestHarness.slx         ← simulation test model
-│
+│ 
 ├── 📁 Generated_SWC_Code/         
 │   ├── BSD_System.c
 │   ├── BSD_System.h
@@ -271,14 +276,19 @@ MCAL (Can) → CanIf → PduR → Com → Os → EcuM → BswM → Dem → RTE �
 
 ```
 Phase 1 — Core BSD (Current)
-├── ✅ AUTOSAR SWC (Simulink + Stateflow)
+├── ✅ Algorithm SWC  (Simulink + Stateflow)
 ├── ✅ Code generation (MISRA-C)
 ├── ✅ ARXML generation
 ├── ✅ Can driver (EB Tresos)
 ├── ✅ CanIf (EB Tresos)
 ├── ✅ PduR (EB Tresos)
 ├── ✅ Com module (EB Tresos)
-├── ✅ Os configuration
+├── ✅ BSD_Warning_SWC  
+├── ✅ BSD_VehicleSignal_SWC
+├── ✅ BSD_RadarInput_SWC
+├── 🔲 BSD_Diagnostic_SWC
+├── 🔲 BSD_System_Top.slx 
+├── 🔲 Os configuration
 ├── 🔲 EcuM / BswM
 ├── 🔲 Dem (DTC management)
 └── 🔲 RTE integration
