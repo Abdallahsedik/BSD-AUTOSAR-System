@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Auto generated XML Component Description for model Algorithm
+Model version                : 1.21
+Simulink Coder version       : Simulink Coder 24.1 (R2024a) 19-Nov-2023
+XML source code generated on : Mon Oct 12 14:48:58 2026
+Model Checksum               : 2342244579 2843595120 1406120160 201158746
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00051.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>DataTypes</SHORT-NAME>
+            <ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE UUID="2d238fd0-f64f-5647-0ebf-6b7eb7a2ce73">
+                    <SHORT-NAME>SignalStatus_T</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/sint32</BASE-TYPE-REF>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/COMPU_SignalStatus_T</COMPU-METHOD-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="e9908fd0-b664-53f4-02ae-e23ac330242d">
+                    <SHORT-NAME>float32</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/float32</BASE-TYPE-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="d775db37-5aca-5eaa-bc71-60bfb3c413dd">
+                    <SHORT-NAME>Gear_T</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/sint32</BASE-TYPE-REF>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/COMPU_Gear_T</COMPU-METHOD-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="f64a527d-95ac-531e-ac7d-f4f7ea72c8b1">
+                    <SHORT-NAME>TurnSignal_T</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/sint32</BASE-TYPE-REF>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/COMPU_TurnSignal_T</COMPU-METHOD-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="6e11894d-5d9e-58c0-7af7-65859677ee88">
+                    <SHORT-NAME>RadarStatus_T</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/sint32</BASE-TYPE-REF>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/COMPU_RadarStatus_T</COMPU-METHOD-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="6dbcbe2c-5ced-5abd-2f44-06fb72a5e1d4">
+                    <SHORT-NAME>BSDState_T</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/sint32</BASE-TYPE-REF>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/COMPU_BSDState_T</COMPU-METHOD-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="b8323e2d-ed63-57c3-6a86-ec12e3f5e669">
+                    <SHORT-NAME>DiagEventStatus_T</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/sint32</BASE-TYPE-REF>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/COMPU_DiagEventStatus_T</COMPU-METHOD-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="56353785-1bdc-5306-8908-e08d81dc3509">
+                    <SHORT-NAME>uint16</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/uint16</BASE-TYPE-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="be781001-e122-5d3d-2cc2-d2cca566a799">
+                    <SHORT-NAME>uint8</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/uint8</BASE-TYPE-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="5059871e-fc1a-5d1b-1786-4099fd46609f">
+                    <SHORT-NAME>sint16</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/sint16</BASE-TYPE-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="0a5bedfc-621f-59c6-c8bf-22d849272256">
+                    <SHORT-NAME>LedState_T</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/DataTypes/SwBaseTypes/sint32</BASE-TYPE-REF>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/COMPU_LedState_T</COMPU-METHOD-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+            </ELEMENTS>
+            <AR-PACKAGES>
+                <AR-PACKAGE>
+                    <SHORT-NAME>SwBaseTypes</SHORT-NAME>
+                    <ELEMENTS>
+                        <SW-BASE-TYPE UUID="f428c760-6b24-5948-2557-f1a234b3c6f5">
+                            <SHORT-NAME>sint32</SHORT-NAME>
+                            <CATEGORY>FIXED_LENGTH</CATEGORY>
+                            <BASE-TYPE-SIZE>32</BASE-TYPE-SIZE>
+                            <BASE-TYPE-ENCODING>2C</BASE-TYPE-ENCODING>
+                            <NATIVE-DECLARATION>sint32</NATIVE-DECLARATION>
+                        </SW-BASE-TYPE>
+                        <SW-BASE-TYPE UUID="a515fc6f-77f9-5343-78fd-01198a341a5f">
+                            <SHORT-NAME>float32</SHORT-NAME>
+                            <CATEGORY>FIXED_LENGTH</CATEGORY>
+                            <BASE-TYPE-SIZE>32</BASE-TYPE-SIZE>
+                            <BASE-TYPE-ENCODING>IEEE754</BASE-TYPE-ENCODING>
+                            <NATIVE-DECLARATION>float32</NATIVE-DECLARATION>
+                        </SW-BASE-TYPE>
+                        <SW-BASE-TYPE UUID="60263ac8-6e4e-50e3-acec-b8e1f9d442ed">
+                            <SHORT-NAME>uint16</SHORT-NAME>
+                            <CATEGORY>FIXED_LENGTH</CATEGORY>
+                            <BASE-TYPE-SIZE>16</BASE-TYPE-SIZE>
+                            <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+                            <NATIVE-DECLARATION>uint16</NATIVE-DECLARATION>
+                        </SW-BASE-TYPE>
+                        <SW-BASE-TYPE UUID="2c97c2c3-61cc-5de0-5c58-9041b6ad0024">
+                            <SHORT-NAME>uint8</SHORT-NAME>
+                            <CATEGORY>FIXED_LENGTH</CATEGORY>
+                            <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+                            <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+                            <NATIVE-DECLARATION>uint8</NATIVE-DECLARATION>
+                        </SW-BASE-TYPE>
+                        <SW-BASE-TYPE UUID="0b7f4cac-6964-5666-a531-308b3bf2d34e">
+                            <SHORT-NAME>sint16</SHORT-NAME>
+                            <CATEGORY>FIXED_LENGTH</CATEGORY>
+                            <BASE-TYPE-SIZE>16</BASE-TYPE-SIZE>
+                            <BASE-TYPE-ENCODING>2C</BASE-TYPE-ENCODING>
+                            <NATIVE-DECLARATION>sint16</NATIVE-DECLARATION>
+                        </SW-BASE-TYPE>
+                    </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                    <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    <ELEMENTS>
+                        <COMPU-METHOD UUID="0c47c07a-7e00-5dab-8552-ab5b10caa22d">
+                            <SHORT-NAME>COMPU_SignalStatus_T</SHORT-NAME>
+                            <CATEGORY>TEXTTABLE</CATEGORY>
+                            <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                            <COMPU-INTERNAL-TO-PHYS>
+                                <COMPU-SCALES>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>SIGNAL_OK</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>SIGNAL_FAIL</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                </COMPU-SCALES>
+                            </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD UUID="01e85e1f-1d98-5829-4207-480f67144e16">
+                            <SHORT-NAME>Identcl</SHORT-NAME>
+                            <CATEGORY>IDENTICAL</CATEGORY>
+                            <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD UUID="29c86c84-1970-5a99-3968-11f2d6ac2880">
+                            <SHORT-NAME>COMPU_Gear_T</SHORT-NAME>
+                            <CATEGORY>TEXTTABLE</CATEGORY>
+                            <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                            <COMPU-INTERNAL-TO-PHYS>
+                                <COMPU-SCALES>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>GEAR_PARK</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>GEAR_REVERSE</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>GEAR_NEUTRAL</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>GEAR_DRIVE</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                </COMPU-SCALES>
+                            </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD UUID="a9889efe-40b7-53d6-441c-1b0bacc8a32c">
+                            <SHORT-NAME>COMPU_TurnSignal_T</SHORT-NAME>
+                            <CATEGORY>TEXTTABLE</CATEGORY>
+                            <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                            <COMPU-INTERNAL-TO-PHYS>
+                                <COMPU-SCALES>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>TURN_OFF</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>TURN_LEFT</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>TURN_RIGHT</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                </COMPU-SCALES>
+                            </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD UUID="48fa9583-4a5a-539b-1c85-239af7de6366">
+                            <SHORT-NAME>COMPU_RadarStatus_T</SHORT-NAME>
+                            <CATEGORY>TEXTTABLE</CATEGORY>
+                            <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                            <COMPU-INTERNAL-TO-PHYS>
+                                <COMPU-SCALES>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>RADAR_OK</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>RADAR_FAIL</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                </COMPU-SCALES>
+                            </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD UUID="e5f06753-bba1-53e6-6315-a8d8b2f494ea">
+                            <SHORT-NAME>COMPU_BSDState_T</SHORT-NAME>
+                            <CATEGORY>TEXTTABLE</CATEGORY>
+                            <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                            <COMPU-INTERNAL-TO-PHYS>
+                                <COMPU-SCALES>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>BSD_CLEAR</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>BSD_WARNING</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>BSD_ALERT</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                </COMPU-SCALES>
+                            </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD UUID="61180343-6d64-57ec-fcd9-2894027ae673">
+                            <SHORT-NAME>COMPU_DiagEventStatus_T</SHORT-NAME>
+                            <CATEGORY>TEXTTABLE</CATEGORY>
+                            <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                            <COMPU-INTERNAL-TO-PHYS>
+                                <COMPU-SCALES>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>DIAG_EVT_PASSED</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>DIAG_EVT_FAILED</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                </COMPU-SCALES>
+                            </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD UUID="ccd268ed-a4a9-5958-b582-46bb1ded2529">
+                            <SHORT-NAME>COMPU_LedState_T</SHORT-NAME>
+                            <CATEGORY>TEXTTABLE</CATEGORY>
+                            <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                            <COMPU-INTERNAL-TO-PHYS>
+                                <COMPU-SCALES>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>LED_OFF</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                    <COMPU-SCALE>
+                                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                        <COMPU-CONST>
+                                            <VT>LED_ON</VT>
+                                        </COMPU-CONST>
+                                    </COMPU-SCALE>
+                                </COMPU-SCALES>
+                            </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                    </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                    <SHORT-NAME>Units</SHORT-NAME>
+                    <ELEMENTS>
+                        <UNIT UUID="3cec0c0c-78cb-5567-d3dc-bbc852ac8df3">
+                            <SHORT-NAME>NoUnit</SHORT-NAME>
+                            <FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+                            <OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+                        </UNIT>
+                    </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                    <SHORT-NAME>ApplDataTypes</SHORT-NAME>
+                    <ELEMENTS>
+                        <APPLICATION-PRIMITIVE-DATA-TYPE UUID="3bd23ad6-a04f-50a5-c86b-8adc5e7d533b">
+                            <SHORT-NAME>Steering_Angle</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/Identcl</COMPU-METHOD-REF>
+                                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/ApplDataTypes/DataConstrs/DC_Steering_Angle</DATA-CONSTR-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </APPLICATION-PRIMITIVE-DATA-TYPE>
+                        <APPLICATION-PRIMITIVE-DATA-TYPE UUID="8b6bdb63-e951-587a-42cb-849fc5aa20b3">
+                            <SHORT-NAME>Vehicle_Speed</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/Identcl</COMPU-METHOD-REF>
+                                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/ApplDataTypes/DataConstrs/DC_Vehicle_Speed</DATA-CONSTR-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </APPLICATION-PRIMITIVE-DATA-TYPE>
+                        <APPLICATION-PRIMITIVE-DATA-TYPE UUID="bc3e3df3-38ec-5a9c-6fb0-3f24ad75f0aa">
+                            <SHORT-NAME>Distance</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/Identcl</COMPU-METHOD-REF>
+                                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/ApplDataTypes/DataConstrs/DC_Distance</DATA-CONSTR-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </APPLICATION-PRIMITIVE-DATA-TYPE>
+                        <APPLICATION-PRIMITIVE-DATA-TYPE UUID="7bfbfa14-2ca1-5f36-5465-1d300fb6169f">
+                            <SHORT-NAME>Distance_Raw</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/Identcl</COMPU-METHOD-REF>
+                                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/ApplDataTypes/DataConstrs/DC_Distance_Raw</DATA-CONSTR-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </APPLICATION-PRIMITIVE-DATA-TYPE>
+                        <APPLICATION-PRIMITIVE-DATA-TYPE UUID="3abfbc7b-43df-5386-582a-232e7ad0d2c8">
+                            <SHORT-NAME>Status_Raw</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/Identcl</COMPU-METHOD-REF>
+                                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/ApplDataTypes/DataConstrs/DC_Status_Raw</DATA-CONSTR-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </APPLICATION-PRIMITIVE-DATA-TYPE>
+                        <APPLICATION-PRIMITIVE-DATA-TYPE UUID="a47ff8d8-43f0-55a4-3d60-a8be17a6d0ac">
+                            <SHORT-NAME>Vehicle_Speed_Raw</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/Identcl</COMPU-METHOD-REF>
+                                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/ApplDataTypes/DataConstrs/DC_Vehicle_Speed_Raw</DATA-CONSTR-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </APPLICATION-PRIMITIVE-DATA-TYPE>
+                        <APPLICATION-PRIMITIVE-DATA-TYPE UUID="b161a715-4e86-5749-c6fc-c0aa28c03519">
+                            <SHORT-NAME>Raw_turn_sig</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/Identcl</COMPU-METHOD-REF>
+                                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/ApplDataTypes/DataConstrs/DC_Raw_turn_sig</DATA-CONSTR-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </APPLICATION-PRIMITIVE-DATA-TYPE>
+                        <APPLICATION-PRIMITIVE-DATA-TYPE UUID="637df431-f385-5264-42b4-c08d1496c628">
+                            <SHORT-NAME>Raw_steering</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/Identcl</COMPU-METHOD-REF>
+                                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/ApplDataTypes/DataConstrs/DC_Raw_steering</DATA-CONSTR-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </APPLICATION-PRIMITIVE-DATA-TYPE>
+                        <APPLICATION-PRIMITIVE-DATA-TYPE UUID="5cfb520c-1899-57ad-16d5-9b1755fdbeda">
+                            <SHORT-NAME>Gear_Raw</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataTypes/CompuMethods/Identcl</COMPU-METHOD-REF>
+                                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/ApplDataTypes/DataConstrs/DC_Gear_Raw</DATA-CONSTR-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </APPLICATION-PRIMITIVE-DATA-TYPE>
+                    </ELEMENTS>
+                    <AR-PACKAGES>
+                        <AR-PACKAGE>
+                            <SHORT-NAME>DataConstrs</SHORT-NAME>
+                            <ELEMENTS>
+                                <DATA-CONSTR UUID="4cca75ff-9ec4-594e-13ca-ab0150fb0559">
+                                    <SHORT-NAME>DC_Steering_Angle</SHORT-NAME>
+                                    <DATA-CONSTR-RULES>
+                                        <DATA-CONSTR-RULE>
+                                            <PHYS-CONSTRS>
+                                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">-INF</LOWER-LIMIT>
+                                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">INF</UPPER-LIMIT>
+                                                <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                                            </PHYS-CONSTRS>
+                                        </DATA-CONSTR-RULE>
+                                    </DATA-CONSTR-RULES>
+                                </DATA-CONSTR>
+                                <DATA-CONSTR UUID="1fc5ee0f-455e-588c-d814-4701aef3f40b">
+                                    <SHORT-NAME>DC_Vehicle_Speed</SHORT-NAME>
+                                    <DATA-CONSTR-RULES>
+                                        <DATA-CONSTR-RULE>
+                                            <PHYS-CONSTRS>
+                                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">-INF</LOWER-LIMIT>
+                                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">INF</UPPER-LIMIT>
+                                                <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                                            </PHYS-CONSTRS>
+                                        </DATA-CONSTR-RULE>
+                                    </DATA-CONSTR-RULES>
+                                </DATA-CONSTR>
+                                <DATA-CONSTR UUID="fa76b689-4ab1-5933-0063-d30be232f5f6">
+                                    <SHORT-NAME>DC_Distance</SHORT-NAME>
+                                    <DATA-CONSTR-RULES>
+                                        <DATA-CONSTR-RULE>
+                                            <PHYS-CONSTRS>
+                                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">-INF</LOWER-LIMIT>
+                                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">INF</UPPER-LIMIT>
+                                                <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                                            </PHYS-CONSTRS>
+                                        </DATA-CONSTR-RULE>
+                                    </DATA-CONSTR-RULES>
+                                </DATA-CONSTR>
+                                <DATA-CONSTR UUID="97fd03ee-6b36-5488-d87d-5561cff7e94c">
+                                    <SHORT-NAME>DC_Distance_Raw</SHORT-NAME>
+                                    <DATA-CONSTR-RULES>
+                                        <DATA-CONSTR-RULE>
+                                            <PHYS-CONSTRS>
+                                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">65535</UPPER-LIMIT>
+                                                <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                                            </PHYS-CONSTRS>
+                                        </DATA-CONSTR-RULE>
+                                    </DATA-CONSTR-RULES>
+                                </DATA-CONSTR>
+                                <DATA-CONSTR UUID="3945e85e-1ae3-5d06-ca87-ec9d09a85d80">
+                                    <SHORT-NAME>DC_Status_Raw</SHORT-NAME>
+                                    <DATA-CONSTR-RULES>
+                                        <DATA-CONSTR-RULE>
+                                            <PHYS-CONSTRS>
+                                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+                                                <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                                            </PHYS-CONSTRS>
+                                        </DATA-CONSTR-RULE>
+                                    </DATA-CONSTR-RULES>
+                                </DATA-CONSTR>
+                                <DATA-CONSTR UUID="80bc0bf5-17bf-568e-6204-83c9c3262747">
+                                    <SHORT-NAME>DC_Vehicle_Speed_Raw</SHORT-NAME>
+                                    <DATA-CONSTR-RULES>
+                                        <DATA-CONSTR-RULE>
+                                            <PHYS-CONSTRS>
+                                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">65535</UPPER-LIMIT>
+                                                <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                                            </PHYS-CONSTRS>
+                                        </DATA-CONSTR-RULE>
+                                    </DATA-CONSTR-RULES>
+                                </DATA-CONSTR>
+                                <DATA-CONSTR UUID="3101f16f-5d5e-5794-54c3-3b158e433133">
+                                    <SHORT-NAME>DC_Raw_turn_sig</SHORT-NAME>
+                                    <DATA-CONSTR-RULES>
+                                        <DATA-CONSTR-RULE>
+                                            <PHYS-CONSTRS>
+                                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+                                                <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                                            </PHYS-CONSTRS>
+                                        </DATA-CONSTR-RULE>
+                                    </DATA-CONSTR-RULES>
+                                </DATA-CONSTR>
+                                <DATA-CONSTR UUID="6f789851-f18d-5189-e759-5f6119ce4c63">
+                                    <SHORT-NAME>DC_Raw_steering</SHORT-NAME>
+                                    <DATA-CONSTR-RULES>
+                                        <DATA-CONSTR-RULE>
+                                            <PHYS-CONSTRS>
+                                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">-32768</LOWER-LIMIT>
+                                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">32767</UPPER-LIMIT>
+                                                <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                                            </PHYS-CONSTRS>
+                                        </DATA-CONSTR-RULE>
+                                    </DATA-CONSTR-RULES>
+                                </DATA-CONSTR>
+                                <DATA-CONSTR UUID="12b85e33-522a-560b-1ca9-05a8940b51e4">
+                                    <SHORT-NAME>DC_Gear_Raw</SHORT-NAME>
+                                    <DATA-CONSTR-RULES>
+                                        <DATA-CONSTR-RULE>
+                                            <PHYS-CONSTRS>
+                                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+                                                <UNIT-REF DEST="UNIT">/DataTypes/Units/NoUnit</UNIT-REF>
+                                            </PHYS-CONSTRS>
+                                        </DATA-CONSTR-RULE>
+                                    </DATA-CONSTR-RULES>
+                                </DATA-CONSTR>
+                            </ELEMENTS>
+                        </AR-PACKAGE>
+                    </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                    <SHORT-NAME>DataTypeMappings</SHORT-NAME>
+                    <ELEMENTS>
+                        <DATA-TYPE-MAPPING-SET UUID="8a4c8c85-a8a7-5321-cdd6-ad140680dc67">
+                            <SHORT-NAME>bsdDataTypeMappingsSet</SHORT-NAME>
+                            <DATA-TYPE-MAPS>
+                                <DATA-TYPE-MAP>
+                                    <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplDataTypes/Steering_Angle</APPLICATION-DATA-TYPE-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/float32</IMPLEMENTATION-DATA-TYPE-REF>
+                                </DATA-TYPE-MAP>
+                                <DATA-TYPE-MAP>
+                                    <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplDataTypes/Vehicle_Speed</APPLICATION-DATA-TYPE-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/float32</IMPLEMENTATION-DATA-TYPE-REF>
+                                </DATA-TYPE-MAP>
+                                <DATA-TYPE-MAP>
+                                    <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplDataTypes/Distance</APPLICATION-DATA-TYPE-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/float32</IMPLEMENTATION-DATA-TYPE-REF>
+                                </DATA-TYPE-MAP>
+                                <DATA-TYPE-MAP>
+                                    <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplDataTypes/Distance_Raw</APPLICATION-DATA-TYPE-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                </DATA-TYPE-MAP>
+                                <DATA-TYPE-MAP>
+                                    <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplDataTypes/Status_Raw</APPLICATION-DATA-TYPE-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                </DATA-TYPE-MAP>
+                                <DATA-TYPE-MAP>
+                                    <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplDataTypes/Vehicle_Speed_Raw</APPLICATION-DATA-TYPE-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                </DATA-TYPE-MAP>
+                                <DATA-TYPE-MAP>
+                                    <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplDataTypes/Raw_turn_sig</APPLICATION-DATA-TYPE-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                </DATA-TYPE-MAP>
+                                <DATA-TYPE-MAP>
+                                    <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplDataTypes/Raw_steering</APPLICATION-DATA-TYPE-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/sint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                </DATA-TYPE-MAP>
+                                <DATA-TYPE-MAP>
+                                    <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplDataTypes/Gear_Raw</APPLICATION-DATA-TYPE-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                </DATA-TYPE-MAP>
+                            </DATA-TYPE-MAPS>
+                        </DATA-TYPE-MAPPING-SET>
+                    </ELEMENTS>
+                </AR-PACKAGE>
+            </AR-PACKAGES>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,14 @@
+%% BSD_RIN_Init.m   -workspace initialization
+% PRJ-002-RIN
+
+% Parameter	Description	Value
+
+ 
+%	Minimum valid raw distance	50
+RADAR_RAW_MIN =50 
+RADAR_RAW_MAX	Maximum valid raw distance	500
+RADAR_RESOLUTION_M	Meters per raw count	0.01
+RADAR_DIST_FAILSAFE_M	Distance output while status is RADAR_FAIL	10.0
+RADAR_TIMEOUT_CYCLES	Cycles without a new frame before timeout	25 (500 ms / 20 ms)
+RADAR_RECOVERY_CNT	Consecutive valid samples needed to recover	3
+RADAR_STATUS_VALID_CODE	Status_Raw code meaning "sensor healthy"	0x00

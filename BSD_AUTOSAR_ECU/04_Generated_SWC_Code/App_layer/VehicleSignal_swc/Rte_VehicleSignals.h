@@ -1,0 +1,112 @@
+/* This file contains stub implementations of the AUTOSAR RTE functions.
+   The stub implementations can be used for testing the generated code in
+   Simulink, for example, in SIL/PIL simulations of the component under
+   test. Note that this file should be replaced with an appropriate RTE
+   file when deploying the generated code outside of Simulink.
+
+   This file is generated for:
+   Atomic software component:  "VehicleSignals"
+   ARXML schema: "R22-11"
+   File generated on: "Sun Oct 11 22:51:33 2026"  */
+
+#ifndef Rte_VehicleSignals_h
+#define Rte_VehicleSignals_h
+#include "Rte_Type.h"
+#include "Compiler.h"
+
+/* Data access functions */
+#define Rte_IRead_VehicleSignals_Step_RPort_Gear_Raw_Gear_Raw Rte_IRead_VehicleSignals_VehicleSignals_Step_RPort_Gear_Raw_Gear_Raw
+
+uint8 Rte_IRead_VehicleSignals_Step_RPort_Gear_Raw_Gear_Raw(void);
+
+#define Rte_IRead_VehicleSignals_Step_RPort_Steering_Raw_Raw_steering Rte_IRead_VehicleSignals_VehicleSignals_Step_RPort_Steering_Raw_Raw_steering
+
+sint16 Rte_IRead_VehicleSignals_Step_RPort_Steering_Raw_Raw_steering(void);
+
+#define Rte_IRead_VehicleSignals_Step_RPort_TurnSignal_Raw_Raw_turn_sig Rte_IRead_VehicleSignals_VehicleSignals_Step_RPort_TurnSignal_Raw_Raw_turn_sig
+
+uint8 Rte_IRead_VehicleSignals_Step_RPort_TurnSignal_Raw_Raw_turn_sig(void);
+
+#define Rte_IRead_VehicleSignals_Step_RPort_Vehicle_Speed_Raw_Vehicle_Speed_Raw Rte_IRead_VehicleSignals_VehicleSignals_Step_RPort_Vehicle_Speed_Raw_Vehicle_Speed_Raw
+
+uint16 Rte_IRead_VehicleSignals_Step_RPort_Vehicle_Speed_Raw_Vehicle_Speed_Raw
+  (void);
+
+#define Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Steering_Status Rte_IWrite_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Steering_Status
+
+void Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Steering_Status
+  (SignalStatus_T u);
+
+#define Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Steering_Status Rte_IWriteRef_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Steering_Status
+
+SignalStatus_T
+  * Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Steering_Status(void);
+
+#define Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Steering_Angle Rte_IWrite_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Steering_Angle
+
+void Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Steering_Angle(float32 u);
+
+#define Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Steering_Angle Rte_IWriteRef_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Steering_Angle
+
+float32* Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Steering_Angle(void);
+
+#define Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Gear_Status Rte_IWrite_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Gear_Status
+
+void Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Gear_Status(SignalStatus_T
+  u);
+
+#define Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Gear_Status Rte_IWriteRef_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Gear_Status
+
+SignalStatus_T* Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Gear_Status
+  (void);
+
+#define Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Gear Rte_IWrite_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Gear
+
+void Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Gear(Gear_T u);
+
+#define Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Gear Rte_IWriteRef_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Gear
+
+Gear_T* Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Gear(void);
+
+#define Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_TurnSignal_Status Rte_IWrite_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_TurnSignal_Status
+
+void Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_TurnSignal_Status
+  (SignalStatus_T u);
+
+#define Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_TurnSignal_Status Rte_IWriteRef_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_TurnSignal_Status
+
+SignalStatus_T
+  * Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_TurnSignal_Status(void);
+
+#define Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_TurnSignal Rte_IWrite_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_TurnSignal
+
+void Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_TurnSignal(TurnSignal_T u);
+
+#define Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_TurnSignal Rte_IWriteRef_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_TurnSignal
+
+TurnSignal_T* Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_TurnSignal
+  (void);
+
+#define Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Vehicle_Speed Rte_IWrite_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Vehicle_Speed
+
+void Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Vehicle_Speed(float32 u);
+
+#define Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Vehicle_Speed Rte_IWriteRef_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Vehicle_Speed
+
+float32* Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Vehicle_Speed(void);
+
+#define Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Speed_Status Rte_IWrite_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Speed_Status
+
+void Rte_IWrite_VehicleSignals_Step_PPort_VehicleData_Speed_Status
+  (SignalStatus_T u);
+
+#define Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Speed_Status Rte_IWriteRef_VehicleSignals_VehicleSignals_Step_PPort_VehicleData_Speed_Status
+
+SignalStatus_T* Rte_IWriteRef_VehicleSignals_Step_PPort_VehicleData_Speed_Status
+  (void);
+
+/* Entry point functions */
+extern FUNC(void, VehicleSignals_CODE) VehicleSignals_Init(void);
+extern FUNC(void, VehicleSignals_CODE) VehicleSignals_Step(void);
+
+#endif

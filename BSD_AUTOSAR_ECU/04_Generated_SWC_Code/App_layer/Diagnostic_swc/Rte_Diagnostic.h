@@ -1,0 +1,108 @@
+/* This file contains stub implementations of the AUTOSAR RTE functions.
+   The stub implementations can be used for testing the generated code in
+   Simulink, for example, in SIL/PIL simulations of the component under
+   test. Note that this file should be replaced with an appropriate RTE
+   file when deploying the generated code outside of Simulink.
+
+   This file is generated for:
+   Atomic software component:  "Diagnostic"
+   ARXML schema: "R22-11"
+   File generated on: "Sun Oct 11 22:50:52 2026"  */
+
+#ifndef Rte_Diagnostic_h
+#define Rte_Diagnostic_h
+#include "Rte_Type.h"
+#include "Compiler.h"
+
+/* Data access functions */
+#define Rte_IRead_RE_Diagnostic_Run_RPort_RadarDataLeft_Status Rte_IRead_Diagnostic_RE_Diagnostic_Run_RPort_RadarDataLeft_Status
+
+RadarStatus_T Rte_IRead_RE_Diagnostic_Run_RPort_RadarDataLeft_Status(void);
+
+#define Rte_IRead_RE_Diagnostic_Run_RPort_VehicleData_Speed_Status Rte_IRead_Diagnostic_RE_Diagnostic_Run_RPort_VehicleData_Speed_Status
+
+SignalStatus_T Rte_IRead_RE_Diagnostic_Run_RPort_VehicleData_Speed_Status(void);
+
+#define Rte_IRead_RE_Diagnostic_Run_RPort_RadarData_Right_Status Rte_IRead_Diagnostic_RE_Diagnostic_Run_RPort_RadarData_Right_Status
+
+RadarStatus_T Rte_IRead_RE_Diagnostic_Run_RPort_RadarData_Right_Status(void);
+
+#define Rte_IRead_RE_Diagnostic_Run_RPort_VehicleData_Steering_Status Rte_IRead_Diagnostic_RE_Diagnostic_Run_RPort_VehicleData_Steering_Status
+
+SignalStatus_T Rte_IRead_RE_Diagnostic_Run_RPort_VehicleData_Steering_Status
+  (void);
+
+#define Rte_IRead_RE_Diagnostic_Run_RPort_VehicleData_Gear_Status Rte_IRead_Diagnostic_RE_Diagnostic_Run_RPort_VehicleData_Gear_Status
+
+SignalStatus_T Rte_IRead_RE_Diagnostic_Run_RPort_VehicleData_Gear_Status(void);
+
+#define Rte_IRead_RE_Diagnostic_Run_RPort_VehicleData_TurnSignal_Status Rte_IRead_Diagnostic_RE_Diagnostic_Run_RPort_VehicleData_TurnSignal_Status
+
+SignalStatus_T Rte_IRead_RE_Diagnostic_Run_RPort_VehicleData_TurnSignal_Status
+  (void);
+
+#define Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_Steering_Event Rte_IWrite_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_Steering_Event
+
+void Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_Steering_Event
+  (DiagEventStatus_T u);
+
+#define Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_Steering_Event Rte_IWriteRef_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_Steering_Event
+
+DiagEventStatus_T
+  * Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_Steering_Event(void);
+
+#define Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Left_Event Rte_IWrite_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Left_Event
+
+void Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Left_Event
+  (DiagEventStatus_T u);
+
+#define Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Left_Event Rte_IWriteRef_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Left_Event
+
+DiagEventStatus_T
+  * Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Left_Event(void);
+
+#define Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Right_Event Rte_IWrite_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Right_Event
+
+void Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Right_Event
+  (DiagEventStatus_T u);
+
+#define Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Right_Event Rte_IWriteRef_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Right_Event
+
+DiagEventStatus_T
+  * Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_Radar_Right_Event(void);
+
+#define Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_Speed_Event Rte_IWrite_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_Speed_Event
+
+void Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_Speed_Event(DiagEventStatus_T
+  u);
+
+#define Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_Speed_Event Rte_IWriteRef_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_Speed_Event
+
+DiagEventStatus_T* Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_Speed_Event
+  (void);
+
+#define Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_TurnSignal_Event Rte_IWrite_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_TurnSignal_Event
+
+void Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_TurnSignal_Event
+  (DiagEventStatus_T u);
+
+#define Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_TurnSignal_Event Rte_IWriteRef_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_TurnSignal_Event
+
+DiagEventStatus_T
+  * Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_TurnSignal_Event(void);
+
+#define Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_Gear_Event Rte_IWrite_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_Gear_Event
+
+void Rte_IWrite_RE_Diagnostic_Run_PPort_DiagStatus_Gear_Event(DiagEventStatus_T
+  u);
+
+#define Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_Gear_Event Rte_IWriteRef_Diagnostic_RE_Diagnostic_Run_PPort_DiagStatus_Gear_Event
+
+DiagEventStatus_T* Rte_IWriteRef_RE_Diagnostic_Run_PPort_DiagStatus_Gear_Event
+  (void);
+
+/* Entry point functions */
+extern FUNC(void, Diagnostic_CODE) Diagnostic_Init(void);
+extern FUNC(void, Diagnostic_CODE) RE_Diagnostic_Run(void);
+
+#endif
