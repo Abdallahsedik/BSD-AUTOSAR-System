@@ -1,6 +1,7 @@
-# Blind Spot Detection (BSD) ECU — AUTOSAR Classic
 
-> **Automotive-grade Blind Spot Detection system built from scratch using AUTOSAR Classic architecture, Model-Based Development with MATLAB/Simulink, and EB Tresos BSW configuration.**
+# Blind Spot Detection (BSD) ECU — AUTOSAR Classic Portfolio
+
+> **Automotive-grade Blind Spot Detection system built from scratch using AUTOSAR Classic architecture, Model-Based Development with MATLAB/Simulink, and a hand-written AUTOSAR RTE/BSW stack deployed on STM32.**
 
 ------------------------------------------------------------------------------------------------------
 ## 📋 Table of Contents
@@ -9,17 +10,10 @@
 2. [Constraints](#2-constraints)
 3. [System Scope and Context](#3-system-scope-and-context)
 4. [Solution Strategy](#4-solution-strategy)
-5. [Building Block View](#5-building-block-view)
-6. [Runtime View](#6-runtime-view)
-7. [Deployment View](#7-deployment-view)
-8. [Crosscutting Concepts](#8-crosscutting-concepts)
-9. [Architecture Decisions](#9-architecture-decisions)
-10. [Quality Requirements](#10-quality-requirements)
-11. [Risks and Technical Debt](#11-risks-and-technical-debt)
-12. [Glossary](#12-glossary)
-13. [Project Structure](#project-structure)
-14. [Getting Started](#getting-started)
-
+5. [Development Approach](#5-development-approach)
+6. [Glossary](#6-glossary)
+7. [Project Structure](#7-project-structure)
+8. [Development Status](#8-development-status)
 
 ------------------------------------------------------------------------------------------------------
 ## 1. Introduction and Goals
@@ -28,13 +22,13 @@
 
 This project implements a **Blind Spot Detection (BSD) ECU** using the **AUTOSAR Classic** software architecture. The system monitors vehicle blind spots using simulated radar sensor data received over CAN bus and issues warnings to the driver when objects are detected.
 
-
 The project demonstrates a complete, industry-grade embedded software development workflow:
 
 - **Model-Based Development** using MATLAB/Simulink and AUTOSAR Blockset
-- **BSW Configuration** using EB Tresos AutoCore
+- **Hand-written AUTOSAR RTE** (`Rte.c` / `Rte.h`) mapping Simulink interfaces to the BSW
+- **Custom Communication Stack** (CanIf, PduR, Com) implemented from scratch in C
 - **MISRA-C compliant** C code generation via Embedded Coder
-- **Full AUTOSAR layered architecture** from MCAL to Application Layer
+- **Hardware-in-the-Loop (HIL)** validation via dual-STM32 CAN network in Proteus
 
 ------------------------------------------------------------------------------------------------------
 ### 1.2 Functional Requirements
@@ -52,6 +46,8 @@ The project demonstrates a complete, industry-grade embedded software developmen
 | FR-09 | System shall transmit warning status via CAN ID 0x300 every 20ms           | High  |
 | FR-10 | System shall transmit LED control via CAN ID 0x301 every 20ms              | Medium |
 | FR-11 | BSD algorithm shall execute every 20ms                                     | High  |
+| FR-12 | System shall ignore radar input when vehicle speed exceeds 100 km/h (Highway Suppression) | Medium |
+| FR-13 | System shall force CLEAR state if radar/speed signals report a failure (Fail-safe) | High |
 
 ------------------------------------------------------------------------------------------------------
 ### 1.3 Quality Goals
@@ -61,11 +57,10 @@ The project demonstrates a complete, industry-grade embedded software developmen
 | 1 | **Safety** | Correct and timely warning prevents accidents |
 | 2 | **Timing Determinism** | 20ms cycle must never be violated |
 | 3 | **MISRA Compliance** | Mandatory for automotive production code |
-| 4 | **Traceability** | Requirements traceable to Simulink blocks |
+| 4 | **Traceability** | Requirements traceable to Simulink blocks and SRS docs |
 | 5 | **Portability** | Hardware-independent SWC code via RTE |
 
----------------------------------------------------------------------------------------------------
-
+------------------------------------------------------------------------------------------------------
 ## 2. Constraints
 
 ### 2.1 Technical Constraints
@@ -77,23 +72,23 @@ The project demonstrates a complete, industry-grade embedded software developmen
 | **CAN bus**            | Inter-ECU communication only via CAN (500 kbps)     |
 | **Fixed-step solver**  | Simulink model uses discrete fixed-step 20ms        |
 | **No dynamic memory**  | No `malloc`/`free` — static allocation only         |
----------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------
 ### 2.2 Organizational Constraints
 
 | Constraint                | Description                                  |
 |---------------------------|----------------------------------------------|
-| **Tools**                 | MATLAB R2024a, EB Tresos, STM32CubeIDE       |
-| **Simulation only**       | No physical hardware — PC simulation target  |
+| **Tools**                 | MATLAB R2024a, STM32CubeIDE, Proteus         |
+| **Target Hardware**       | STM32F103C6 (ARM Cortex-M3)                  |
+| **Hand-written Stack**    | BSW/RTE hand-written without EB Tresos       |
 | **Diagnostics deferred**  | CanTp/Dcm integration planned for next phase |
 
----------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 ## 3. System Scope and Context
-### 3.1 Business Context
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/a4635d19-8045-4906-a2ec-6659fd0aaee1" />
 
 ### 3.1 Business Context
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                              Vehicle CAN Network                             │
 │                                                                             │
@@ -108,19 +103,19 @@ The project demonstrates a complete, industry-grade embedded software developmen
 │  └─────────────┘             │  ┌────────────────▼────────────────┐    │   │
 │                              │  │  2. BSD_VehicleSignals_SWC      │    │   │
 │  ┌─────────────┐             │  │     scales speed/gear/turn      │    │   │
-│  │  ABS ECU   │──0x100─────▶│  └────────────────┬────────────────┘    │   │
+│  │  ABS ECU    │──0x100─────▶│  └────────────────┬────────────────┘    │   │
 │  └─────────────┘             │                   │                     │   │
 │                              │  ┌────────────────▼────────────────┐    │   │
 │  ┌─────────────┐             │  │  3. BSD_Algorithm_SWC           │    │   │
-│  │    BCM      │──0x3A0─────▶│  │     CLEAR / WARNING / ALERT    │    │   │
+│  │    BCM      │──0x3A0─────▶│  │     CLEAR / WARNING / ALERT     │    │   │
 │  └─────────────┘             │  └────────────────┬────────────────┘    │   │
 │                              │                   │                     │   │
 │  ┌─────────────┐             │  ┌────────────────▼────────────────┐    │   │
-│  │  EPS ECU   │──0x2E0─────▶│  │  4. BSD_Warning_SWC             │    │   │
+│  │  EPS ECU    │──0x2E0─────▶│  │  4. BSD_Warning_SWC             │    │   │
 │  └─────────────┘             │  │     LED / Buzzer / HMI control  │    │   │
 │                              │  └────────────────┬────────────────┘    │   │
 │  ┌─────────────┐             │                   │                     │   │
-│  │   TCU ECU  │──0x1A0─────▶│  ┌────────────────▼────────────────┐    │   │
+│  │  TCU ECU    │──0x1A0─────▶│  ┌────────────────▼────────────────┐    │   │
 │  └─────────────┘             │  │  5. BSD_Diagnostic_SWC          │    │   │
 │                              │  │     DTC reporting + faults      │    │   │
 │                              │  └─────────────────────────────────┘    │   │
@@ -135,26 +130,26 @@ The project demonstrates a complete, industry-grade embedded software developmen
 ```
 
 ### 3.2 CAN Message Matrix
+
 #### Receive Messages
 
 | CAN ID  | Source           | Signals                               | DLC | Cycle |
 |---------|------------------|---------------------------------------|-----|-------|
-| `0x200` | Radar Left ECU   | Distance_L, Velocity_L, Status_L      | 8   | 20ms  |
-| `0x201` | Radar Right ECU  | Distance_R, Velocity_R, Status_R      | 8   | 20ms  |
-| `0x100` | ABS ECU          | Vehicle_Speed                         | 2   | 10ms  |
-| `0x3A0` | BCM              | Turn_Signal_Left, Turn_Signal_Right   | 1   | 20ms  |
+| `0x200` | Radar Left ECU   | Distance_L, Status_L                  | 8   | 20ms  |
+| `0x201` | Radar Right ECU  | Distance_R, Status_R                  | 8   | 20ms  |
+| `0x100` | ABS ECU          | Vehicle_Speed                         | 2   | 20ms  |
+| `0x3A0` | BCM              | Turn_Signal                           | 1   | Event |
 | `0x2E0` | EPS ECU          | Steering_Angle                        | 2   | 20ms  |
-| `0x1A0` | TCU              | Gear_Position                         | 1   | 100ms |
+| `0x1A0` | TCU              | Gear_Position                         | 1   | 20ms  |
 
 #### Transmit Messages
 
-| CAN ID  | Destination        | Signals                     |DLC | Cycle |
-|---------|--------------------|-----------------------------|----|-------|
-| `0x300` | Instrument Cluster | Warning_Status, BSD_Active  | 2  | 20ms  |
-| `0x301` | BCM                | LED_Left, LED_Right, Buzzer | 1  | 20ms  |
+| CAN ID  | Destination        | Signals                     | DLC | Cycle |
+|---------|--------------------|-----------------------------|-----|-------|
+| `0x300` | Instrument Cluster | Warning_State_L, Warning_State_R | 2   | 20ms  |
+| `0x301` | BCM                | LED_Left, LED_Right         | 1   | 20ms  |
 
----------------------------------------------------------------------------------------------------
-
+------------------------------------------------------------------------------------------------------
 ## 4. Solution Strategy
 
 ### 4.1 Technology Decisions
@@ -163,24 +158,27 @@ The project demonstrates a complete, industry-grade embedded software developmen
 |-------------------|--------------------|---------------------------------------------------|
 | SW Architecture   | AUTOSAR Classic    | Industry standard for automotive ECUs             |
 | SWC Development   | Simulink + AUTOSAR Blockset | Model-Based Design, auto code generation |
-| BSW Configuration | EB Tresos          | Professional AUTOSAR BSW toolchain                |
+| BSW Implementation| Hand-written C     | Deep understanding of AUTOSAR COM stack (CanIf, PduR, Com) |
+| RTE Integration   | Hand-written `Rte.c` | Custom mapping of Simulink `Rte_Read/Write` to COM buffers |
 | Code Standard     | MISRA-C:2012       | Automotive safety requirement                     |
 | Communication     | CAN 500 kbps       | Standard automotive bus                           |
-| Scheduling        | OSEK/AUTOSAR OS    | Deterministic task scheduling                     |
+| Scheduling        | Custom OSEK RTOS   | Deterministic task scheduling with priority ceiling |
 
+------------------------------------------------------------------------------------------------------
+## 5. Development Approach
 
+The project utilizes a bottom-up implementation strategy to ensure each layer is verified before integrating the next:
 
+```text
+Bottom-Up Layer Build:
+MCAL (Can, Port, Dio) → CanIf → PduR → Com → Custom OSEK RTOS → Hand-written RTE → Simulink SWCs
+```
 
+**Validation Method:**
+Hardware-in-the-Loop (HIL) testing was conducted using a dual-STM32 setup in Proteus. A "Sender STM32" acts as the vehicle network simulator (transmitting ABS, Radar, BCM data), while the "BSD ECU STM32" runs the AUTOSAR application stack.
 
-
-
-
-
-
-
----
-
-## 12. Glossary
+------------------------------------------------------------------------------------------------------
+## 6. Glossary
 
 | Term        | Definition                                      |
 |-------------|-------------------------------------------------|
@@ -192,114 +190,83 @@ The project demonstrates a complete, industry-grade embedded software developmen
 | **Dcm**     | Diagnostic Communication Manager                |
 | **Dem**     | Diagnostic Event Manager — DTC storage          |
 | **DTC**     | Diagnostic Trouble Code                         |
-| **EcuM**    | ECU State Manager                               |
-| **HRH**     | Hardware Receive Handle                         |
-| **HTH**     | Hardware Transmit Handle                        |
+| **HIL**     | Hardware-in-the-Loop                            |
 | **IPDU**    | Interaction Layer Protocol Data Unit            |
 | **MCAL**    | Microcontroller Abstraction Layer               |
 | **MISRA**   | Motor Industry Software Reliability Association |
 | **MBD**     | Model-Based Development                         |
-| **NvM**     | Non-Volatile Memory manager                     |
-| **Os**      | AUTOSAR Operating System                        |
+| **OS**      | Operating System                                |
 | **PDU**     | Protocol Data Unit                              |
 | **PduR**    | PDU Router module                               |
 | **RTE**     | Runtime Environment — SWC to BSW interface      |
 | **SWC**     | Software Component                              |
-| **UDS**     | Unified Diagnostic Services (ISO 14229)         |
-|---------------------------------------------------------------|
 
-## Project Structure
+------------------------------------------------------------------------------------------------------
+## 7. Project Structure
 
-```
-📁 BSD-AUTOSAR-ECU/
+```text
+📁 BSD_AUTOSAR_ECU/
 │
-├── 📁 Simulink/
-│   ├── BSD_System.slx              ← AUTOSAR SWC model
-│   └── BSD_TestHarness.slx         ← simulation test model
+├── 📁 01_Docs/                   # Software Requirements Specifications (SRS)
+│   ├── README_00_System.md       # System overview & CAN Matrix
+│   ├── README_01_VSG.md          # Vehicle Signals SWC Requirements
+│   ├── README_02_RIN.md          # Radar Input SWC Requirements
+│   ├── README_03_ALG.md          # Algorithm SWC Requirements
+│   ├── README_04_WRN.md          # Warning SWC Requirements
+│   └── README_05_DIA.md          # Diagnostic SWC Requirements
 │
-├── 📁 Generated_SWC_Code/         
-│   ├── BSD_System.c
-│   ├── BSD_System.h
-│   └── BSD_System_private.h
+├── 📁 02_Matlab/                 # MATLAB initialization & Data Dictionary
+│   ├── bsd.sldd                  # AUTOSAR Data Types (Bus, Aliases, Enums)
+│   └── BSD_*_Init.m              # Calibration parameters & configs
 │
-├── 📁 ARXML/                       ← AUTOSAR descriptions
-│   ├── BSD_System_component.arxml
-│   ├── BSD_System_datatype.arxml
-│   ├── BSD_System_interface.arxml
-│   └── BSD_System_implementation.arxml
+├── 📁 03_Simulink/               # Simulink SWC Models (.slx)
+│   ├── Algorithm.slx
+│   ├── RadarInput.slx
+│   ├── VehicleSignals.slx
+│   ├── Warning.slx
+│   └── Diagnostic.slx
 │
-├── 📁 EB_Tresos/                   ← BSW configuration project
-│   ├── 📁 output/
-│   │   ├── Can_Cfg.c / .h
-│   │   ├── CanIf_Cfg.c / .h
-│   │   ├── PduR_Cfg.c / .h
-│   │   ├── Com_Cfg.c / .h
-│   │   ├── Com_PBcfg.c
-│   │   └── Os_Cfg.c / .h
-│   └── ECU_BSD.tpj                 
+├── 📁 04_STM32_Application/      # STM32CubeIDE Project
+│   ├── App_layer/                # Generated C-code, Rte.c, Rte.h, Rte_Type.h
+│   ├── BSW/                      # Com, PduR, CanIf
+│   ├── MCAL/                     # Can, Port, Dio , Mcuu 
+│   └── OS/                       # Custom OSEK-style RTOS (MyRTOS)
 │
-├── 📁 RTE/                        
-│   └── Rte_BSD_ECU.h             
-│
-├── 📁 Docs/
-│   ├── BSD_SRS.docx                System Requirements Spec
-│   ├── CAN_Matrix.xlsx             
-│   └── Architecture_Diagram.png
-│
-└── README.md                       
+└── README.md                     # Project overview
 ```
 
-### 4.2 Development Approach
+------------------------------------------------------------------------------------------------------
+## 8. Development Status
 
-```
-Bottom-Up Layer Build:
-MCAL (Can) → CanIf → PduR → Com → Os → EcuM → BswM → Dem → RTE → SWC
-```
-
-
-
-
-
-
-
-
-
-
----
-
-## Development Status
-
-```
-Phase 1 — Core BSD (Current)
-├── ✅ AUTOSAR SWC (Simulink + Stateflow)
+```text
+Phase 1 — Core BSD (Completed)
+├── ✅ AUTOSAR SWCs (Simulink + Stateflow)
 ├── ✅ Code generation (MISRA-C)
-├── ✅ ARXML generation
-├── ✅ Can driver (EB Tresos)
-├── ✅ CanIf (EB Tresos)
-├── ✅ PduR (EB Tresos)
-├── ✅ Com module (EB Tresos)
-├── ✅ Os configuration
-├── 🔲 EcuM / BswM
-├── 🔲 Dem (DTC management)
-└── 🔲 RTE integration
+├── ✅ AUTOSAR Data Dictionary (bsd.sldd)
+├── ✅ Can driver (bxCAN)
+├── ✅ CanIf (PDU <-> CAN ID mapping)
+├── ✅ PduR (Routing)
+├── ✅ Com module (Signal packing/unpacking)
+├── ✅ Custom OSEK RTOS integration
+├── ✅ Hand-written RTE integration
+└── ✅ HIL Simulation (Proteus dual-STM32)
 
 Phase 2 — Diagnostics (Planned)
 ├── 🔲 CanTp
 ├── 🔲 Dcm (UDS services)
 └── 🔲 NvM (fault storage)
 
-Phase 3 — Hardware (Future)
-└── 🔲 STM32F4 target integration
+
 ```
 
----
+------------------------------------------------------------------------------------------------------
 
 ## Author
 
-**Abdallah  mohamed sedik** — Embedded Software Engineer  
+**Abdallah Mohamed Sedik** — Embedded Software Engineer  
 AUTOSAR Classic | Model-Based Development | Automotive Systems
 
 ---
 
-*Built with MATLAB R2024a + EB Tresos | AUTOSAR Classic 4.x | MISRA-C:2012*
-
+*Built with MATLAB R2024a + STM32CubeIDE | AUTOSAR Classic 4.x | MISRA-C:2012*
+```
